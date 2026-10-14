@@ -23,7 +23,7 @@ jobs:
   release:
     # Manual runs release from main; tag pushes release the tagged commit.
     if: github.event_name == 'push' || github.ref == 'refs/heads/main'
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
         with:

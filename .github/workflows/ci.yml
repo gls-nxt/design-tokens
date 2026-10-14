@@ -10,8 +10,9 @@ permissions:
 
 jobs:
   build:
-    # macOS: iOS targets need Xcode; the runner also ships an Android SDK.
-    runs-on: macos-latest
+    # Linux is enough: Kotlin cross-compiles the iOS klibs (no cinterop), and the
+    # runner ships an Android SDK.
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
@@ -30,3 +31,12 @@ jobs:
       - name: Compile Kotlin (Android + iOS)
         working-directory: packages/kotlin
         run: ./gradlew compileAndroidMain compileKotlinIosArm64 compileKotlinIosSimulatorArm64
+
+      # TEMP: hand the Linux-built artifacts to a local iOS link test. Remove before merge.
+      - name: Publish to Maven Local
+        working-directory: packages/kotlin
+        run: ./gradlew publishToMavenLocal -Pversion=0.0.0-linux
+      - uses: actions/upload-artifact@v4
+        with:
+          name: m2-linux
+          path: ~/.m2/repository/com/glsnxt
