@@ -69,7 +69,7 @@ The library targets Android, `iosArm64` and `iosSimulatorArm64`. It is built wit
 1. **Edit the JSON in `tokens/`:**
    - `primitive/color.tokens.json` holds the raw hex values.
    - `semantic/color.light.tokens.json` and `color.dark.tokens.json` reference the primitives, as in `{blue.700}`.
-2. **Run `npm run build && npm test`.**
+2. **Run `pnpm install && pnpm build && pnpm test`.** To set up pnpm, see the [prerequisites in CONTRIBUTING.md](CONTRIBUTING.md#prerequisites).
 3. **Commit `TOKENS.md` and `docs/swatches/` with your token change.** The build regenerates them, and CI fails if they're out of date.
 
 [`TOKENS.md`](TOKENS.md) previews every token, light and dark, with its CSS and Kotlin names. On a pull request, CI posts a comment that lists each changed colour before and after.
