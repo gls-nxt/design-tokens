@@ -1,0 +1,29 @@
+version: 2
+
+# One grouped PR per ecosystem per week.
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      npm:
+        patterns: ['*']
+
+  # Kotlin, AGP, Compose and the Gradle wrapper. Keep Kotlin no newer than
+  # gls-app-kmp's, or its iOS build can't read the klibs.
+  - package-ecosystem: gradle
+    directory: /packages/kotlin
+    schedule:
+      interval: weekly
+    groups:
+      gradle:
+        patterns: ['*']
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      github-actions:
+        patterns: ['*']
