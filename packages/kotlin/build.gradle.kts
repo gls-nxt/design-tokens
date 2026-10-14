@@ -22,6 +22,23 @@ kotlin {
 }
 
 publishing {
+    publications.withType<MavenPublication>().configureEach {
+        pom {
+            name = "Unity Design System tokens"
+            description = "Unity Design System colour tokens as Compose Color values for Kotlin Multiplatform."
+            url = "https://github.com/gls-nxt/design-tokens"
+            licenses {
+                license {
+                    name = "MIT License"
+                    url = "https://opensource.org/license/mit"
+                }
+            }
+            scm {
+                url = "https://github.com/gls-nxt/design-tokens"
+                connection = "scm:git:https://github.com/gls-nxt/design-tokens.git"
+            }
+        }
+    }
     repositories {
         maven {
             name = "GitHubPackages"

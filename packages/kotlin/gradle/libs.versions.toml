@@ -1,4 +1,4 @@
-# Kept in step with gls-app-kmp: the library's Kotlin must not be newer than the app's,
+# Kept in step with the consuming KMP app: the library's Kotlin must not be newer than the app's,
 # or the iOS klibs won't load.
 [versions]
 kotlin = "2.4.10"

@@ -1,0 +1,3 @@
+# Reviews are requested from these owners on every pull request.
+# Replace the user with the team that owns the design system once that team exists in the org.
+* @jdwillemse
