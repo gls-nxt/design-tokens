@@ -1,0 +1,8 @@
+node_modules/
+packages/web/dist/
+packages/kotlin/src/
+packages/kotlin/build/
+packages/kotlin/.gradle/
+packages/kotlin/.kotlin/
+packages/kotlin/local.properties
+.DS_Store

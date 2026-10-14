@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    # macOS: iOS targets need Xcode; the runner also ships an Android SDK.
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 21
+      - uses: gradle/actions/setup-gradle@v5
+
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
+      - name: Compile Kotlin (Android + iOS)
+        working-directory: packages/kotlin
+        run: ./gradlew compileAndroidMain compileKotlinIosArm64 compileKotlinIosSimulatorArm64

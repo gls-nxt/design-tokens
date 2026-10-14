@@ -1,0 +1,103 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: Semver bump
+        type: choice
+        options: [patch, minor, major]
+        default: patch
+  push:
+    tags: ['v*.*.*']
+
+permissions:
+  contents: write # tag + GitHub Release
+  packages: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    # Manual runs release from main; tag pushes release the tagged commit.
+    if: github.event_name == 'push' || github.ref == 'refs/heads/main'
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0 # need tags to find the current version
+
+      - name: Determine version
+        env:
+          BUMP: ${{ inputs.bump }}
+        run: |
+          if [ "$GITHUB_EVENT_NAME" = push ]; then
+            # Tag push: the tag is the version.
+            version=${GITHUB_REF_NAME#v}
+            current=$GITHUB_REF_NAME
+          else
+            current=$(git tag --list 'v*.*.*' --sort=-v:refname | head -n1)
+            IFS=. read -r major minor patch <<< "${current:-v0.0.0}"
+            major=${major#v}
+            case "$BUMP" in
+              major) major=$((major + 1)); minor=0; patch=0 ;;
+              minor) minor=$((minor + 1)); patch=0 ;;
+              patch) patch=$((patch + 1)) ;;
+            esac
+            version=$major.$minor.$patch
+          fi
+          if ! [[ $version =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "::error::'$version' is not a MAJOR.MINOR.PATCH version"; exit 1
+          fi
+          echo "VERSION=$version" >> "$GITHUB_ENV"
+          echo "Releasing v$version (trigger: $GITHUB_EVENT_NAME, previous: ${current:-none})" >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+          registry-url: https://npm.pkg.github.com
+          scope: '@gls-nxt'
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 21
+      - uses: gradle/actions/setup-gradle@v5
+
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
+
+      - name: Publish npm package
+        working-directory: packages/web
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm version "$VERSION" --no-git-tag-version
+          npm publish
+
+      - name: Publish Kotlin package
+        working-directory: packages/kotlin
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ./gradlew publishAllPublicationsToGitHubPackagesRepository -Pversion="$VERSION"
+
+      # Manual runs create the tag here, last, so a failed publish leaves no tag.
+      # Tag pushes already have it; gh reuses the existing tag.
+      # Tags created with GITHUB_TOKEN don't trigger workflows, so this never runs twice.
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "v$VERSION" \
+            --target "$GITHUB_SHA" \
+            --title "v$VERSION" \
+            --generate-notes \
+            --notes "$(cat <<EOF
+          ## Packages
+          - npm: \`@gls-nxt/design-tokens@$VERSION\`
+          - Maven: \`com.glsnxt:design-tokens:$VERSION\`
+          EOF
+          )"

@@ -1,0 +1,13 @@
+# Kept in step with gls-app-kmp: the library's Kotlin must not be newer than the app's,
+# or the iOS klibs won't load.
+[versions]
+kotlin = "2.4.10"
+agp = "9.2.1"
+compose = "1.12.0"
+
+[libraries]
+compose-ui-graphics = { module = "org.jetbrains.compose.ui:ui-graphics", version.ref = "compose" }
+
+[plugins]
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+android-kmp-library = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
