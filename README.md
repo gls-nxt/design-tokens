@@ -8,7 +8,7 @@ Unity Design System tokens from one source, published as native packages for the
 
 Neither platform parses JSON at runtime, and Kotlin developers never need Node.
 
-The PoC scope is colour tokens in light and dark mode.
+The current scope is colour tokens in light and dark mode.
 
 ## Packages
 
@@ -115,8 +115,16 @@ A renamed or removed token breaks consumers, so it needs a major version.
 
 ## Where the tokens come from
 
-The tokens were exported from the Figma file "Refined Library WIP" (branch `ew0pL5kPMy1hJprqMfYiJT`):
+The tokens are exported from the Unity Design System Figma library:
 - the **Primitives** collection;
 - the **Theme** collection, with its Light and Dark modes.
 
-Theme references to the **Brand** collection are resolved to its `GLS` mode (`light/N` → `blue/N`, `dark/N` → `blue-dark/N`). The other Brand modes (`inboxx`, `Neutral`) are not exported yet.
+Theme references to the **Brand** collection are resolved to its `GLS` mode (`light/N` → `blue/N`, `dark/N` → `blue-dark/N`). The other Brand modes are not exported yet.
+
+## Contributing and security
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for how to report problems and propose changes, and [SECURITY.md](SECURITY.md) for how to report a vulnerability.
+
+## License
+
+[MIT](LICENSE). The GLS name, logo and brand colours remain trademarks of their owner; the license covers the code and token files, not the right to present yourself as GLS.
