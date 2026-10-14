@@ -32,11 +32,3 @@ jobs:
         working-directory: packages/kotlin
         run: ./gradlew compileAndroidMain compileKotlinIosArm64 compileKotlinIosSimulatorArm64
 
-      # TEMP: hand the Linux-built artifacts to a local iOS link test. Remove before merge.
-      - name: Publish to Maven Local
-        working-directory: packages/kotlin
-        run: ./gradlew publishToMavenLocal -Pversion=0.0.0-linux
-      - uses: actions/upload-artifact@v4
-        with:
-          name: m2-linux
-          path: ~/.m2/repository/com/glsnxt
