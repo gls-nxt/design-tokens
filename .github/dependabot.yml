@@ -11,7 +11,7 @@ updates:
         patterns: ['*']
 
   # Gradle wrapper only. Kotlin, AGP and Compose are bumped by hand, in step
-  # with gls-app-kmp: a newer Kotlin than the app's breaks its iOS klibs.
+  # with the consuming KMP app: a newer Kotlin than the app's breaks its iOS klibs.
   - package-ecosystem: gradle
     directory: /packages/kotlin
     schedule:
