@@ -10,12 +10,16 @@ updates:
       npm:
         patterns: ['*']
 
-  # Kotlin, AGP, Compose and the Gradle wrapper. Keep Kotlin no newer than
-  # gls-app-kmp's, or its iOS build can't read the klibs.
+  # Gradle wrapper only. Kotlin, AGP and Compose are bumped by hand, in step
+  # with gls-app-kmp: a newer Kotlin than the app's breaks its iOS klibs.
   - package-ecosystem: gradle
     directory: /packages/kotlin
     schedule:
       interval: weekly
+    ignore:
+      - dependency-name: 'org.jetbrains.kotlin*'
+      - dependency-name: 'com.android*'
+      - dependency-name: 'org.jetbrains.compose*'
     groups:
       gradle:
         patterns: ['*']
