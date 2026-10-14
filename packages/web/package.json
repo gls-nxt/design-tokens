@@ -1,15 +1,12 @@
 {
   "name": "@gls-nxt/design-tokens",
   "version": "0.0.0",
-  "description": "Unity Design System tokens: CSS variables and TypeScript constants.",
+  "description": "Unity Design System tokens: CSS variables.",
   "license": "MIT",
   "homepage": "https://github.com/gls-nxt/design-tokens#readme",
-  "type": "module",
   "files": ["dist"],
   "exports": {
-    "./tokens.css": "./dist/tokens.css",
-    "./light": { "types": "./dist/light.d.ts", "default": "./dist/light.js" },
-    "./dark": { "types": "./dist/dark.d.ts", "default": "./dist/dark.js" }
+    "./tokens.css": "./dist/tokens.css"
   },
   "repository": { "type": "git", "url": "git+https://github.com/gls-nxt/design-tokens.git", "directory": "packages/web" },
   "publishConfig": { "registry": "https://npm.pkg.github.com" }
