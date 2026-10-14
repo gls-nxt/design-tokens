@@ -1,9 +1,9 @@
 # Kept in step with gls-app-kmp: the library's Kotlin must not be newer than the app's,
 # or the iOS klibs won't load.
 [versions]
-kotlin = "2.4.10"
-agp = "9.2.1"
-compose = "1.12.0"
+kotlin = "2.4.21"
+agp = "9.4.1"
+compose = "1.12.1"
 
 [libraries]
 compose-ui-graphics = { module = "org.jetbrains.compose.ui:ui-graphics", version.ref = "compose" }
