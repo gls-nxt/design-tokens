@@ -29,7 +29,42 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm build
       - run: pnpm test
+      - name: Check TOKENS.md and swatches are up to date
+        run: |
+          if [ -n "$(git status --porcelain -- TOKENS.md docs)" ]; then
+            git status --short -- TOKENS.md docs
+            echo "::error::Run pnpm build and commit TOKENS.md and docs/."
+            exit 1
+          fi
       - name: Compile Kotlin (Android + iOS)
         working-directory: packages/kotlin
         run: ./gradlew compileAndroidMain compileKotlinIosArm64 compileKotlinIosSimulatorArm64
 
+  token-diff:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    concurrency:
+      group: token-diff-${{ github.event.pull_request.number }}
+      cancel-in-progress: true
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - name: Compare tokens with the base branch
+        run: |
+          mkdir -p "$RUNNER_TEMP/base"
+          git archive "origin/$GITHUB_BASE_REF" tokens | tar -x -C "$RUNNER_TEMP/base"
+          node token-diff.mjs "$RUNNER_TEMP/base" . > "$RUNNER_TEMP/diff.md"
+          cat "$RUNNER_TEMP/diff.md" >> "$GITHUB_STEP_SUMMARY"
+      # Edits the bot's previous comment, so each PR keeps a single up-to-date summary.
+      - name: Post comment
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ github.event.pull_request.number }}
+        run: gh pr comment "$PR" --body-file "$RUNNER_TEMP/diff.md" --edit-last --create-if-none

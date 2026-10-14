@@ -4,7 +4,7 @@ Unity Design System tokens from one source, published as native packages for the
 
 - **Source:** W3C Design Tokens (DTCG) JSON in `tokens/`.
 - **Compiler:** Style Dictionary, run by `build.mjs`.
-- **Output:** CSS variables and TypeScript for the web, Compose `Color` code for KMP.
+- **Output:** CSS variables for the web, Compose `Color` code for KMP.
 
 Neither platform parses JSON at runtime, and Kotlin developers never need Node.
 
@@ -14,7 +14,7 @@ The current scope is colour tokens in light and dark mode.
 
 | Platform | Package | Contents |
 | --- | --- | --- |
-| Web | `@gls-nxt/design-tokens` (npm) | `tokens.css`, plus the `light` and `dark` ES modules with `.d.ts` files |
+| Web | `@gls-nxt/design-tokens` (npm) | `tokens.css` |
 | KMP | `com.glsnxt:design-tokens` (Maven) | `PrimitiveColors`, plus `<Group>Colors` data classes with `light…()` and `dark…()` factories |
 
 Both packages are published to GitHub Packages and share one version.
@@ -35,10 +35,8 @@ Both packages are published to GitHub Packages and share one version.
    .button { background: var(--unity-surface-selection-default); }
    ```
    Dark mode follows the OS setting. To force a mode, set `data-theme="dark"` or `data-theme="light"` on `<html>`.
-4. **Use the TypeScript constants** where CSS can't reach, for example in canvas or charts:
-   ```ts
-   import { surfaceSelectionDefault } from '@gls-nxt/design-tokens/light';
-   ```
+
+Use the CSS variables only. The package has no JavaScript or TypeScript exports, so components can't hard-code a colour value that ignores the active mode.
 
 ## Use in KMP
 
@@ -72,6 +70,9 @@ The library targets Android, `iosArm64` and `iosSimulatorArm64`. It is built wit
    - `primitive/color.tokens.json` holds the raw hex values.
    - `semantic/color.light.tokens.json` and `color.dark.tokens.json` reference the primitives, as in `{blue.700}`.
 2. **Run `pnpm install && pnpm build && pnpm test`.** To set up pnpm, see the [prerequisites in CONTRIBUTING.md](CONTRIBUTING.md#prerequisites).
+3. **Commit `TOKENS.md` and `docs/swatches/` with your token change.** The build regenerates them, and CI fails if they're out of date.
+
+[`TOKENS.md`](TOKENS.md) previews every token, light and dark, with its CSS and Kotlin names. On a pull request, CI posts a comment that lists each changed colour before and after.
 
 The build fails in two cases:
 - the light and dark files define different tokens;
@@ -81,11 +82,11 @@ The build fails in two cases:
 
 Token path segments are lowercase kebab-case. Each platform derives its names from the full path:
 
-| Token | CSS | TypeScript | Kotlin |
-| --- | --- | --- | --- |
-| `blue.700` | `--unity-blue-700` | — | `PrimitiveColors.Blue.Blue700` |
-| `surface.selection-default` | `--unity-surface-selection-default` | `surfaceSelectionDefault` | `SurfaceColors.selectionDefault` |
-| `surface.base-1` | `--unity-surface-base-1` | `surfaceBase1` | `SurfaceColors.base1` |
+| Token | CSS | Kotlin |
+| --- | --- | --- |
+| `blue.700` | `--unity-blue-700` | `PrimitiveColors.Blue.Blue700` |
+| `surface.selection-default` | `--unity-surface-selection-default` | `SurfaceColors.selectionDefault` |
+| `surface.base-1` | `--unity-surface-base-1` | `SurfaceColors.base1` |
 
 Two rules apply:
 - A semantic segment after the group must start with a letter. Use `text.size-2xl`, not `text.2xl`.
