@@ -4,18 +4,22 @@ Unity Design System tokens from one source, published as native packages for the
 
 - **Source:** W3C Design Tokens (DTCG) JSON in `tokens/`.
 - **Compiler:** Style Dictionary, run by `build.mjs`.
-- **Output:** CSS variables for the web, Compose `Color` code for KMP.
+- **Output:** CSS variables for the web, Compose code (`Color`, `Dp`, `TextUnit`, `FontWeight`) for KMP.
 
 Neither platform parses JSON at runtime, and Kotlin developers never need Node.
 
-The current scope is colour tokens in light and dark mode.
+The tokens cover:
+- colours, in light and dark mode;
+- sizes, spacing, radii, breakpoints and type scales as primitives;
+- typography and touch targets per viewport (desktop, mobile, locker);
+- brand fonts.
 
 ## Packages
 
 | Platform | Package | Contents |
 | --- | --- | --- |
 | Web | `@gls-nxt/design-tokens` (npm) | `tokens.css` |
-| KMP | `com.glsnxt:design-tokens` (Maven) | `PrimitiveColors`, plus `<Group>Colors` data classes with `light…()` and `dark…()` factories |
+| KMP | `com.glsnxt:design-tokens` (Maven) | `PrimitiveColors` and `<Group>Colors` with `light…()` and `dark…()` factories; `PrimitiveTokens`, `FontTokens`, and `Viewport` with `desktop…()`, `mobile…()` and `locker…()` factories |
 
 Both packages are published to GitHub Packages and share one version.
 
@@ -35,6 +39,8 @@ Both packages are published to GitHub Packages and share one version.
    .button { background: var(--unity-surface-selection-default); }
    ```
    Dark mode follows the OS setting. To force a mode, set `data-theme="dark"` or `data-theme="light"` on `<html>`.
+
+   Viewport tokens default to desktop. For mobile or the locker, set `data-viewport="mobile"` or `data-viewport="locker"` on `<html>`.
 
 Use the CSS variables only. The package has no JavaScript or TypeScript exports, so components can't hard-code a colour value that ignores the active mode.
 
@@ -56,27 +62,34 @@ Use the CSS variables only. The package has no JavaScript or TypeScript exports,
    - **Locally:** put `gpr.user` and `gpr.key` (a token with `read:packages`) in `~/.gradle/gradle.properties`.
    - **In CI:** use `GITHUB_TOKEN`, and give the consuming repo read access in the package settings.
 2. **Add the dependency** to commonMain: `implementation("com.glsnxt:design-tokens:<version>")`.
-3. **Use the colours.** Choose the mode in your theme:
+3. **Use the tokens.** Choose the colour mode and viewport in your theme:
    ```kotlin
    val surface = if (isSystemInDarkTheme()) darkSurfaceColors() else lightSurfaceColors()
-   Box(Modifier.background(surface.selectionDefault))
+   val viewport = mobileViewport()
+   Box(Modifier.background(surface.selectionDefault).padding(PrimitiveTokens.Spacing.Spacing4))
+   Text("Hi", fontSize = viewport.h1FontSize, lineHeight = viewport.h1LineHeight)
    ```
+   Colours live in `com.glsnxt.designtokens.color`; everything else in `com.glsnxt.designtokens`. Text sizes are `sp`; other sizes are `dp`.
 
 The library targets Android, `iosArm64` and `iosSimulatorArm64`. It is built with Kotlin 2.4.10, so consumers need Kotlin 2.4.10 or newer.
 
 ## Change tokens
 
 1. **Edit the JSON in `tokens/`:**
-   - `primitive/color.tokens.json` holds the raw hex values.
+   - `primitive/` holds the raw values: `color`, `size` and `font`.
    - `semantic/color.light.tokens.json` and `color.dark.tokens.json` reference the primitives, as in `{blue.700}`.
+   - `semantic/font.tokens.json` holds the brand fonts.
+   - `viewport/viewport.<desktop|mobile|locker>.tokens.json` reference the primitives, as in `{font.size.42}`.
+   - Set `$type` on groups, not at the top of a file. Style Dictionary merges all files, so a top-level `$type` overrides the other files.
 2. **Run `pnpm install && pnpm build && pnpm test`.** To set up pnpm, see the [prerequisites in CONTRIBUTING.md](CONTRIBUTING.md#prerequisites).
 3. **Commit `TOKENS.md` and `docs/swatches/` with your token change.** The build regenerates them, and CI fails if they're out of date.
 
-[`TOKENS.md`](TOKENS.md) previews every token, light and dark, with its CSS and Kotlin names. On a pull request, CI posts a comment that lists each changed colour before and after.
+[`TOKENS.md`](TOKENS.md) previews every token in every mode, with its CSS and Kotlin names. On a pull request, CI posts a comment that lists each changed token before and after.
 
-The build fails in two cases:
-- the light and dark files define different tokens;
-- a generated name is not a valid identifier.
+The build fails in three cases:
+- the light and dark files, or the three viewport files, define different tokens;
+- a generated name is not a valid identifier;
+- two tokens generate the same Kotlin name.
 
 ## Naming convention
 
@@ -87,6 +100,8 @@ Token path segments are lowercase kebab-case. Each platform derives its names fr
 | `blue.700` | `--unity-blue-700` | `PrimitiveColors.Blue.Blue700` |
 | `surface.selection-default` | `--unity-surface-selection-default` | `SurfaceColors.selectionDefault` |
 | `surface.base-1` | `--unity-surface-base-1` | `SurfaceColors.base1` |
+| `spacing.4` | `--unity-spacing-4` | `PrimitiveTokens.Spacing.Spacing4` |
+| `h1.font-size` | `--unity-h1-font-size` | `Viewport.h1FontSize` |
 
 Two rules apply:
 - A semantic segment after the group must start with a letter. Use `text.size-2xl`, not `text.2xl`.
@@ -117,9 +132,12 @@ A renamed or removed token breaks consumers, so it needs a major version.
 
 The tokens are exported from the Unity Design System Figma library:
 - the **Primitives** collection;
-- the **Theme** collection, with its Light and Dark modes.
+- the **Theme** collection, with its Light and Dark modes;
+- the **Viewport** collection, with its Desktop, Mobile and Locker modes.
 
-Theme references to the **Brand** collection are resolved to its `GLS` mode (`light/N` → `blue/N`, `dark/N` → `blue-dark/N`). The other Brand modes are not exported yet.
+References to the **Brand** collection are resolved to its `GLS` mode (`light/N` → `blue/N`, `dark/N` → `blue-dark/N`, fonts → Newson GLS). The other Brand modes are not exported yet.
+
+Some names differ from Figma: `Font/height` is `font.line-height`, `Font/spacing` is `font.letter-spacing`, and spaces become hyphens. Figma's `Frame Width` and `String` variables are design-file helpers and are not exported.
 
 ## Contributing and security
 

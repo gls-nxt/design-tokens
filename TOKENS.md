@@ -113,7 +113,68 @@ Light and dark values, with the primitive each one references.
 | `text.warning` | ![#813600](docs/swatches/813600.svg) `#813600`<br>`orange.1000` | ![#ffd9b3](docs/swatches/ffd9b3.svg) `#ffd9b3`<br>`orange-dark.900` | `--unity-text-warning` | `TextColors.warning` |
 | `text.info` | ![#3242c0](docs/swatches/3242c0.svg) `#3242c0`<br>`blue.600` | ![#89a0ff](docs/swatches/89a0ff.svg) `#89a0ff`<br>`blue-dark.900` | `--unity-text-info` | `TextColors.info` |
 
-## Primitives
+## Viewport
+
+Sizes per viewport, with the primitive each one references. Desktop is the default; set `data-viewport="mobile"` or `data-viewport="locker"` to switch on the web.
+
+| Token | Desktop | Mobile | Locker | CSS | Kotlin |
+| --- | --- | --- | --- | --- | --- |
+| `touch-target.min` | `24px` | `48px` | `64px` | `--unity-touch-target-min` | `Viewport.touchTargetMin` |
+| `control.height` | `0px` | `0px` | `64px` | `--unity-control-height` | `Viewport.controlHeight` |
+| `h1.font-size` | `42px`<br>`font.size.42` | `42px`<br>`font.size.42` | `48px`<br>`font.size.48` | `--unity-h1-font-size` | `Viewport.h1FontSize` |
+| `h1.line-height` | `52px`<br>`font.line-height.52` | `52px`<br>`font.line-height.52` | `56px`<br>`font.line-height.56` | `--unity-h1-line-height` | `Viewport.h1LineHeight` |
+| `h1.letter-spacing` | `-0.86px`<br>`font.letter-spacing.12` | `-0.86px`<br>`font.letter-spacing.12` | `-0.86px`<br>`font.letter-spacing.12` | `--unity-h1-letter-spacing` | `Viewport.h1LetterSpacing` |
+| `h2.font-size` | `34px`<br>`font.size.34` | `34px`<br>`font.size.34` | `42px`<br>`font.size.42` | `--unity-h2-font-size` | `Viewport.h2FontSize` |
+| `h2.line-height` | `40px`<br>`font.line-height.40` | `40px`<br>`font.line-height.40` | `52px`<br>`font.line-height.52` | `--unity-h2-line-height` | `Viewport.h2LineHeight` |
+| `h2.letter-spacing` | `-0.68px`<br>`font.letter-spacing.11` | `-0.68px`<br>`font.letter-spacing.11` | `-0.68px`<br>`font.letter-spacing.11` | `--unity-h2-letter-spacing` | `Viewport.h2LetterSpacing` |
+| `h3.font-size` | `24px`<br>`font.size.24` | `24px`<br>`font.size.24` | `34px`<br>`font.size.34` | `--unity-h3-font-size` | `Viewport.h3FontSize` |
+| `h3.line-height` | `32px`<br>`font.line-height.32` | `32px`<br>`font.line-height.32` | `40px`<br>`font.line-height.40` | `--unity-h3-line-height` | `Viewport.h3LineHeight` |
+| `h3.letter-spacing` | `-0.48px`<br>`font.letter-spacing.10` | `-0.48px`<br>`font.letter-spacing.10` | `-0.48px`<br>`font.letter-spacing.10` | `--unity-h3-letter-spacing` | `Viewport.h3LetterSpacing` |
+| `h4.font-size` | `22px`<br>`font.size.22` | `22px`<br>`font.size.22` | `28px`<br>`font.size.28` | `--unity-h4-font-size` | `Viewport.h4FontSize` |
+| `h4.line-height` | `28px`<br>`font.line-height.28` | `28px`<br>`font.line-height.28` | `32px`<br>`font.line-height.32` | `--unity-h4-line-height` | `Viewport.h4LineHeight` |
+| `h4.letter-spacing` | `-0.34px`<br>`font.letter-spacing.9` | `-0.34px`<br>`font.letter-spacing.9` | `-0.34px`<br>`font.letter-spacing.9` | `--unity-h4-letter-spacing` | `Viewport.h4LetterSpacing` |
+| `h5.font-size` | `20px`<br>`font.size.20` | `20px`<br>`font.size.20` | `24px`<br>`font.size.24` | `--unity-h5-font-size` | `Viewport.h5FontSize` |
+| `h5.line-height` | `26px`<br>`font.line-height.26` | `26px`<br>`font.line-height.26` | `32px`<br>`font.line-height.32` | `--unity-h5-line-height` | `Viewport.h5LineHeight` |
+| `h5.letter-spacing` | `-0.3px`<br>`font.letter-spacing.8` | `-0.3px`<br>`font.letter-spacing.8` | `-0.3px`<br>`font.letter-spacing.8` | `--unity-h5-letter-spacing` | `Viewport.h5LetterSpacing` |
+| `h6.font-size` | `18px`<br>`font.size.18` | `18px`<br>`font.size.18` | `20px`<br>`font.size.20` | `--unity-h6-font-size` | `Viewport.h6FontSize` |
+| `h6.line-height` | `24px`<br>`font.line-height.24` | `24px`<br>`font.line-height.24` | `26px`<br>`font.line-height.26` | `--unity-h6-line-height` | `Viewport.h6LineHeight` |
+| `h6.letter-spacing` | `-0.28px`<br>`font.letter-spacing.7` | `-0.28px`<br>`font.letter-spacing.7` | `-0.28px`<br>`font.letter-spacing.7` | `--unity-h6-letter-spacing` | `Viewport.h6LetterSpacing` |
+| `body-xl.font-size` | `20px`<br>`font.size.20` | `20px`<br>`font.size.20` | `22px`<br>`font.size.22` | `--unity-body-xl-font-size` | `Viewport.bodyXlFontSize` |
+| `body-xl.line-height` | `32px`<br>`font.line-height.32` | `32px`<br>`font.line-height.32` | `32px`<br>`font.line-height.32` | `--unity-body-xl-line-height` | `Viewport.bodyXlLineHeight` |
+| `body-xl.letter-spacing` | `-0.2px`<br>`font.letter-spacing.6` | `-0.2px`<br>`font.letter-spacing.6` | `-0.2px`<br>`font.letter-spacing.6` | `--unity-body-xl-letter-spacing` | `Viewport.bodyXlLetterSpacing` |
+| `body-lg.font-size` | `18px`<br>`font.size.18` | `18px`<br>`font.size.18` | `20px`<br>`font.size.20` | `--unity-body-lg-font-size` | `Viewport.bodyLgFontSize` |
+| `body-lg.line-height` | `28px`<br>`font.line-height.28` | `28px`<br>`font.line-height.28` | `32px`<br>`font.line-height.32` | `--unity-body-lg-line-height` | `Viewport.bodyLgLineHeight` |
+| `body-lg.letter-spacing` | `-0.18px`<br>`font.letter-spacing.5` | `-0.18px`<br>`font.letter-spacing.5` | `-0.18px`<br>`font.letter-spacing.5` | `--unity-body-lg-letter-spacing` | `Viewport.bodyLgLetterSpacing` |
+| `body-md.font-size` | `16px`<br>`font.size.16` | `16px`<br>`font.size.16` | `18px`<br>`font.size.18` | `--unity-body-md-font-size` | `Viewport.bodyMdFontSize` |
+| `body-md.line-height` | `24px`<br>`font.line-height.24` | `24px`<br>`font.line-height.24` | `28px`<br>`font.line-height.28` | `--unity-body-md-line-height` | `Viewport.bodyMdLineHeight` |
+| `body-md.letter-spacing` | `-0.16px`<br>`font.letter-spacing.4` | `-0.16px`<br>`font.letter-spacing.4` | `-0.16px`<br>`font.letter-spacing.4` | `--unity-body-md-letter-spacing` | `Viewport.bodyMdLetterSpacing` |
+| `body-sm.font-size` | `14px`<br>`font.size.14` | `14px`<br>`font.size.14` | `16px`<br>`font.size.16` | `--unity-body-sm-font-size` | `Viewport.bodySmFontSize` |
+| `body-sm.line-height` | `22px`<br>`font.line-height.22` | `22px`<br>`font.line-height.22` | `26px`<br>`font.line-height.26` | `--unity-body-sm-line-height` | `Viewport.bodySmLineHeight` |
+| `body-sm.letter-spacing` | `-0.14px`<br>`font.letter-spacing.3` | `-0.14px`<br>`font.letter-spacing.3` | `-0.14px`<br>`font.letter-spacing.3` | `--unity-body-sm-letter-spacing` | `Viewport.bodySmLetterSpacing` |
+| `body-xsm.font-size` | `12px`<br>`font.size.12` | `12px`<br>`font.size.12` | `14px`<br>`font.size.14` | `--unity-body-xsm-font-size` | `Viewport.bodyXsmFontSize` |
+| `body-xsm.line-height` | `20px`<br>`font.line-height.20` | `20px`<br>`font.line-height.20` | `24px`<br>`font.line-height.24` | `--unity-body-xsm-line-height` | `Viewport.bodyXsmLineHeight` |
+| `body-xsm.letter-spacing` | `-0.12px`<br>`font.letter-spacing.2` | `-0.12px`<br>`font.letter-spacing.2` | `-0.12px`<br>`font.letter-spacing.2` | `--unity-body-xsm-letter-spacing` | `Viewport.bodyXsmLetterSpacing` |
+| `label-xl.font-size` | `20px`<br>`font.size.20` | `20px`<br>`font.size.20` | `32px`<br>`font.size.32` | `--unity-label-xl-font-size` | `Viewport.labelXlFontSize` |
+| `label-xl.line-height` | `24px`<br>`font.line-height.24` | `24px`<br>`font.line-height.24` | `28px`<br>`font.line-height.28` | `--unity-label-xl-line-height` | `Viewport.labelXlLineHeight` |
+| `label-lg.font-size` | `18px`<br>`font.size.18` | `18px`<br>`font.size.18` | `28px`<br>`font.size.28` | `--unity-label-lg-font-size` | `Viewport.labelLgFontSize` |
+| `label-lg.line-height` | `22px`<br>`font.line-height.22` | `22px`<br>`font.line-height.22` | `26px`<br>`font.line-height.26` | `--unity-label-lg-line-height` | `Viewport.labelLgLineHeight` |
+| `label-md.font-size` | `16px`<br>`font.size.16` | `16px`<br>`font.size.16` | `24px`<br>`font.size.24` | `--unity-label-md-font-size` | `Viewport.labelMdFontSize` |
+| `label-md.line-height` | `20px`<br>`font.line-height.20` | `20px`<br>`font.line-height.20` | `24px`<br>`font.line-height.24` | `--unity-label-md-line-height` | `Viewport.labelMdLineHeight` |
+| `label-sm.font-size` | `14px`<br>`font.size.14` | `14px`<br>`font.size.14` | `18px`<br>`font.size.18` | `--unity-label-sm-font-size` | `Viewport.labelSmFontSize` |
+| `label-sm.line-height` | `18px`<br>`font.line-height.18` | `18px`<br>`font.line-height.18` | `24px`<br>`font.line-height.24` | `--unity-label-sm-line-height` | `Viewport.labelSmLineHeight` |
+| `label-xsm.font-size` | `12px`<br>`font.size.12` | `12px`<br>`font.size.12` | `16px`<br>`font.size.16` | `--unity-label-xsm-font-size` | `Viewport.labelXsmFontSize` |
+| `label-xsm.line-height` | `16px`<br>`font.line-height.16` | `16px`<br>`font.line-height.16` | `22px`<br>`font.line-height.22` | `--unity-label-xsm-line-height` | `Viewport.labelXsmLineHeight` |
+| `label-xxsm.font-size` | `10px`<br>`font.size.10` | `10px`<br>`font.size.10` | `14px`<br>`font.size.14` | `--unity-label-xxsm-font-size` | `Viewport.labelXxsmFontSize` |
+| `label-xxsm.line-height` | `14px`<br>`font.line-height.14` | `14px`<br>`font.line-height.14` | `16px`<br>`font.line-height.16` | `--unity-label-xxsm-line-height` | `Viewport.labelXxsmLineHeight` |
+
+## Fonts
+
+| Token | Value | CSS | Kotlin |
+| --- | --- | --- | --- |
+| `font.heading` | `Newson GLS`<br>`font.family.newson-gls` | `--unity-font-heading` | `FontTokens.heading` |
+| `font.body` | `Newson GLS`<br>`font.family.newson-gls` | `--unity-font-body` | `FontTokens.body` |
+
+## Primitive colours
 
 CSS `--unity-<family>-<step>`, Kotlin `PrimitiveColors.<Family>.<Family><Step>`.
 
@@ -221,3 +282,158 @@ CSS `--unity-<family>-<step>`, Kotlin `PrimitiveColors.<Family>.<Family><Step>`.
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | ![#0c140e](docs/swatches/0c140e.svg) | ![#112018](docs/swatches/112018.svg) | ![#163023](docs/swatches/163023.svg) | ![#1c3f2c](docs/swatches/1c3f2c.svg) | ![#235138](docs/swatches/235138.svg) | ![#2b6546](docs/swatches/2b6546.svg) | ![#30a46c](docs/swatches/30a46c.svg) | ![#33b074](docs/swatches/33b074.svg) | ![#b5eacf](docs/swatches/b5eacf.svg) | ![#cdefe0](docs/swatches/cdefe0.svg) | ![#e3f7ef](docs/swatches/e3f7ef.svg) | ![#f4fef8](docs/swatches/f4fef8.svg) |
 | `#0c140e` | `#112018` | `#163023` | `#1c3f2c` | `#235138` | `#2b6546` | `#30a46c` | `#33b074` | `#b5eacf` | `#cdefe0` | `#e3f7ef` | `#f4fef8` |
+
+## Other primitives
+
+### font
+
+| Token | Value | CSS | Kotlin |
+| --- | --- | --- | --- |
+| `font.family.newson-gls` | `Newson GLS` | `--unity-font-family-newson-gls` | `PrimitiveTokens.Font.FontFamilyNewsonGls` |
+| `font.family.inter` | `Inter` | `--unity-font-family-inter` | `PrimitiveTokens.Font.FontFamilyInter` |
+| `font.weight.regular` | `400` | `--unity-font-weight-regular` | `PrimitiveTokens.Font.FontWeightRegular` |
+| `font.weight.medium` | `500` | `--unity-font-weight-medium` | `PrimitiveTokens.Font.FontWeightMedium` |
+| `font.weight.semibold` | `600` | `--unity-font-weight-semibold` | `PrimitiveTokens.Font.FontWeightSemibold` |
+| `font.weight.bold` | `700` | `--unity-font-weight-bold` | `PrimitiveTokens.Font.FontWeightBold` |
+| `font.size.10` | `10px` | `--unity-font-size-10` | `PrimitiveTokens.Font.FontSize10` |
+| `font.size.12` | `12px` | `--unity-font-size-12` | `PrimitiveTokens.Font.FontSize12` |
+| `font.size.14` | `14px` | `--unity-font-size-14` | `PrimitiveTokens.Font.FontSize14` |
+| `font.size.16` | `16px` | `--unity-font-size-16` | `PrimitiveTokens.Font.FontSize16` |
+| `font.size.18` | `18px` | `--unity-font-size-18` | `PrimitiveTokens.Font.FontSize18` |
+| `font.size.20` | `20px` | `--unity-font-size-20` | `PrimitiveTokens.Font.FontSize20` |
+| `font.size.22` | `22px` | `--unity-font-size-22` | `PrimitiveTokens.Font.FontSize22` |
+| `font.size.24` | `24px` | `--unity-font-size-24` | `PrimitiveTokens.Font.FontSize24` |
+| `font.size.28` | `28px` | `--unity-font-size-28` | `PrimitiveTokens.Font.FontSize28` |
+| `font.size.32` | `32px` | `--unity-font-size-32` | `PrimitiveTokens.Font.FontSize32` |
+| `font.size.34` | `34px` | `--unity-font-size-34` | `PrimitiveTokens.Font.FontSize34` |
+| `font.size.42` | `42px` | `--unity-font-size-42` | `PrimitiveTokens.Font.FontSize42` |
+| `font.size.48` | `48px` | `--unity-font-size-48` | `PrimitiveTokens.Font.FontSize48` |
+| `font.line-height.14` | `14px` | `--unity-font-line-height-14` | `PrimitiveTokens.Font.FontLineHeight14` |
+| `font.line-height.16` | `16px` | `--unity-font-line-height-16` | `PrimitiveTokens.Font.FontLineHeight16` |
+| `font.line-height.18` | `18px` | `--unity-font-line-height-18` | `PrimitiveTokens.Font.FontLineHeight18` |
+| `font.line-height.20` | `20px` | `--unity-font-line-height-20` | `PrimitiveTokens.Font.FontLineHeight20` |
+| `font.line-height.22` | `22px` | `--unity-font-line-height-22` | `PrimitiveTokens.Font.FontLineHeight22` |
+| `font.line-height.24` | `24px` | `--unity-font-line-height-24` | `PrimitiveTokens.Font.FontLineHeight24` |
+| `font.line-height.26` | `26px` | `--unity-font-line-height-26` | `PrimitiveTokens.Font.FontLineHeight26` |
+| `font.line-height.28` | `28px` | `--unity-font-line-height-28` | `PrimitiveTokens.Font.FontLineHeight28` |
+| `font.line-height.32` | `32px` | `--unity-font-line-height-32` | `PrimitiveTokens.Font.FontLineHeight32` |
+| `font.line-height.40` | `40px` | `--unity-font-line-height-40` | `PrimitiveTokens.Font.FontLineHeight40` |
+| `font.line-height.52` | `52px` | `--unity-font-line-height-52` | `PrimitiveTokens.Font.FontLineHeight52` |
+| `font.line-height.56` | `56px` | `--unity-font-line-height-56` | `PrimitiveTokens.Font.FontLineHeight56` |
+| `font.letter-spacing.1` | `-0.1px` | `--unity-font-letter-spacing-1` | `PrimitiveTokens.Font.FontLetterSpacing1` |
+| `font.letter-spacing.2` | `-0.12px` | `--unity-font-letter-spacing-2` | `PrimitiveTokens.Font.FontLetterSpacing2` |
+| `font.letter-spacing.3` | `-0.14px` | `--unity-font-letter-spacing-3` | `PrimitiveTokens.Font.FontLetterSpacing3` |
+| `font.letter-spacing.4` | `-0.16px` | `--unity-font-letter-spacing-4` | `PrimitiveTokens.Font.FontLetterSpacing4` |
+| `font.letter-spacing.5` | `-0.18px` | `--unity-font-letter-spacing-5` | `PrimitiveTokens.Font.FontLetterSpacing5` |
+| `font.letter-spacing.6` | `-0.2px` | `--unity-font-letter-spacing-6` | `PrimitiveTokens.Font.FontLetterSpacing6` |
+| `font.letter-spacing.7` | `-0.28px` | `--unity-font-letter-spacing-7` | `PrimitiveTokens.Font.FontLetterSpacing7` |
+| `font.letter-spacing.8` | `-0.3px` | `--unity-font-letter-spacing-8` | `PrimitiveTokens.Font.FontLetterSpacing8` |
+| `font.letter-spacing.9` | `-0.34px` | `--unity-font-letter-spacing-9` | `PrimitiveTokens.Font.FontLetterSpacing9` |
+| `font.letter-spacing.10` | `-0.48px` | `--unity-font-letter-spacing-10` | `PrimitiveTokens.Font.FontLetterSpacing10` |
+| `font.letter-spacing.11` | `-0.68px` | `--unity-font-letter-spacing-11` | `PrimitiveTokens.Font.FontLetterSpacing11` |
+| `font.letter-spacing.12` | `-0.86px` | `--unity-font-letter-spacing-12` | `PrimitiveTokens.Font.FontLetterSpacing12` |
+
+### scale
+
+| Token | Value | CSS | Kotlin |
+| --- | --- | --- | --- |
+| `scale.0` | `0px` | `--unity-scale-0` | `PrimitiveTokens.Scale.Scale0` |
+| `scale.25` | `1px` | `--unity-scale-25` | `PrimitiveTokens.Scale.Scale25` |
+| `scale.50` | `2px` | `--unity-scale-50` | `PrimitiveTokens.Scale.Scale50` |
+| `scale.100` | `4px` | `--unity-scale-100` | `PrimitiveTokens.Scale.Scale100` |
+| `scale.150` | `6px` | `--unity-scale-150` | `PrimitiveTokens.Scale.Scale150` |
+| `scale.200` | `8px` | `--unity-scale-200` | `PrimitiveTokens.Scale.Scale200` |
+| `scale.250` | `10px` | `--unity-scale-250` | `PrimitiveTokens.Scale.Scale250` |
+| `scale.300` | `12px` | `--unity-scale-300` | `PrimitiveTokens.Scale.Scale300` |
+| `scale.400` | `16px` | `--unity-scale-400` | `PrimitiveTokens.Scale.Scale400` |
+| `scale.500` | `20px` | `--unity-scale-500` | `PrimitiveTokens.Scale.Scale500` |
+| `scale.600` | `24px` | `--unity-scale-600` | `PrimitiveTokens.Scale.Scale600` |
+| `scale.700` | `28px` | `--unity-scale-700` | `PrimitiveTokens.Scale.Scale700` |
+| `scale.800` | `32px` | `--unity-scale-800` | `PrimitiveTokens.Scale.Scale800` |
+| `scale.850` | `36px` | `--unity-scale-850` | `PrimitiveTokens.Scale.Scale850` |
+| `scale.900` | `40px` | `--unity-scale-900` | `PrimitiveTokens.Scale.Scale900` |
+| `scale.1000` | `48px` | `--unity-scale-1000` | `PrimitiveTokens.Scale.Scale1000` |
+| `scale.1600` | `64px` | `--unity-scale-1600` | `PrimitiveTokens.Scale.Scale1600` |
+| `scale.full` | `9999999px` | `--unity-scale-full` | `PrimitiveTokens.Scale.ScaleFull` |
+
+### spacing
+
+| Token | Value | CSS | Kotlin |
+| --- | --- | --- | --- |
+| `spacing.0` | `0px`<br>`scale.0` | `--unity-spacing-0` | `PrimitiveTokens.Spacing.Spacing0` |
+| `spacing.1` | `4px`<br>`scale.100` | `--unity-spacing-1` | `PrimitiveTokens.Spacing.Spacing1` |
+| `spacing.2` | `8px`<br>`scale.200` | `--unity-spacing-2` | `PrimitiveTokens.Spacing.Spacing2` |
+| `spacing.3` | `12px`<br>`scale.300` | `--unity-spacing-3` | `PrimitiveTokens.Spacing.Spacing3` |
+| `spacing.4` | `16px`<br>`scale.400` | `--unity-spacing-4` | `PrimitiveTokens.Spacing.Spacing4` |
+| `spacing.5` | `20px`<br>`scale.500` | `--unity-spacing-5` | `PrimitiveTokens.Spacing.Spacing5` |
+| `spacing.6` | `24px`<br>`scale.600` | `--unity-spacing-6` | `PrimitiveTokens.Spacing.Spacing6` |
+| `spacing.7` | `28px`<br>`scale.700` | `--unity-spacing-7` | `PrimitiveTokens.Spacing.Spacing7` |
+| `spacing.8` | `32px`<br>`scale.800` | `--unity-spacing-8` | `PrimitiveTokens.Spacing.Spacing8` |
+| `spacing.9` | `36px`<br>`scale.850` | `--unity-spacing-9` | `PrimitiveTokens.Spacing.Spacing9` |
+| `spacing.10` | `40px`<br>`scale.900` | `--unity-spacing-10` | `PrimitiveTokens.Spacing.Spacing10` |
+| `spacing.12` | `48px`<br>`scale.1000` | `--unity-spacing-12` | `PrimitiveTokens.Spacing.Spacing12` |
+| `spacing.16` | `64px`<br>`scale.1600` | `--unity-spacing-16` | `PrimitiveTokens.Spacing.Spacing16` |
+| `spacing.0-5` | `2px`<br>`scale.50` | `--unity-spacing-0-5` | `PrimitiveTokens.Spacing.Spacing05` |
+| `spacing.1-5` | `6px`<br>`scale.150` | `--unity-spacing-1-5` | `PrimitiveTokens.Spacing.Spacing15` |
+
+### radius
+
+| Token | Value | CSS | Kotlin |
+| --- | --- | --- | --- |
+| `radius.0` | `0px`<br>`scale.0` | `--unity-radius-0` | `PrimitiveTokens.Radius.Radius0` |
+| `radius.sm` | `4px`<br>`scale.100` | `--unity-radius-sm` | `PrimitiveTokens.Radius.RadiusSm` |
+| `radius.md` | `8px`<br>`scale.200` | `--unity-radius-md` | `PrimitiveTokens.Radius.RadiusMd` |
+| `radius.lg` | `12px`<br>`scale.300` | `--unity-radius-lg` | `PrimitiveTokens.Radius.RadiusLg` |
+| `radius.xl` | `16px`<br>`scale.400` | `--unity-radius-xl` | `PrimitiveTokens.Radius.RadiusXl` |
+| `radius.2xl` | `20px`<br>`scale.500` | `--unity-radius-2xl` | `PrimitiveTokens.Radius.Radius2xl` |
+| `radius.full` | `9999999px`<br>`scale.full` | `--unity-radius-full` | `PrimitiveTokens.Radius.RadiusFull` |
+
+### border-width
+
+| Token | Value | CSS | Kotlin |
+| --- | --- | --- | --- |
+| `border-width.none` | `0px`<br>`scale.0` | `--unity-border-width-none` | `PrimitiveTokens.BorderWidth.BorderWidthNone` |
+| `border-width.sm` | `1px`<br>`scale.25` | `--unity-border-width-sm` | `PrimitiveTokens.BorderWidth.BorderWidthSm` |
+| `border-width.md` | `2px`<br>`scale.50` | `--unity-border-width-md` | `PrimitiveTokens.BorderWidth.BorderWidthMd` |
+
+### component-height
+
+| Token | Value | CSS | Kotlin |
+| --- | --- | --- | --- |
+| `component-height.xs` | `32px` | `--unity-component-height-xs` | `PrimitiveTokens.ComponentHeight.ComponentHeightXs` |
+| `component-height.sm` | `40px` | `--unity-component-height-sm` | `PrimitiveTokens.ComponentHeight.ComponentHeightSm` |
+| `component-height.md` | `48px` | `--unity-component-height-md` | `PrimitiveTokens.ComponentHeight.ComponentHeightMd` |
+| `component-height.lg` | `56px` | `--unity-component-height-lg` | `PrimitiveTokens.ComponentHeight.ComponentHeightLg` |
+
+### icon-size
+
+| Token | Value | CSS | Kotlin |
+| --- | --- | --- | --- |
+| `icon-size.10` | `10px` | `--unity-icon-size-10` | `PrimitiveTokens.IconSize.IconSize10` |
+| `icon-size.12` | `12px` | `--unity-icon-size-12` | `PrimitiveTokens.IconSize.IconSize12` |
+| `icon-size.14` | `14px` | `--unity-icon-size-14` | `PrimitiveTokens.IconSize.IconSize14` |
+| `icon-size.16` | `16px` | `--unity-icon-size-16` | `PrimitiveTokens.IconSize.IconSize16` |
+| `icon-size.18` | `18px` | `--unity-icon-size-18` | `PrimitiveTokens.IconSize.IconSize18` |
+| `icon-size.20` | `20px` | `--unity-icon-size-20` | `PrimitiveTokens.IconSize.IconSize20` |
+| `icon-size.22` | `22px` | `--unity-icon-size-22` | `PrimitiveTokens.IconSize.IconSize22` |
+| `icon-size.24` | `24px` | `--unity-icon-size-24` | `PrimitiveTokens.IconSize.IconSize24` |
+| `icon-size.34` | `34px` | `--unity-icon-size-34` | `PrimitiveTokens.IconSize.IconSize34` |
+| `icon-size.38` | `38px` | `--unity-icon-size-38` | `PrimitiveTokens.IconSize.IconSize38` |
+
+### breakpoints
+
+| Token | Value | CSS | Kotlin |
+| --- | --- | --- | --- |
+| `breakpoints.sm` | `640px` | `--unity-breakpoints-sm` | `PrimitiveTokens.Breakpoints.BreakpointsSm` |
+| `breakpoints.md` | `768px` | `--unity-breakpoints-md` | `PrimitiveTokens.Breakpoints.BreakpointsMd` |
+| `breakpoints.lg` | `1024px` | `--unity-breakpoints-lg` | `PrimitiveTokens.Breakpoints.BreakpointsLg` |
+| `breakpoints.xl` | `1280px` | `--unity-breakpoints-xl` | `PrimitiveTokens.Breakpoints.BreakpointsXl` |
+| `breakpoints.2xl` | `1440px` | `--unity-breakpoints-2xl` | `PrimitiveTokens.Breakpoints.Breakpoints2xl` |
+
+### grid
+
+| Token | Value | CSS | Kotlin |
+| --- | --- | --- | --- |
+| `grid.columns.mobile` | `4` | `--unity-grid-columns-mobile` | `PrimitiveTokens.Grid.GridColumnsMobile` |
+| `grid.columns.tablet` | `8` | `--unity-grid-columns-tablet` | `PrimitiveTokens.Grid.GridColumnsTablet` |
+| `grid.columns.desktop` | `12` | `--unity-grid-columns-desktop` | `PrimitiveTokens.Grid.GridColumnsDesktop` |

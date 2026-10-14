@@ -15,8 +15,10 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            // api: Color is part of the public surface.
+            // api: Color, Dp, TextUnit and FontWeight are part of the public surface.
             api(libs.compose.ui.graphics)
+            api(libs.compose.ui.text)
+            api(libs.compose.ui.unit)
         }
     }
 }
@@ -25,7 +27,7 @@ publishing {
     publications.withType<MavenPublication>().configureEach {
         pom {
             name = "Unity Design System tokens"
-            description = "Unity Design System colour tokens as Compose Color values for Kotlin Multiplatform."
+            description = "Unity Design System tokens as Compose values for Kotlin Multiplatform."
             url = "https://github.com/gls-nxt/design-tokens"
             licenses {
                 license {
