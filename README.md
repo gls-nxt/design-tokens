@@ -71,7 +71,7 @@ The library targets Android, `iosArm64` and `iosSimulatorArm64`. It is built wit
 1. **Edit the JSON in `tokens/`:**
    - `primitive/color.tokens.json` holds the raw hex values.
    - `semantic/color.light.tokens.json` and `color.dark.tokens.json` reference the primitives, as in `{blue.700}`.
-2. **Run `npm run build && npm test`.**
+2. **Run `pnpm build && pnpm test`.**
 
 The build fails in two cases:
 - the light and dark files define different tokens;

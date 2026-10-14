@@ -13,7 +13,7 @@ Token values are exported from the Unity Design System Figma library, which is t
 Pull requests are welcome for the compiler in `build.mjs`, the tests, the package setup and the documentation.
 
 1. Fork the repository and create a branch.
-2. Run `npm ci && npm run build && npm test`.
+2. Run `pnpm install && pnpm build && pnpm test`.
 3. For Kotlin changes, also run `./gradlew compileAndroidMain compileKotlinIosArm64 compileKotlinIosSimulatorArm64` in `packages/kotlin`.
 4. Open a pull request that says what changes for consumers of the packages.
 
