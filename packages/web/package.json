@@ -2,6 +2,8 @@
   "name": "@gls-nxt/design-tokens",
   "version": "0.0.0",
   "description": "Unity Design System tokens: CSS variables and TypeScript constants.",
+  "license": "MIT",
+  "homepage": "https://github.com/gls-nxt/design-tokens#readme",
   "type": "module",
   "files": ["dist"],
   "exports": {
