@@ -12,6 +12,12 @@ Token values are exported from the Unity Design System Figma library, which is t
 
 Pull requests are welcome for the compiler in `build.mjs`, the tests, the package setup and the documentation.
 
+### Prerequisites
+
+You need Node.js 24 and pnpm 11.21.0, the version pinned in `package.json`. Node.js doesn't include pnpm. Run `corepack enable pnpm` once, and Corepack then runs the pinned version. Corepack ships with Node.js 24; on Node.js 25 or newer, install it first with `npm install -g corepack`.
+
+### Steps
+
 1. Fork the repository and create a branch.
 2. Run `pnpm install && pnpm build && pnpm test`.
 3. For Kotlin changes, also run `./gradlew compileAndroidMain compileKotlinIosArm64 compileKotlinIosSimulatorArm64` in `packages/kotlin`.
