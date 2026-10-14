@@ -204,6 +204,12 @@
     },
     "tooltip-toast": {
       "$value": "{base.white}"
+    },
+    "neutral-strong-default": {
+      "$value": "{gray-dark.700}"
+    },
+    "neutral-strong-hover": {
+      "$value": "{gray-dark.800}"
     }
   },
   "text": {

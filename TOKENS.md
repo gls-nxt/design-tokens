@@ -91,6 +91,8 @@ Light and dark values, with the primitive each one references.
 | `surface.warning-strong` | ![#ffd100](docs/swatches/ffd100.svg) `#ffd100`<br>`yellow.600` | ![#ffd100](docs/swatches/ffd100.svg) `#ffd100`<br>`yellow-dark.800` | `--unity-surface-warning-strong` | `SurfaceColors.warningStrong` |
 | `surface.overlay` | ![#667085](docs/swatches/667085.svg) `#667085`<br>`gray.600` | ![#111113](docs/swatches/111113.svg) `#111113`<br>`gray-dark.100` | `--unity-surface-overlay` | `SurfaceColors.overlay` |
 | `surface.tooltip-toast` | ![#191919](docs/swatches/191919.svg) `#191919`<br>`base.black` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | `--unity-surface-tooltip-toast` | `SurfaceColors.tooltipToast` |
+| `surface.neutral-strong-default` | ![#d0d5dd](docs/swatches/d0d5dd.svg) `#d0d5dd`<br>`gray.400` | ![#43484e](docs/swatches/43484e.svg) `#43484e`<br>`gray-dark.700` | `--unity-surface-neutral-strong-default` | `SurfaceColors.neutralStrongDefault` |
+| `surface.neutral-strong-hover` | ![#98a2b3](docs/swatches/98a2b3.svg) `#98a2b3`<br>`gray.500` | ![#5a6169](docs/swatches/5a6169.svg) `#5a6169`<br>`gray-dark.800` | `--unity-surface-neutral-strong-hover` | `SurfaceColors.neutralStrongHover` |
 
 ### text
 
