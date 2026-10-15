@@ -10,6 +10,8 @@ const VIEWPORTS = ['desktop', 'mobile', 'locker'];
 
 const inFile = (name) => (token) => token.filePath.endsWith(`tokens/${name}.tokens.json`);
 const isPrimitive = (token) => token.filePath.includes('/primitive/');
+// The css group, but px dimensions become rem (16px = 1rem) so sizes follow the user's browser font size.
+const CSS_TRANSFORMS = StyleDictionary.hooks.transformGroups.css.map((t) => (t === 'size/rem' ? 'size/pxToRem' : t));
 const cssFile = (selector, filter) => ({ format: 'css/variables', filter, options: { outputReferences: true, showFileHeader: false, selector } });
 
 const sdFor = (sources, files) =>
@@ -18,7 +20,7 @@ const sdFor = (sources, files) =>
     // The mode blocks reference primitives that only live in :root; that warning is expected.
     log: { verbosity: 'silent', warnings: 'disabled' },
     platforms: {
-      css: { transformGroup: 'css', prefix: 'unity', files },
+      css: { transforms: CSS_TRANSFORMS, prefix: 'unity', files },
       // No output files: resolved, untransformed tokens for the Kotlin and TOKENS.md writers.
       resolved: { transforms: [] },
     },

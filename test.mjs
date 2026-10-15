@@ -26,6 +26,10 @@ test('css has viewport overrides and non-colour primitives', async () => {
   assert.match(css, /:root \{[^}]*--unity-spacing-4: var\(--unity-scale-400\);/);
   assert.match(css, /:root \{[^}]*--unity-h1-font-size: var\(--unity-font-size-42\);/);
   assert.match(css, /\[data-viewport="locker"\] \{[^}]*--unity-h1-font-size: var\(--unity-font-size-48\);/);
+  assert.match(css, /--unity-scale-400: 1rem;/);
+  assert.match(css, /--unity-scale-0: 0;/);
+  assert.match(css, /--unity-font-letter-spacing-12: -0\.05375rem;/);
+  assert.doesNotMatch(css, /\dpx;/);
   // Group-level $type must not leak across files: colours stay colours.
   assert.match(css, /--unity-black-alpha-1: rgba\(0, 0, 0, /);
 });

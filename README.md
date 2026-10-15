@@ -40,6 +40,8 @@ Both packages are published to GitHub Packages and share one version.
    ```
    Dark mode follows the OS setting. To force a mode, set `data-theme="dark"` or `data-theme="light"` on `<html>`.
 
+   Sizes are in `rem` (16px = 1rem), so they scale with the user's browser font size.
+
    Viewport tokens default to desktop. For mobile or the locker, set `data-viewport="mobile"` or `data-viewport="locker"` on `<html>`.
 
 Use the CSS variables only. The package has no JavaScript or TypeScript exports, so components can't hard-code a colour value that ignores the active mode.
