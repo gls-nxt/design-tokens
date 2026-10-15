@@ -82,16 +82,16 @@
     }
   },
   "surface": {
-    "base-0": {
+    "base-1": {
       "$value": "{gray.200}"
     },
-    "base-1": {
+    "base-2": {
       "$value": "{base.white}"
     },
-    "elevated-2": {
+    "base-3": {
       "$value": "{gray.100}"
     },
-    "elevated-3": {
+    "base-4": {
       "$value": "{base.white}"
     },
     "secondary-default": {

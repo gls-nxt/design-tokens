@@ -50,10 +50,10 @@ Light and dark values, with the primitive each one references. The Kotlin column
 
 | Token | Light | Dark | CSS | Kotlin |
 | --- | --- | --- | --- | --- |
-| `surface.base-0` | ![#f2f4f7](docs/swatches/f2f4f7.svg) `#f2f4f7`<br>`gray.200` | ![#272a2d](docs/swatches/272a2d.svg) `#272a2d`<br>`gray-dark.400` | `--unity-surface-base-0` | `SurfaceColors.base0` |
-| `surface.base-1` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | ![#212225](docs/swatches/212225.svg) `#212225`<br>`gray-dark.300` | `--unity-surface-base-1` | `SurfaceColors.base1` |
-| `surface.elevated-2` | ![#fcfcfd](docs/swatches/fcfcfd.svg) `#fcfcfd`<br>`gray.100` | ![#18191b](docs/swatches/18191b.svg) `#18191b`<br>`gray-dark.200` | `--unity-surface-elevated-2` | `SurfaceColors.elevated2` |
-| `surface.elevated-3` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | ![#212225](docs/swatches/212225.svg) `#212225`<br>`gray-dark.300` | `--unity-surface-elevated-3` | `SurfaceColors.elevated3` |
+| `surface.base-1` | ![#f2f4f7](docs/swatches/f2f4f7.svg) `#f2f4f7`<br>`gray.200` | ![#272a2d](docs/swatches/272a2d.svg) `#272a2d`<br>`gray-dark.400` | `--unity-surface-base-1` | `SurfaceColors.base1` |
+| `surface.base-2` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | ![#212225](docs/swatches/212225.svg) `#212225`<br>`gray-dark.300` | `--unity-surface-base-2` | `SurfaceColors.base2` |
+| `surface.base-3` | ![#fcfcfd](docs/swatches/fcfcfd.svg) `#fcfcfd`<br>`gray.100` | ![#18191b](docs/swatches/18191b.svg) `#18191b`<br>`gray-dark.200` | `--unity-surface-base-3` | `SurfaceColors.base3` |
+| `surface.base-4` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | ![#212225](docs/swatches/212225.svg) `#212225`<br>`gray-dark.300` | `--unity-surface-base-4` | `SurfaceColors.base4` |
 | `surface.secondary-default` | ![#f2f4f7](docs/swatches/f2f4f7.svg) `#f2f4f7`<br>`gray.200` | ![#2e3135](docs/swatches/2e3135.svg) `#2e3135`<br>`gray-dark.500` | `--unity-surface-secondary-default` | `SurfaceColors.secondaryDefault` |
 | `surface.secondary-hover` | ![#e4e7ec](docs/swatches/e4e7ec.svg) `#e4e7ec`<br>`gray.300` | ![#363a3f](docs/swatches/363a3f.svg) `#363a3f`<br>`gray-dark.600` | `--unity-surface-secondary-hover` | — |
 | `surface.secondary-pressed` | ![#d0d5dd](docs/swatches/d0d5dd.svg) `#d0d5dd`<br>`gray.400` | ![#363a3f](docs/swatches/363a3f.svg) `#363a3f`<br>`gray-dark.600` | `--unity-surface-secondary-pressed` | `SurfaceColors.secondaryPressed` |
