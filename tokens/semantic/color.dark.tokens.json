@@ -2,215 +2,281 @@
   "$type": "color",
   "border": {
     "default": {
+      "$description": "Visible edge of controls such as inputs, checkboxes and the off toggle. Meets 3:1 on the page.",
       "$value": "{gray-dark.850}"
     },
     "subtle": {
+      "$description": "Decorative dividers and card outlines. Not for controls.",
       "$value": "{gray-dark.500}"
     },
     "action": {
+      "$description": "Brand coloured edge for outlined actions and active elements.",
       "$value": "{blue-dark.800}"
     },
     "focus": {
+      "$description": "Focus ring on keyboard focus.",
       "$value": "{blue-dark.800}"
     },
     "disabled": {
+      "$description": "Edge of disabled controls.",
       "$value": "{gray-dark.500}"
     },
     "error": {
+      "$description": "Error border, for example on an invalid input.",
       "$value": "{red-dark.800}"
     },
     "success": {
+      "$description": "Success border.",
       "$value": "{green-dark.700}"
     },
     "warning": {
+      "$description": "Warning border.",
       "$value": "{orange-dark.700}"
     },
     "info": {
+      "$description": "Info border.",
       "$value": "{blue-dark.800}"
     },
     "selection-default": {
+      "$description": "Edge of a selected item such as a chosen select tile.",
       "$value": "{blue-dark.800}"
     }
   },
   "effects": {
     "shadow-1": {
+      "$description": "Shadow colour for elevation level 1 (1 lowest, 5 highest). Used by the shadow xs to xl styles.",
       "$value": "{black-alpha.8}"
     },
     "shadow-2": {
+      "$description": "Shadow colour for elevation level 2 (1 lowest, 5 highest). Used by the shadow xs to xl styles.",
       "$value": "{black-alpha.12}"
     },
     "shadow-3": {
+      "$description": "Shadow colour for elevation level 3 (1 lowest, 5 highest). Used by the shadow xs to xl styles.",
       "$value": "{black-alpha.16}"
     },
     "shadow-4": {
+      "$description": "Shadow colour for elevation level 4 (1 lowest, 5 highest). Used by the shadow xs to xl styles.",
       "$value": "{black-alpha.24}"
     },
     "shadow-5": {
+      "$description": "Shadow colour for elevation level 5 (1 lowest, 5 highest). Used by the shadow xs to xl styles.",
       "$value": "{black-alpha.32}"
     }
   },
   "icon": {
     "default": {
+      "$description": "Default icons next to primary text.",
       "$value": "{gray-dark.1200}"
     },
     "secondary": {
+      "$description": "Supporting icons with low emphasis.",
       "$value": "{gray-dark.1100}"
     },
     "disabled": {
+      "$description": "Icons of disabled elements.",
       "$value": "{gray-dark.1000}"
     },
     "on-action": {
+      "$description": "Icons on brand and selection fills such as button icons.",
       "$value": "{base.white}"
     },
     "action": {
+      "$description": "Interactive icons in the brand colour such as icon buttons.",
       "$value": "{blue-dark.1000}"
     },
     "error": {
+      "$description": "Error status icons.",
       "$value": "{red-dark.900}"
     },
     "success": {
+      "$description": "Success status icons.",
       "$value": "{green-dark.900}"
     },
     "warning": {
+      "$description": "Warning status icons.",
       "$value": "{orange-dark.900}"
     },
     "info": {
+      "$description": "Info status icons.",
       "$value": "{blue-dark.900}"
     },
     "inverse": {
+      "$description": "Icons on tooltips and toasts.",
       "$value": "{gray.1200}"
     }
   },
   "surface": {
     "base-1": {
+      "$description": "Page background and recessed areas.",
       "$value": "{gray-dark.400}"
     },
     "base-2": {
+      "$description": "Default content background.",
       "$value": "{gray-dark.300}"
     },
     "base-3": {
+      "$description": "Raised containers such as cards and sheets.",
       "$value": "{gray-dark.200}"
     },
     "base-4": {
+      "$description": "Surfaces above base-3, such as nested cards and popovers.",
       "$value": "{gray-dark.300}"
     },
     "secondary-default": {
+      "$description": "Fill of neutral, low emphasis actions such as the secondary button.",
       "$value": "{gray-dark.500}"
     },
     "secondary-hover": {
+      "$description": "Fill of neutral, low emphasis actions such as the secondary button. Hover state.",
       "$value": "{gray-dark.600}",
       "$extensions": { "com.glsnxt.platforms": { "kotlin": false } }
     },
     "secondary-pressed": {
+      "$description": "Fill of neutral, low emphasis actions such as the secondary button. Pressed state.",
       "$value": "{gray-dark.600}"
     },
     "secondary-disabled": {
+      "$description": "Fill of neutral, low emphasis actions such as the secondary button. Disabled state.",
       "$value": "{gray-dark.400}"
     },
     "tertiary-default": {
+      "$description": "Background of form controls and neutral hover and pressed states.",
       "$value": "{gray-dark.300}"
     },
     "tertiary-hover": {
+      "$description": "Background of form controls and neutral hover and pressed states. Hover state.",
       "$value": "{gray-dark.400}",
       "$extensions": { "com.glsnxt.platforms": { "kotlin": false } }
     },
     "tertiary-pressed": {
+      "$description": "Background of form controls and neutral hover and pressed states. Pressed state.",
       "$value": "{gray-dark.500}"
     },
     "tertiary-disabled": {
+      "$description": "Background of form controls and neutral hover and pressed states. Disabled state.",
       "$value": "{gray-dark.200}"
     },
     "on-action": {
+      "$description": "White fill that stays white in both themes, for elements placed on action colours.",
       "$value": "{base.white}"
     },
     "selection-default": {
+      "$description": "Fill of selected controls such as a checked toggle, checkbox or radio.",
       "$value": "{blue-dark.700}"
     },
     "selection-hover": {
+      "$description": "Fill of selected controls such as a checked toggle, checkbox or radio. Hover state.",
       "$value": "{blue-dark.800}",
       "$extensions": { "com.glsnxt.platforms": { "kotlin": false } }
     },
     "selection-disabled": {
+      "$description": "Fill of selected controls such as a checked toggle, checkbox or radio. Disabled state.",
       "$value": "{blue-dark.300}"
     },
     "brand-default": {
+      "$description": "Fill of primary actions such as the primary button.",
       "$value": "{blue-dark.700}"
     },
     "brand-hover": {
+      "$description": "Fill of primary actions such as the primary button. Hover state.",
       "$value": "{blue-dark.800}",
       "$extensions": { "com.glsnxt.platforms": { "kotlin": false } }
     },
     "brand-pressed": {
+      "$description": "Fill of primary actions such as the primary button. Pressed state.",
       "$value": "{blue-dark.900}"
     },
     "brand-disabled": {
+      "$description": "Fill of primary actions such as the primary button. Disabled state.",
       "$value": "{blue-dark.200}"
     },
     "brand-light-default": {
+      "$description": "Soft tinted brand fill for secondary brand actions and chips.",
       "$value": "{blue-dark.500}"
     },
     "brand-light-hover": {
+      "$description": "Soft tinted brand fill for secondary brand actions and chips. Hover state.",
       "$value": "{blue-dark.600}",
       "$extensions": { "com.glsnxt.platforms": { "kotlin": false } }
     },
     "brand-light-pressed": {
+      "$description": "Soft tinted brand fill for secondary brand actions and chips. Pressed state.",
       "$value": "{blue-dark.700}"
     },
     "brand-light-disabled": {
+      "$description": "Soft tinted brand fill for secondary brand actions and chips. Disabled state.",
       "$value": "{blue-dark.300}"
     },
     "error-default": {
+      "$description": "Soft error background for alerts, banners and error fields.",
       "$value": "{red-dark.300}"
     },
     "error-hover": {
+      "$description": "Soft error background for alerts, banners and error fields. Hover state.",
       "$value": "{red-dark.400}",
       "$extensions": { "com.glsnxt.platforms": { "kotlin": false } }
     },
     "error-pressed": {
+      "$description": "Soft error background for alerts, banners and error fields. Pressed state.",
       "$value": "{red-dark.500}"
     },
     "error-disabled": {
+      "$description": "Soft error background for alerts, banners and error fields. Disabled state.",
       "$value": "{red-dark.200}"
     },
     "error-strong-default": {
+      "$description": "Solid error fill for badges and strong emphasis.",
       "$value": "{red-dark.600}"
     },
     "success-strong": {
+      "$description": "Solid success fill for badges and strong emphasis.",
       "$value": "{green-dark.600}"
     },
     "success-strong-hover": {
+      "$description": "Solid success fill for badges and strong emphasis. Hover state.",
       "$value": "{green-dark.700}",
       "$extensions": { "com.glsnxt.platforms": { "kotlin": false } }
     },
     "success-strong-pressed": {
+      "$description": "Solid success fill for badges and strong emphasis. Pressed state.",
       "$value": "{green-dark.800}"
     },
     "success-strong-disabled": {
+      "$description": "Solid success fill for badges and strong emphasis. Disabled state.",
       "$value": "{green-dark.200}"
     },
     "success-light-default": {
+      "$description": "Soft success background for alerts, banners and success fields.",
       "$value": "{green-dark.300}"
     },
     "success-light-hover": {
+      "$description": "Soft success background for alerts, banners and success fields. Hover state.",
       "$value": "{green-dark.400}",
       "$extensions": { "com.glsnxt.platforms": { "kotlin": false } }
     },
     "success-light-pressed": {
+      "$description": "Soft success background for alerts, banners and success fields. Pressed state.",
       "$value": "{green-dark.500}"
     },
     "success-light-disabled": {
+      "$description": "Soft success background for alerts, banners and success fields. Disabled state.",
       "$value": "{green-dark.200}"
     },
     "warning-default": {
+      "$description": "Soft warning background for alerts and banners.",
       "$value": "{yellow-dark.300}"
     },
     "warning-strong": {
+      "$description": "Solid warning fill for badges and strong emphasis.",
       "$value": "{yellow-dark.800}"
     },
     "overlay": {
+      "$description": "Dimming layer behind modals and drawers.",
       "$value": "{gray-dark.100}"
     },
     "tooltip-toast": {
+      "$description": "Background of tooltips and toasts. Dark in Light mode, white in Dark mode.",
       "$value": "{base.white}"
     },
     "neutral-strong-default": {
@@ -223,46 +289,60 @@
   },
   "text": {
     "primary": {
+      "$description": "Default text such as body copy, headings and labels. Highest contrast.",
       "$value": "{gray-dark.1200}"
     },
     "secondary": {
+      "$description": "Supporting text such as captions, helper text and metadata.",
       "$value": "{gray-dark.1100}"
     },
     "disabled": {
+      "$description": "Text of disabled elements. Not for content people need to read.",
       "$value": "{gray-dark.1000}"
     },
     "inverse": {
+      "$description": "Text on inverted surfaces such as tooltips and toasts. Flips with the theme.",
       "$value": "{gray.1200}"
     },
     "on-action": {
+      "$description": "Text on brand and strong status fills such as button labels. White in both themes.",
       "$value": "{base.white}"
     },
     "on-white": {
+      "$description": "Text that stays dark on a light fill in both themes.",
       "$value": "{gray.1200}"
     },
     "link": {
+      "$description": "Inline link text.",
       "$value": "{blue-dark.1100}"
     },
     "link-hover": {
+      "$description": "Inline link text, hover state.",
       "$value": "{blue-dark.1100}",
       "$extensions": { "com.glsnxt.platforms": { "kotlin": false } }
     },
     "link-pressed": {
+      "$description": "Inline link text, pressed state.",
       "$value": "{blue-dark.1200}"
     },
     "link-disabled": {
+      "$description": "Inline link text, disabled state.",
       "$value": "{gray-dark.900}"
     },
     "error": {
+      "$description": "Error message and status text. Pair with the matching border, icon or surface.",
       "$value": "{red-dark.1000}"
     },
     "success": {
+      "$description": "Success message and status text. Pair with the matching border, icon or surface.",
       "$value": "{green-dark.900}"
     },
     "warning": {
+      "$description": "Warning message and status text. Pair with the matching border, icon or surface.",
       "$value": "{orange-dark.900}"
     },
     "info": {
+      "$description": "Info message and status text. Pair with the matching border, icon or surface.",
       "$value": "{blue-dark.900}"
     }
   }
