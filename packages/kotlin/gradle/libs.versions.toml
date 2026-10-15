@@ -7,6 +7,8 @@ compose = "1.12.0"
 
 [libraries]
 compose-ui-graphics = { module = "org.jetbrains.compose.ui:ui-graphics", version.ref = "compose" }
+compose-ui-text = { module = "org.jetbrains.compose.ui:ui-text", version.ref = "compose" }
+compose-ui-unit = { module = "org.jetbrains.compose.ui:ui-unit", version.ref = "compose" }
 
 [plugins]
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }

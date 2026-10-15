@@ -1,10 +1,18 @@
-// Markdown summary of colour changes between two checkouts of tokens/.
+// Markdown summary of token changes between two checkouts of tokens/.
 // Usage: node token-diff.mjs <base-dir> <head-dir>
 // Hex values in backticks render as colour chips in GitHub PR comments.
-import { readFile } from 'node:fs/promises';
+import { readdir, readFile } from 'node:fs/promises';
 import { pathToFileURL } from 'node:url';
 
-const MODES = ['light', 'dark'];
+// Files with one value per mode; the mode is appended to each token name.
+const MODED = {
+  'semantic/color.light': 'light',
+  'semantic/color.dark': 'dark',
+  'semantic/font': null,
+  'viewport/viewport.desktop': 'desktop',
+  'viewport/viewport.mobile': 'mobile',
+  'viewport/viewport.locker': 'locker',
+};
 
 const flatten = (node, path = [], out = {}) => {
   for (const [key, value] of Object.entries(node)) {
@@ -17,14 +25,20 @@ const flatten = (node, path = [], out = {}) => {
 
 const readJson = async (file) => JSON.parse(await readFile(file, 'utf8').catch(() => '{}'));
 
-// { 'blue.700': '#061ab1', 'surface.base-1 (light)': '#ffffff', … }, with semantic references resolved.
+// { 'blue.700': '#061ab1', 'surface.base-1 (light)': '#ffffff', 'h1.font-size (locker)': '48px', … }, with references resolved.
 export async function loadTokens(dir) {
-  const primitives = flatten(await readJson(`${dir}/tokens/primitive/color.tokens.json`));
-  const tokens = { ...primitives };
-  for (const mode of MODES) {
-    const semantic = flatten(await readJson(`${dir}/tokens/semantic/color.${mode}.tokens.json`));
-    for (const [path, value] of Object.entries(semantic)) {
-      tokens[`${path} (${mode})`] = value.replace(/^\{(.+)\}$/, (ref, target) => primitives[target] ?? ref);
+  const primitives = {};
+  for (const file of await readdir(`${dir}/tokens/primitive`).catch(() => [])) {
+    Object.assign(primitives, flatten(await readJson(`${dir}/tokens/primitive/${file}`)));
+  }
+  const resolve = (value) => {
+    while (typeof value === 'string' && /^\{.+\}$/.test(value) && value.slice(1, -1) in primitives) value = primitives[value.slice(1, -1)];
+    return typeof value === 'object' ? `${value.value}${value.unit}` : `${value}`;
+  };
+  const tokens = Object.fromEntries(Object.entries(primitives).map(([path, value]) => [path, resolve(value)]));
+  for (const [file, mode] of Object.entries(MODED)) {
+    for (const [path, value] of Object.entries(flatten(await readJson(`${dir}/tokens/${file}.tokens.json`)))) {
+      tokens[mode ? `${path} (${mode})` : path] = resolve(value);
     }
   }
   return tokens;
@@ -37,7 +51,7 @@ export function diffTokens(base, head) {
 
 export function toMarkdown(rows) {
   const cell = (hex) => (hex ? `\`${hex.toLowerCase()}\`` : '—');
-  if (!rows.length) return '### Token changes\n\nNo colour changes.\n';
+  if (!rows.length) return '### Token changes\n\nNo token changes.\n';
   return [
     '### Token changes',
     '',

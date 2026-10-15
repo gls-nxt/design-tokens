@@ -1,0 +1,11 @@
+{
+  "font": {
+    "$type": "fontFamily",
+    "heading": {
+      "$value": "{font.family.newson-gls}"
+    },
+    "body": {
+      "$value": "{font.family.newson-gls}"
+    }
+  }
+}
