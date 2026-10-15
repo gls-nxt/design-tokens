@@ -6,7 +6,13 @@ Open an issue with the token name, the platform (web or KMP), the package versio
 
 ## Changing token values
 
-Token values are exported from the Unity Design System Figma library, which is the source of truth. A pull request that edits the JSON in `tokens/` by hand will be closed unless it comes from a maintainer who is syncing the export. If a value looks wrong, open an issue so the design team can fix it at the source.
+The JSON in `tokens/` is the source of truth. It is edited by hand or with tools, not exported from Figma.
+
+1. Edit the JSON as described in **Change tokens** in the [README](README.md#change-tokens).
+2. Run `pnpm install && pnpm build && pnpm test`, and commit the regenerated `TOKENS.md` and `docs/swatches/`.
+3. Open a pull request that says which tokens change and why. CI comments with each changed token before and after.
+
+Removing a token from a platform, or renaming it, is a breaking change and needs a major version.
 
 ## Changing the build or the generated output
 

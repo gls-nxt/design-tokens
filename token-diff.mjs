@@ -17,8 +17,14 @@ const MODED = {
 const flatten = (node, path = [], out = {}) => {
   for (const [key, value] of Object.entries(node)) {
     if (key.startsWith('$')) continue;
-    if (value && typeof value === 'object' && '$value' in value) out[[...path, key].join('.')] = value.$value;
-    else if (value && typeof value === 'object') flatten(value, [...path, key], out);
+    if (!value || typeof value !== 'object') continue;
+    const name = [...path, key].join('.');
+    // Per-platform overrides show as their own rows, as in `surface.brand-hover [kotlin]`.
+    for (const [platform, v] of Object.entries(value.$extensions?.['com.glsnxt.platforms'] ?? {})) {
+      out[`${name} [${platform}]`] = v === false ? 'excluded' : v.$value;
+    }
+    if ('$value' in value) out[name] = value.$value;
+    else flatten(value, [...path, key], out);
   }
   return out;
 };

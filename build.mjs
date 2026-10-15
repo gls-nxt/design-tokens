@@ -14,15 +14,39 @@ const isPrimitive = (token) => token.filePath.includes('/primitive/');
 const CSS_TRANSFORMS = StyleDictionary.hooks.transformGroups.css.map((t) => (t === 'size/rem' ? 'size/pxToRem' : t));
 const cssFile = (selector, filter) => ({ format: 'css/variables', filter, options: { outputReferences: true, showFileHeader: false, selector } });
 
+// `$extensions["com.glsnxt.platforms"]` sets a token per platform: `false` leaves the token (or a whole group) out,
+// `{ "$value": … }` replaces its value. Platforms not listed get the token's own `$value`.
+const PLATFORM_EXT = 'com.glsnxt.platforms';
+const PLATFORMS = ['web', 'kotlin'];
+function forPlatform(node, platform, path = []) {
+  for (const [key, child] of Object.entries(node)) {
+    if (key.startsWith('$') || !child || typeof child !== 'object') continue;
+    const at = [...path, key];
+    const ext = child.$extensions?.[PLATFORM_EXT] ?? {};
+    for (const [p, v] of Object.entries(ext)) {
+      if (!PLATFORMS.includes(p) || !(v === false || ('$value' in child && v?.$value !== undefined))) {
+        throw new Error(`${at.join('.')}: ${PLATFORM_EXT}.${p} must be one of ${PLATFORMS.join(', ')}, set to false or (on a token) { "$value": … }`);
+      }
+    }
+    if (ext[platform] === false) delete node[key];
+    else if (ext[platform]) child.$value = ext[platform].$value;
+    else if (!('$value' in child)) forPlatform(child, platform, at);
+  }
+  return node;
+}
+const platform = (name, config) => ({ ...config, preprocessors: ['platform'], platform: name });
+
 const sdFor = (sources, files) =>
   new StyleDictionary({
     source: ['tokens/primitive/*.tokens.json', 'tokens/semantic/font.tokens.json', ...sources],
     // The mode blocks reference primitives that only live in :root; that warning is expected.
     log: { verbosity: 'silent', warnings: 'disabled' },
+    hooks: { preprocessors: { platform: (tokens, config) => forPlatform(tokens, config.platform) } },
     platforms: {
-      css: { transforms: CSS_TRANSFORMS, prefix: 'unity', files },
+      css: platform('web', { transforms: CSS_TRANSFORMS, prefix: 'unity', files }),
       // No output files: resolved, untransformed tokens for the Kotlin and TOKENS.md writers.
-      resolved: { transforms: [] },
+      web: platform('web', { transforms: [] }),
+      kotlin: platform('kotlin', { transforms: [] }),
     },
   });
 
@@ -166,11 +190,22 @@ function swatchSvg(hex) {
 
 const display = (t) => (typeof t.$value === 'object' ? `${t.$value.value}${t.$value.unit}` : `${t.$value}`);
 
-function tokensMarkdown({ colorPrimitives, otherPrimitives, light, dark, fonts, viewports }, cssNames) {
-  const css = (t) => `\`${cssNames.get(t.path.join('.'))}\``;
+function tokensMarkdown(web, kotlin, cssNames) {
+  const key = (t) => t.path.join('.');
+  const byPath = (list) => new Map(list.map((t) => [key(t), t]));
+  const css = (t) => (cssNames.has(key(t)) ? `\`${cssNames.get(key(t))}\`` : '—');
   const withRef = (value, t) => `${value}${refOf(t) ? `<br>\`${refOf(t)}\`` : ''}`;
   const colorCell = (t) => withRef(`${swatch(hexOf(t.$value))} \`${hexOf(t.$value)}\``, t);
   const valueCell = (t) => withRef(`\`${display(t)}\``, t);
+  // Every web token, then the Kotlin-only ones. Value columns show the web value, or the Kotlin one for a Kotlin-only token.
+  const rows = (w, k) => [...w, ...k.filter((t) => !byPath(w).has(key(t)))];
+  const mode = (label, path, w, k) => [label, w.get(path) ?? k.get(path), k.get(path)];
+  // The Kotlin name, or `—` when Kotlin leaves the token out, plus the Kotlin value of each mode that differs from the web one.
+  const ktCell = (name, modes, cell) => {
+    if (!modes[0][2]) return '—';
+    const differs = modes.filter(([, w, k]) => JSON.stringify(w.original.$value) !== JSON.stringify(k.original.$value));
+    return [`\`${name}\``, ...differs.map(([label, , k]) => `${label ? `${label}: ` : 'Kotlin: '}${cell(k)}`)].join('<br>');
+  };
   const out = [
     '# Tokens',
     '',
@@ -178,13 +213,14 @@ function tokensMarkdown({ colorPrimitives, otherPrimitives, light, dark, fonts, 
     '',
     '## Semantic colours',
     '',
-    'Light and dark values, with the primitive each one references.',
+    'Light and dark values, with the primitive each one references. The Kotlin column lists Kotlin values only where they differ from the web ones.',
   ];
-  const darkByPath = new Map(dark.map((t) => [t.path.join('.'), t]));
-  for (const [group, tokens] of groupBy(light)) {
+  const [wLight, wDark, kLight, kDark] = [web.light, web.dark, kotlin.light, kotlin.dark].map(byPath);
+  for (const [group, tokens] of groupBy(rows(web.light, kotlin.light))) {
     out.push('', `### ${group}`, '', '| Token | Light | Dark | CSS | Kotlin |', '| --- | --- | --- | --- | --- |');
     for (const t of tokens) {
-      out.push(`| \`${t.path.join('.')}\` | ${colorCell(t)} | ${colorCell(darkByPath.get(t.path.join('.')))} | ${css(t)} | \`${pascal(group)}Colors.${groupField(t)}\` |`);
+      const modes = [mode('light', key(t), wLight, kLight), mode('dark', key(t), wDark, kDark)];
+      out.push(`| \`${key(t)}\` | ${modes.map(([, v]) => colorCell(v)).join(' | ')} | ${css(t)} | ${ktCell(`${pascal(group)}Colors.${groupField(t)}`, modes, colorCell)} |`);
     }
   }
 
@@ -197,17 +233,22 @@ function tokensMarkdown({ colorPrimitives, otherPrimitives, light, dark, fonts, 
     `| Token | ${VIEWPORTS.map(pascal).join(' | ')} | CSS | Kotlin |`,
     `| --- | ${VIEWPORTS.map(() => '---').join(' | ')} | --- | --- |`,
   );
-  const byPath = Object.fromEntries(VIEWPORTS.map((v) => [v, new Map(viewports[v].map((t) => [t.path.join('.'), t]))]));
-  for (const t of viewports.desktop) {
-    const path = t.path.join('.');
-    out.push(`| \`${path}\` | ${VIEWPORTS.map((v) => valueCell(byPath[v].get(path))).join(' | ')} | ${css(t)} | \`Viewport.${pathField(t)}\` |`);
+  const [wVp, kVp] = [web, kotlin].map((set) => Object.fromEntries(VIEWPORTS.map((v) => [v, byPath(set.viewports[v])])));
+  for (const t of rows(web.viewports.desktop, kotlin.viewports.desktop)) {
+    const modes = VIEWPORTS.map((v) => mode(v, key(t), wVp[v], kVp[v]));
+    out.push(`| \`${key(t)}\` | ${modes.map(([, v]) => valueCell(v)).join(' | ')} | ${css(t)} | ${ktCell(`Viewport.${pathField(t)}`, modes, valueCell)} |`);
   }
 
   out.push('', '## Fonts', '', '| Token | Value | CSS | Kotlin |', '| --- | --- | --- | --- |');
-  for (const t of fonts) out.push(`| \`${t.path.join('.')}\` | ${valueCell(t)} | ${css(t)} | \`${pascal(t.path[0])}Tokens.${groupField(t)}\` |`);
+  const [wFonts, kFonts] = [web.fonts, kotlin.fonts].map(byPath);
+  for (const t of rows(web.fonts, kotlin.fonts)) {
+    const modes = [mode('', key(t), wFonts, kFonts)];
+    out.push(`| \`${key(t)}\` | ${valueCell(modes[0][1])} | ${css(t)} | ${ktCell(`${pascal(t.path[0])}Tokens.${groupField(t)}`, modes, valueCell)} |`);
+  }
 
   out.push('', '## Primitive colours', '', 'CSS `--unity-<family>-<step>`, Kotlin `PrimitiveColors.<Family>.<Family><Step>`.');
-  for (const [family, tokens] of groupBy(colorPrimitives)) {
+  // Web values only: the Kotlin names follow from the header.
+  for (const [family, tokens] of groupBy(web.colorPrimitives)) {
     const steps = tokens.map((t) => t.path.slice(1).join('-'));
     out.push(
       '',
@@ -221,29 +262,40 @@ function tokensMarkdown({ colorPrimitives, otherPrimitives, light, dark, fonts, 
   }
 
   out.push('', '## Other primitives');
-  for (const [group, tokens] of groupBy(otherPrimitives)) {
+  const [wOther, kOther] = [web.otherPrimitives, kotlin.otherPrimitives].map(byPath);
+  for (const [group, tokens] of groupBy(rows(web.otherPrimitives, kotlin.otherPrimitives))) {
     out.push('', `### ${group}`, '', '| Token | Value | CSS | Kotlin |', '| --- | --- | --- | --- |');
-    for (const t of tokens) out.push(`| \`${t.path.join('.')}\` | ${valueCell(t)} | ${css(t)} | \`PrimitiveTokens.${pascal(group)}.${pascal(t.path.join('-'))}\` |`);
+    for (const t of tokens) {
+      const modes = [mode('', key(t), wOther, kOther)];
+      out.push(`| \`${key(t)}\` | ${valueCell(modes[0][1])} | ${css(t)} | ${ktCell(`PrimitiveTokens.${pascal(group)}.${pascal(t.path.join('-'))}`, modes, valueCell)} |`);
+    }
   }
   return out.join('\n') + '\n';
 }
 
-const resolved = Object.fromEntries(
-  await Promise.all(Object.entries(sds).map(async ([mode, sd]) => [mode, (await sd.getPlatformTokens('resolved')).allTokens])),
-);
-const primitives = resolved.light.filter(isPrimitive);
-const tokens = {
-  colorPrimitives: primitives.filter((t) => t.$type === 'color'),
-  otherPrimitives: primitives.filter((t) => t.$type !== 'color'),
-  light: resolved.light.filter(inFile('semantic/color.light')),
-  dark: resolved.dark.filter(inFile('semantic/color.dark')),
-  fonts: resolved.light.filter(inFile('semantic/font')),
-  viewports: Object.fromEntries(VIEWPORTS.map((v) => [v, resolved[v === 'desktop' ? 'light' : v].filter(inFile(`viewport/viewport.${v}`))])),
+// Resolved tokens per mode, as one platform sees them.
+const resolveFor = async (platform) =>
+  Object.fromEntries(await Promise.all(Object.entries(sds).map(async ([mode, sd]) => [mode, (await sd.getPlatformTokens(platform)).allTokens])));
+const tokenSets = (resolved) => {
+  const primitives = resolved.light.filter(isPrimitive);
+  return {
+    colorPrimitives: primitives.filter((t) => t.$type === 'color'),
+    otherPrimitives: primitives.filter((t) => t.$type !== 'color'),
+    light: resolved.light.filter(inFile('semantic/color.light')),
+    dark: resolved.dark.filter(inFile('semantic/color.dark')),
+    fonts: resolved.light.filter(inFile('semantic/font')),
+    viewports: Object.fromEntries(VIEWPORTS.map((v) => [v, resolved[v === 'desktop' ? 'light' : v].filter(inFile(`viewport/viewport.${v}`))])),
+  };
 };
+const resolved = { web: await resolveFor('web'), kotlin: await resolveFor('kotlin') };
+const web = tokenSets(resolved.web);
+const kotlin = tokenSets(resolved.kotlin);
 
-checkParity({ light: tokens.light, dark: tokens.dark });
-checkParity(tokens.viewports);
-checkNames(kotlinNames(tokens));
+for (const set of [web, kotlin]) {
+  checkParity({ light: set.light, dark: set.dark });
+  checkParity(set.viewports);
+}
+checkNames(kotlinNames(kotlin));
 
 await fs.rm(WEB_DIST, { recursive: true, force: true });
 await fs.mkdir(WEB_DIST, { recursive: true });
@@ -253,17 +305,17 @@ const css = (await Promise.all(Object.values(sds).map((sd) => sd.formatPlatform(
 await fs.writeFile(`${WEB_DIST}tokens.css`, css.join('\n'));
 
 await fs.rm(KT_DIR, { recursive: true, force: true });
-for (const [file, source] of Object.entries(kotlinFiles(tokens))) {
+for (const [file, source] of Object.entries(kotlinFiles(kotlin))) {
   await fs.mkdir(KT_DIR + file.replace(/[^/]*$/, ''), { recursive: true });
   await fs.writeFile(KT_DIR + file, source);
 }
 
 await fs.rm(SWATCH_DIR, { recursive: true, force: true });
 await fs.mkdir(SWATCH_DIR, { recursive: true });
-const hexes = new Set([...resolved.light, ...resolved.dark].filter((t) => t.$type === 'color').map((t) => hexOf(t.$value)));
+const hexes = new Set(Object.values(resolved).flatMap((r) => [...r.light, ...r.dark]).filter((t) => t.$type === 'color').map((t) => hexOf(t.$value)));
 for (const hex of hexes) await fs.writeFile(swatchFile(hex), swatchSvg(hex));
-await fs.writeFile('TOKENS.md', tokensMarkdown(tokens, cssNames));
+await fs.writeFile('TOKENS.md', tokensMarkdown(web, kotlin, cssNames));
 console.log(
-  `Built ${primitives.length} primitives, ${tokens.light.length} colour tokens × 2 modes, ` +
-    `${tokens.viewports.desktop.length} viewport tokens × ${VIEWPORTS.length} viewports, ${tokens.fonts.length} font tokens.`,
+  `Built ${web.colorPrimitives.length + web.otherPrimitives.length} primitives, ${web.light.length} colour tokens × 2 modes, ` +
+    `${web.viewports.desktop.length} viewport tokens × ${VIEWPORTS.length} viewports, ${web.fonts.length} font tokens (web).`,
 );

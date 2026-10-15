@@ -4,7 +4,7 @@
 
 ## Semantic colours
 
-Light and dark values, with the primitive each one references.
+Light and dark values, with the primitive each one references. The Kotlin column lists Kotlin values only where they differ from the web ones.
 
 ### border
 

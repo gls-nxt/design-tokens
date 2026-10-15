@@ -83,13 +83,29 @@ The library targets Android, `iosArm64` and `iosSimulatorArm64`. It is built wit
    - `semantic/font.tokens.json` holds the brand fonts.
    - `viewport/viewport.<desktop|mobile|locker>.tokens.json` reference the primitives, as in `{font.size.42}`.
    - Set `$type` on groups, not at the top of a file. Style Dictionary merges all files, so a top-level `$type` overrides the other files.
-2. **Run `pnpm install && pnpm build && pnpm test`.** To set up pnpm, see the [prerequisites in CONTRIBUTING.md](CONTRIBUTING.md#prerequisites).
-3. **Commit `TOKENS.md` and `docs/swatches/` with your token change.** The build regenerates them, and CI fails if they're out of date.
+2. **Set platform-specific values if you need them.** A token can differ per platform (`web` or `kotlin`). Add `$extensions` to the token:
+   ```json
+   "brand-hover": {
+     "$value": "{blue.800}",
+     "$extensions": { "com.glsnxt.platforms": { "kotlin": false } }
+   },
+   "font-size": {
+     "$value": "{font.size.42}",
+     "$extensions": { "com.glsnxt.platforms": { "kotlin": { "$value": "{font.size.24}" } } }
+   }
+   ```
+   - `false` leaves the token out of that platform. On a group, it leaves out the whole group.
+   - `{ "$value": … }` gives that platform its own value.
+   - Platforms you don't list get the token's own `$value`.
+   - Set the override in every mode file (light and dark, or all three viewports). Otherwise the build fails because the modes define different tokens.
+3. **Run `pnpm install && pnpm build && pnpm test`.** To set up pnpm, see the [prerequisites in CONTRIBUTING.md](CONTRIBUTING.md#prerequisites).
+4. **Commit `TOKENS.md` and `docs/swatches/` with your token change.** The build regenerates them, and CI fails if they're out of date.
 
 [`TOKENS.md`](TOKENS.md) previews every token in every mode, with its CSS and Kotlin names. On a pull request, CI posts a comment that lists each changed token before and after.
 
-The build fails in three cases:
-- the light and dark files, or the three viewport files, define different tokens;
+The build fails in four cases:
+- the light and dark files, or the three viewport files, define different tokens on a platform;
+- a `com.glsnxt.platforms` entry names an unknown platform or has an invalid value;
 - a generated name is not a valid identifier;
 - two tokens generate the same Kotlin name.
 
