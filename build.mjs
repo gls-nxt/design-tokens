@@ -236,7 +236,8 @@ function tokensMarkdown(web, kotlin, cssNames) {
   const rows = (w, k) => [...w, ...k.filter((t) => !byPath(w).has(key(t)))];
   const mode = (label, path, w, k) => [label, w.get(path) ?? k.get(path), k.get(path)];
   // Resolved values catch an overridden primitive behind the same reference; references catch a swapped primitive with the same value.
-  const differs = (w, k) => JSON.stringify([w.$value, w.original.$value]) !== JSON.stringify([k.$value, k.original.$value]);
+  // A token only one platform has counts as a difference.
+  const differs = (w, k) => !w || !k || JSON.stringify([w.$value, w.original.$value]) !== JSON.stringify([k.$value, k.original.$value]);
   // The Kotlin name, or `—` when Kotlin leaves the token out, plus the Kotlin value of each mode that differs from the web one.
   const ktCell = (name, modes, cell) => {
     if (!modes[0][2]) return '—';

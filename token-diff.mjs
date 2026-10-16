@@ -12,6 +12,10 @@ const MODED = {
   'screen/desktop': 'desktop',
   'screen/mobile': 'mobile',
   'screen/locker': 'locker',
+  // Before the move to tokens/screen/. Kept so a diff against an older base compares values instead of listing every screen token as new.
+  'viewport/viewport.desktop': 'desktop',
+  'viewport/viewport.mobile': 'mobile',
+  'viewport/viewport.locker': 'locker',
 };
 
 // The tokens one platform sees: `com.glsnxt.platforms` drops (`false`) or replaces (`{ $value }`) a token or group.
