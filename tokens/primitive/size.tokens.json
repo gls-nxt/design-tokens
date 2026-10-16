@@ -1,5 +1,6 @@
 {
   "scale": {
+    "$description": "Raw numeric base for spacing/radius. Do not apply directly.",
     "$type": "dimension",
     "0": {
       "$value": {
@@ -111,6 +112,7 @@
     }
   },
   "spacing": {
+    "$description": "Spacing step (gap/padding).",
     "$type": "dimension",
     "0": {
       "$value": "{scale.0}"
@@ -159,6 +161,7 @@
     }
   },
   "radius": {
+    "$description": "Corner radius step.",
     "$type": "dimension",
     "0": {
       "$value": "{scale.0}"
@@ -183,6 +186,7 @@
     }
   },
   "border-width": {
+    "$description": "Stroke weight (border width).",
     "$type": "dimension",
     "none": {
       "$value": "{scale.0}"
@@ -195,6 +199,7 @@
     }
   },
   "component-height": {
+    "$description": "Control height (reference).",
     "$type": "dimension",
     "xs": {
       "$value": {
@@ -222,6 +227,7 @@
     }
   },
   "icon-size": {
+    "$description": "Icon size (width/height).",
     "$type": "dimension",
     "10": {
       "$value": {
@@ -285,6 +291,7 @@
     }
   },
   "breakpoints": {
+    "$description": "Breakpoint reference (px), passive, not bound.",
     "$type": "dimension",
     "sm": {
       "$value": {
@@ -320,6 +327,7 @@
   "grid": {
     "$type": "number",
     "columns": {
+      "$description": "Grid column count (layout grid).",
       "mobile": {
         "$value": 4
       },
