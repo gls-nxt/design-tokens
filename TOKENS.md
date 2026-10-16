@@ -176,7 +176,7 @@ Sizes per viewport, with the primitive each one references. Desktop is the defau
 
 ## Primitive colours
 
-CSS `--unity-<family>-<step>`, Kotlin `PrimitiveColors.<Family>.<Family><Step>`.
+CSS `--unity-<family>-<step>`, Kotlin `PrimitiveColors.<Family>.<Family><Step>`. A Kotlin row lists Kotlin values only where they differ from the web ones.
 
 ### base
 

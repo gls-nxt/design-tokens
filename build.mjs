@@ -23,6 +23,7 @@ function forPlatform(node, platform, path = []) {
     if (key.startsWith('$') || !child || typeof child !== 'object') continue;
     const at = [...path, key];
     const ext = child.$extensions?.[PLATFORM_EXT] ?? {};
+    if (typeof ext !== 'object' || Array.isArray(ext)) throw new Error(`${at.join('.')}: ${PLATFORM_EXT} must be an object keyed by platform`);
     for (const [p, v] of Object.entries(ext)) {
       if (!PLATFORMS.includes(p) || !(v === false || ('$value' in child && v?.$value !== undefined))) {
         throw new Error(`${at.join('.')}: ${PLATFORM_EXT}.${p} must be one of ${PLATFORMS.join(', ')}, set to false or (on a token) { "$value": … }`);
@@ -200,11 +201,12 @@ function tokensMarkdown(web, kotlin, cssNames) {
   // Every web token, then the Kotlin-only ones. Value columns show the web value, or the Kotlin one for a Kotlin-only token.
   const rows = (w, k) => [...w, ...k.filter((t) => !byPath(w).has(key(t)))];
   const mode = (label, path, w, k) => [label, w.get(path) ?? k.get(path), k.get(path)];
+  // Resolved values catch an overridden primitive behind the same reference; references catch a swapped primitive with the same value.
+  const differs = (w, k) => JSON.stringify([w.$value, w.original.$value]) !== JSON.stringify([k.$value, k.original.$value]);
   // The Kotlin name, or `—` when Kotlin leaves the token out, plus the Kotlin value of each mode that differs from the web one.
   const ktCell = (name, modes, cell) => {
     if (!modes[0][2]) return '—';
-    const differs = modes.filter(([, w, k]) => JSON.stringify(w.original.$value) !== JSON.stringify(k.original.$value));
-    return [`\`${name}\``, ...differs.map(([label, , k]) => `${label ? `${label}: ` : 'Kotlin: '}${cell(k)}`)].join('<br>');
+    return [`\`${name}\``, ...modes.filter(([, w, k]) => differs(w, k)).map(([label, , k]) => `${label ? `${label}: ` : 'Kotlin: '}${cell(k)}`)].join('<br>');
   };
   const out = [
     '# Tokens',
@@ -246,18 +248,26 @@ function tokensMarkdown(web, kotlin, cssNames) {
     out.push(`| \`${key(t)}\` | ${valueCell(modes[0][1])} | ${css(t)} | ${ktCell(`${pascal(t.path[0])}Tokens.${groupField(t)}`, modes, valueCell)} |`);
   }
 
-  out.push('', '## Primitive colours', '', 'CSS `--unity-<family>-<step>`, Kotlin `PrimitiveColors.<Family>.<Family><Step>`.');
-  // Web values only: the Kotlin names follow from the header.
-  for (const [family, tokens] of groupBy(web.colorPrimitives)) {
+  out.push(
+    '',
+    '## Primitive colours',
+    '',
+    'CSS `--unity-<family>-<step>`, Kotlin `PrimitiveColors.<Family>.<Family><Step>`. A Kotlin row lists Kotlin values only where they differ from the web ones.',
+  );
+  const [wPrim, kPrim] = [web.colorPrimitives, kotlin.colorPrimitives].map(byPath);
+  for (const [family, tokens] of groupBy(rows(web.colorPrimitives, kotlin.colorPrimitives))) {
     const steps = tokens.map((t) => t.path.slice(1).join('-'));
+    const modes = tokens.map((t) => mode('', key(t), wPrim, kPrim));
+    const ktRow = modes.map(([, w, k]) => (!k ? 'Kotlin: —' : differs(w, k) ? `Kotlin: ${swatch(hexOf(k.$value))} \`${hexOf(k.$value)}\`` : ''));
     out.push(
       '',
       `### ${family}`,
       '',
       `| ${steps.join(' | ')} |`,
       `| ${steps.map(() => '---').join(' | ')} |`,
-      `| ${tokens.map((t) => swatch(hexOf(t.$value))).join(' | ')} |`,
-      `| ${tokens.map((t) => `\`${hexOf(t.$value)}\``).join(' | ')} |`,
+      `| ${modes.map(([, w]) => swatch(hexOf(w.$value))).join(' | ')} |`,
+      `| ${modes.map(([, w]) => `\`${hexOf(w.$value)}\``).join(' | ')} |`,
+      ...(ktRow.some(Boolean) ? [`| ${ktRow.join(' | ')} |`] : []),
     );
   }
 

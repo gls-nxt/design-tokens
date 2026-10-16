@@ -14,17 +14,16 @@ const MODED = {
   'viewport/viewport.locker': 'locker',
 };
 
-const flatten = (node, path = [], out = {}) => {
+// The tokens one platform sees: `com.glsnxt.platforms` drops (`false`) or replaces (`{ $value }`) a token or group.
+const flatten = (node, platform, path = [], out = {}) => {
   for (const [key, value] of Object.entries(node)) {
     if (key.startsWith('$')) continue;
     if (!value || typeof value !== 'object') continue;
     const name = [...path, key].join('.');
-    // Per-platform overrides show as their own rows, as in `surface.brand-hover [kotlin]`.
-    for (const [platform, v] of Object.entries(value.$extensions?.['com.glsnxt.platforms'] ?? {})) {
-      out[`${name} [${platform}]`] = v === false ? 'excluded' : v.$value;
-    }
-    if ('$value' in value) out[name] = value.$value;
-    else flatten(value, [...path, key], out);
+    const override = value.$extensions?.['com.glsnxt.platforms']?.[platform];
+    if (override === false) continue;
+    if ('$value' in value) out[name] = override?.$value ?? value.$value;
+    else flatten(value, platform, [...path, key], out);
   }
   return out;
 };
@@ -32,10 +31,21 @@ const flatten = (node, path = [], out = {}) => {
 const readJson = async (file) => JSON.parse(await readFile(file, 'utf8').catch(() => '{}'));
 
 // { 'blue.700': '#061ab1', 'surface.base-1 (light)': '#ffffff', 'h1.font-size (locker)': '48px', … }, with references resolved.
+// Web values, plus a `[kotlin]` row wherever Kotlin's resolved value differs, as in `surface.brand-hover [kotlin] (light)`.
 export async function loadTokens(dir) {
+  const web = await loadPlatform(dir, 'web');
+  const kotlin = await loadPlatform(dir, 'kotlin');
+  const tokens = { ...web };
+  for (const key of new Set([...Object.keys(web), ...Object.keys(kotlin)])) {
+    if (web[key]?.toLowerCase() !== kotlin[key]?.toLowerCase()) tokens[key.replace(/^\S+/, '$& [kotlin]')] = kotlin[key] ?? 'excluded';
+  }
+  return tokens;
+}
+
+async function loadPlatform(dir, platform) {
   const primitives = {};
   for (const file of await readdir(`${dir}/tokens/primitive`).catch(() => [])) {
-    Object.assign(primitives, flatten(await readJson(`${dir}/tokens/primitive/${file}`)));
+    Object.assign(primitives, flatten(await readJson(`${dir}/tokens/primitive/${file}`), platform));
   }
   const resolve = (value) => {
     while (typeof value === 'string' && /^\{.+\}$/.test(value) && value.slice(1, -1) in primitives) value = primitives[value.slice(1, -1)];
@@ -43,7 +53,7 @@ export async function loadTokens(dir) {
   };
   const tokens = Object.fromEntries(Object.entries(primitives).map(([path, value]) => [path, resolve(value)]));
   for (const [file, mode] of Object.entries(MODED)) {
-    for (const [path, value] of Object.entries(flatten(await readJson(`${dir}/tokens/${file}.tokens.json`)))) {
+    for (const [path, value] of Object.entries(flatten(await readJson(`${dir}/tokens/${file}.tokens.json`), platform))) {
       tokens[mode ? `${path} (${mode})` : path] = resolve(value);
     }
   }
