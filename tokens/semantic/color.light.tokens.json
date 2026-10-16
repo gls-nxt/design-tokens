@@ -98,7 +98,8 @@
       "$value": "{gray.200}"
     },
     "secondary-hover": {
-      "$value": "{gray.300}"
+      "$value": "{gray.300}",
+      "$extensions": { "com.glsnxt.platforms": { "kotlin": false } }
     },
     "secondary-pressed": {
       "$value": "{gray.400}"
@@ -110,7 +111,8 @@
       "$value": "{base.white}"
     },
     "tertiary-hover": {
-      "$value": "{gray.200}"
+      "$value": "{gray.200}",
+      "$extensions": { "com.glsnxt.platforms": { "kotlin": false } }
     },
     "tertiary-pressed": {
       "$value": "{gray.300}"
@@ -125,7 +127,8 @@
       "$value": "{blue.700}"
     },
     "selection-hover": {
-      "$value": "{blue.800}"
+      "$value": "{blue.800}",
+      "$extensions": { "com.glsnxt.platforms": { "kotlin": false } }
     },
     "selection-disabled": {
       "$value": "{blue.300}"
@@ -134,7 +137,8 @@
       "$value": "{blue.700}"
     },
     "brand-hover": {
-      "$value": "{blue.800}"
+      "$value": "{blue.800}",
+      "$extensions": { "com.glsnxt.platforms": { "kotlin": false } }
     },
     "brand-pressed": {
       "$value": "{blue.900}"
@@ -146,7 +150,8 @@
       "$value": "{blue.300}"
     },
     "brand-light-hover": {
-      "$value": "{blue.400}"
+      "$value": "{blue.400}",
+      "$extensions": { "com.glsnxt.platforms": { "kotlin": false } }
     },
     "brand-light-pressed": {
       "$value": "{blue.500}"
@@ -158,7 +163,8 @@
       "$value": "{red.200}"
     },
     "error-hover": {
-      "$value": "{red.300}"
+      "$value": "{red.300}",
+      "$extensions": { "com.glsnxt.platforms": { "kotlin": false } }
     },
     "error-pressed": {
       "$value": "{red.400}"
@@ -173,7 +179,8 @@
       "$value": "{green.900}"
     },
     "success-strong-hover": {
-      "$value": "{green.1000}"
+      "$value": "{green.1000}",
+      "$extensions": { "com.glsnxt.platforms": { "kotlin": false } }
     },
     "success-strong-pressed": {
       "$value": "{green.1100}"
@@ -185,7 +192,8 @@
       "$value": "{green.200}"
     },
     "success-light-hover": {
-      "$value": "{green.300}"
+      "$value": "{green.300}",
+      "$extensions": { "com.glsnxt.platforms": { "kotlin": false } }
     },
     "success-light-pressed": {
       "$value": "{green.400}"
@@ -209,7 +217,8 @@
       "$value": "{gray.400}"
     },
     "neutral-strong-hover": {
-      "$value": "{gray.500}"
+      "$value": "{gray.500}",
+      "$extensions": { "com.glsnxt.platforms": { "kotlin": false } }
     }
   },
   "text": {
@@ -235,7 +244,8 @@
       "$value": "{blue.700}"
     },
     "link-hover": {
-      "$value": "{blue.800}"
+      "$value": "{blue.800}",
+      "$extensions": { "com.glsnxt.platforms": { "kotlin": false } }
     },
     "link-pressed": {
       "$value": "{blue.900}"
