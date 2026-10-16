@@ -113,59 +113,59 @@ Light and dark values, with the primitive each one references. The Kotlin column
 | `text.warning` | ![#813600](docs/swatches/813600.svg) `#813600`<br>`orange.1000` | ![#ffd9b3](docs/swatches/ffd9b3.svg) `#ffd9b3`<br>`orange-dark.900` | `--unity-text-warning` | `TextColors.warning` |
 | `text.info` | ![#3242c0](docs/swatches/3242c0.svg) `#3242c0`<br>`blue.600` | ![#89a0ff](docs/swatches/89a0ff.svg) `#89a0ff`<br>`blue-dark.900` | `--unity-text-info` | `TextColors.info` |
 
-## Viewport
+## Screen sizes
 
-Sizes per viewport, with the primitive each one references. Desktop is the default; set `data-viewport="mobile"` or `data-viewport="locker"` to switch on the web.
+Text and touch sizes per screen, with the primitive each one references. On the web, desktop is the default; set `data-viewport="mobile"` or `data-viewport="locker"` to switch. Kotlin gets the mobile values only.
 
 | Token | Desktop | Mobile | Locker | CSS | Kotlin |
 | --- | --- | --- | --- | --- | --- |
-| `touch-target.min` | `24px` | `48px` | `64px` | `--unity-touch-target-min` | `Viewport.touchTargetMin` |
-| `control.height` | `0px` | `0px` | `64px` | `--unity-control-height` | `Viewport.controlHeight` |
-| `h1.font-size` | `42px`<br>`font.size.42` | `42px`<br>`font.size.42` | `48px`<br>`font.size.48` | `--unity-h1-font-size` | `Viewport.h1FontSize` |
-| `h1.line-height` | `52px`<br>`font.line-height.52` | `52px`<br>`font.line-height.52` | `56px`<br>`font.line-height.56` | `--unity-h1-line-height` | `Viewport.h1LineHeight` |
-| `h1.letter-spacing` | `-0.86px`<br>`font.letter-spacing.12` | `-0.86px`<br>`font.letter-spacing.12` | `-0.86px`<br>`font.letter-spacing.12` | `--unity-h1-letter-spacing` | `Viewport.h1LetterSpacing` |
-| `h2.font-size` | `34px`<br>`font.size.34` | `34px`<br>`font.size.34` | `42px`<br>`font.size.42` | `--unity-h2-font-size` | `Viewport.h2FontSize` |
-| `h2.line-height` | `40px`<br>`font.line-height.40` | `40px`<br>`font.line-height.40` | `52px`<br>`font.line-height.52` | `--unity-h2-line-height` | `Viewport.h2LineHeight` |
-| `h2.letter-spacing` | `-0.68px`<br>`font.letter-spacing.11` | `-0.68px`<br>`font.letter-spacing.11` | `-0.68px`<br>`font.letter-spacing.11` | `--unity-h2-letter-spacing` | `Viewport.h2LetterSpacing` |
-| `h3.font-size` | `24px`<br>`font.size.24` | `24px`<br>`font.size.24` | `34px`<br>`font.size.34` | `--unity-h3-font-size` | `Viewport.h3FontSize` |
-| `h3.line-height` | `32px`<br>`font.line-height.32` | `32px`<br>`font.line-height.32` | `40px`<br>`font.line-height.40` | `--unity-h3-line-height` | `Viewport.h3LineHeight` |
-| `h3.letter-spacing` | `-0.48px`<br>`font.letter-spacing.10` | `-0.48px`<br>`font.letter-spacing.10` | `-0.48px`<br>`font.letter-spacing.10` | `--unity-h3-letter-spacing` | `Viewport.h3LetterSpacing` |
-| `h4.font-size` | `22px`<br>`font.size.22` | `22px`<br>`font.size.22` | `28px`<br>`font.size.28` | `--unity-h4-font-size` | `Viewport.h4FontSize` |
-| `h4.line-height` | `28px`<br>`font.line-height.28` | `28px`<br>`font.line-height.28` | `32px`<br>`font.line-height.32` | `--unity-h4-line-height` | `Viewport.h4LineHeight` |
-| `h4.letter-spacing` | `-0.34px`<br>`font.letter-spacing.9` | `-0.34px`<br>`font.letter-spacing.9` | `-0.34px`<br>`font.letter-spacing.9` | `--unity-h4-letter-spacing` | `Viewport.h4LetterSpacing` |
-| `h5.font-size` | `20px`<br>`font.size.20` | `20px`<br>`font.size.20` | `24px`<br>`font.size.24` | `--unity-h5-font-size` | `Viewport.h5FontSize` |
-| `h5.line-height` | `26px`<br>`font.line-height.26` | `26px`<br>`font.line-height.26` | `32px`<br>`font.line-height.32` | `--unity-h5-line-height` | `Viewport.h5LineHeight` |
-| `h5.letter-spacing` | `-0.3px`<br>`font.letter-spacing.8` | `-0.3px`<br>`font.letter-spacing.8` | `-0.3px`<br>`font.letter-spacing.8` | `--unity-h5-letter-spacing` | `Viewport.h5LetterSpacing` |
-| `h6.font-size` | `18px`<br>`font.size.18` | `18px`<br>`font.size.18` | `20px`<br>`font.size.20` | `--unity-h6-font-size` | `Viewport.h6FontSize` |
-| `h6.line-height` | `24px`<br>`font.line-height.24` | `24px`<br>`font.line-height.24` | `26px`<br>`font.line-height.26` | `--unity-h6-line-height` | `Viewport.h6LineHeight` |
-| `h6.letter-spacing` | `-0.28px`<br>`font.letter-spacing.7` | `-0.28px`<br>`font.letter-spacing.7` | `-0.28px`<br>`font.letter-spacing.7` | `--unity-h6-letter-spacing` | `Viewport.h6LetterSpacing` |
-| `body-xl.font-size` | `20px`<br>`font.size.20` | `20px`<br>`font.size.20` | `22px`<br>`font.size.22` | `--unity-body-xl-font-size` | `Viewport.bodyXlFontSize` |
-| `body-xl.line-height` | `32px`<br>`font.line-height.32` | `32px`<br>`font.line-height.32` | `32px`<br>`font.line-height.32` | `--unity-body-xl-line-height` | `Viewport.bodyXlLineHeight` |
-| `body-xl.letter-spacing` | `-0.2px`<br>`font.letter-spacing.6` | `-0.2px`<br>`font.letter-spacing.6` | `-0.2px`<br>`font.letter-spacing.6` | `--unity-body-xl-letter-spacing` | `Viewport.bodyXlLetterSpacing` |
-| `body-lg.font-size` | `18px`<br>`font.size.18` | `18px`<br>`font.size.18` | `20px`<br>`font.size.20` | `--unity-body-lg-font-size` | `Viewport.bodyLgFontSize` |
-| `body-lg.line-height` | `28px`<br>`font.line-height.28` | `28px`<br>`font.line-height.28` | `32px`<br>`font.line-height.32` | `--unity-body-lg-line-height` | `Viewport.bodyLgLineHeight` |
-| `body-lg.letter-spacing` | `-0.18px`<br>`font.letter-spacing.5` | `-0.18px`<br>`font.letter-spacing.5` | `-0.18px`<br>`font.letter-spacing.5` | `--unity-body-lg-letter-spacing` | `Viewport.bodyLgLetterSpacing` |
-| `body-md.font-size` | `16px`<br>`font.size.16` | `16px`<br>`font.size.16` | `18px`<br>`font.size.18` | `--unity-body-md-font-size` | `Viewport.bodyMdFontSize` |
-| `body-md.line-height` | `24px`<br>`font.line-height.24` | `24px`<br>`font.line-height.24` | `28px`<br>`font.line-height.28` | `--unity-body-md-line-height` | `Viewport.bodyMdLineHeight` |
-| `body-md.letter-spacing` | `-0.16px`<br>`font.letter-spacing.4` | `-0.16px`<br>`font.letter-spacing.4` | `-0.16px`<br>`font.letter-spacing.4` | `--unity-body-md-letter-spacing` | `Viewport.bodyMdLetterSpacing` |
-| `body-sm.font-size` | `14px`<br>`font.size.14` | `14px`<br>`font.size.14` | `16px`<br>`font.size.16` | `--unity-body-sm-font-size` | `Viewport.bodySmFontSize` |
-| `body-sm.line-height` | `22px`<br>`font.line-height.22` | `22px`<br>`font.line-height.22` | `26px`<br>`font.line-height.26` | `--unity-body-sm-line-height` | `Viewport.bodySmLineHeight` |
-| `body-sm.letter-spacing` | `-0.14px`<br>`font.letter-spacing.3` | `-0.14px`<br>`font.letter-spacing.3` | `-0.14px`<br>`font.letter-spacing.3` | `--unity-body-sm-letter-spacing` | `Viewport.bodySmLetterSpacing` |
-| `body-xsm.font-size` | `12px`<br>`font.size.12` | `12px`<br>`font.size.12` | `14px`<br>`font.size.14` | `--unity-body-xsm-font-size` | `Viewport.bodyXsmFontSize` |
-| `body-xsm.line-height` | `20px`<br>`font.line-height.20` | `20px`<br>`font.line-height.20` | `24px`<br>`font.line-height.24` | `--unity-body-xsm-line-height` | `Viewport.bodyXsmLineHeight` |
-| `body-xsm.letter-spacing` | `-0.12px`<br>`font.letter-spacing.2` | `-0.12px`<br>`font.letter-spacing.2` | `-0.12px`<br>`font.letter-spacing.2` | `--unity-body-xsm-letter-spacing` | `Viewport.bodyXsmLetterSpacing` |
-| `label-xl.font-size` | `20px`<br>`font.size.20` | `20px`<br>`font.size.20` | `32px`<br>`font.size.32` | `--unity-label-xl-font-size` | `Viewport.labelXlFontSize` |
-| `label-xl.line-height` | `24px`<br>`font.line-height.24` | `24px`<br>`font.line-height.24` | `28px`<br>`font.line-height.28` | `--unity-label-xl-line-height` | `Viewport.labelXlLineHeight` |
-| `label-lg.font-size` | `18px`<br>`font.size.18` | `18px`<br>`font.size.18` | `28px`<br>`font.size.28` | `--unity-label-lg-font-size` | `Viewport.labelLgFontSize` |
-| `label-lg.line-height` | `22px`<br>`font.line-height.22` | `22px`<br>`font.line-height.22` | `26px`<br>`font.line-height.26` | `--unity-label-lg-line-height` | `Viewport.labelLgLineHeight` |
-| `label-md.font-size` | `16px`<br>`font.size.16` | `16px`<br>`font.size.16` | `24px`<br>`font.size.24` | `--unity-label-md-font-size` | `Viewport.labelMdFontSize` |
-| `label-md.line-height` | `20px`<br>`font.line-height.20` | `20px`<br>`font.line-height.20` | `24px`<br>`font.line-height.24` | `--unity-label-md-line-height` | `Viewport.labelMdLineHeight` |
-| `label-sm.font-size` | `14px`<br>`font.size.14` | `14px`<br>`font.size.14` | `18px`<br>`font.size.18` | `--unity-label-sm-font-size` | `Viewport.labelSmFontSize` |
-| `label-sm.line-height` | `18px`<br>`font.line-height.18` | `18px`<br>`font.line-height.18` | `24px`<br>`font.line-height.24` | `--unity-label-sm-line-height` | `Viewport.labelSmLineHeight` |
-| `label-xsm.font-size` | `12px`<br>`font.size.12` | `12px`<br>`font.size.12` | `16px`<br>`font.size.16` | `--unity-label-xsm-font-size` | `Viewport.labelXsmFontSize` |
-| `label-xsm.line-height` | `16px`<br>`font.line-height.16` | `16px`<br>`font.line-height.16` | `22px`<br>`font.line-height.22` | `--unity-label-xsm-line-height` | `Viewport.labelXsmLineHeight` |
-| `label-xxsm.font-size` | `10px`<br>`font.size.10` | `10px`<br>`font.size.10` | `14px`<br>`font.size.14` | `--unity-label-xxsm-font-size` | `Viewport.labelXxsmFontSize` |
-| `label-xxsm.line-height` | `14px`<br>`font.line-height.14` | `14px`<br>`font.line-height.14` | `16px`<br>`font.line-height.16` | `--unity-label-xxsm-line-height` | `Viewport.labelXxsmLineHeight` |
+| `touch-target.min` | `24px` | `48px` | `64px` | `--unity-touch-target-min` | `MobileDimensions.touchTargetMin` |
+| `control.height` | `0px` | `0px` | `64px` | `--unity-control-height` | `MobileDimensions.controlHeight` |
+| `h1.font-size` | `42px`<br>`font.size.42` | `42px`<br>`font.size.42` | `48px`<br>`font.size.48` | `--unity-h1-font-size` | `MobileTypography.h1.fontSize` |
+| `h1.line-height` | `52px`<br>`font.line-height.52` | `52px`<br>`font.line-height.52` | `56px`<br>`font.line-height.56` | `--unity-h1-line-height` | `MobileTypography.h1.lineHeight` |
+| `h1.letter-spacing` | `-0.86px`<br>`font.letter-spacing.12` | `-0.86px`<br>`font.letter-spacing.12` | `-0.86px`<br>`font.letter-spacing.12` | `--unity-h1-letter-spacing` | `MobileTypography.h1.letterSpacing` |
+| `h2.font-size` | `34px`<br>`font.size.34` | `34px`<br>`font.size.34` | `42px`<br>`font.size.42` | `--unity-h2-font-size` | `MobileTypography.h2.fontSize` |
+| `h2.line-height` | `40px`<br>`font.line-height.40` | `40px`<br>`font.line-height.40` | `52px`<br>`font.line-height.52` | `--unity-h2-line-height` | `MobileTypography.h2.lineHeight` |
+| `h2.letter-spacing` | `-0.68px`<br>`font.letter-spacing.11` | `-0.68px`<br>`font.letter-spacing.11` | `-0.68px`<br>`font.letter-spacing.11` | `--unity-h2-letter-spacing` | `MobileTypography.h2.letterSpacing` |
+| `h3.font-size` | `24px`<br>`font.size.24` | `24px`<br>`font.size.24` | `34px`<br>`font.size.34` | `--unity-h3-font-size` | `MobileTypography.h3.fontSize` |
+| `h3.line-height` | `32px`<br>`font.line-height.32` | `32px`<br>`font.line-height.32` | `40px`<br>`font.line-height.40` | `--unity-h3-line-height` | `MobileTypography.h3.lineHeight` |
+| `h3.letter-spacing` | `-0.48px`<br>`font.letter-spacing.10` | `-0.48px`<br>`font.letter-spacing.10` | `-0.48px`<br>`font.letter-spacing.10` | `--unity-h3-letter-spacing` | `MobileTypography.h3.letterSpacing` |
+| `h4.font-size` | `22px`<br>`font.size.22` | `22px`<br>`font.size.22` | `28px`<br>`font.size.28` | `--unity-h4-font-size` | `MobileTypography.h4.fontSize` |
+| `h4.line-height` | `28px`<br>`font.line-height.28` | `28px`<br>`font.line-height.28` | `32px`<br>`font.line-height.32` | `--unity-h4-line-height` | `MobileTypography.h4.lineHeight` |
+| `h4.letter-spacing` | `-0.34px`<br>`font.letter-spacing.9` | `-0.34px`<br>`font.letter-spacing.9` | `-0.34px`<br>`font.letter-spacing.9` | `--unity-h4-letter-spacing` | `MobileTypography.h4.letterSpacing` |
+| `h5.font-size` | `20px`<br>`font.size.20` | `20px`<br>`font.size.20` | `24px`<br>`font.size.24` | `--unity-h5-font-size` | `MobileTypography.h5.fontSize` |
+| `h5.line-height` | `26px`<br>`font.line-height.26` | `26px`<br>`font.line-height.26` | `32px`<br>`font.line-height.32` | `--unity-h5-line-height` | `MobileTypography.h5.lineHeight` |
+| `h5.letter-spacing` | `-0.3px`<br>`font.letter-spacing.8` | `-0.3px`<br>`font.letter-spacing.8` | `-0.3px`<br>`font.letter-spacing.8` | `--unity-h5-letter-spacing` | `MobileTypography.h5.letterSpacing` |
+| `h6.font-size` | `18px`<br>`font.size.18` | `18px`<br>`font.size.18` | `20px`<br>`font.size.20` | `--unity-h6-font-size` | `MobileTypography.h6.fontSize` |
+| `h6.line-height` | `24px`<br>`font.line-height.24` | `24px`<br>`font.line-height.24` | `26px`<br>`font.line-height.26` | `--unity-h6-line-height` | `MobileTypography.h6.lineHeight` |
+| `h6.letter-spacing` | `-0.28px`<br>`font.letter-spacing.7` | `-0.28px`<br>`font.letter-spacing.7` | `-0.28px`<br>`font.letter-spacing.7` | `--unity-h6-letter-spacing` | `MobileTypography.h6.letterSpacing` |
+| `body-xl.font-size` | `20px`<br>`font.size.20` | `20px`<br>`font.size.20` | `22px`<br>`font.size.22` | `--unity-body-xl-font-size` | `MobileTypography.bodyXl.fontSize` |
+| `body-xl.line-height` | `32px`<br>`font.line-height.32` | `32px`<br>`font.line-height.32` | `32px`<br>`font.line-height.32` | `--unity-body-xl-line-height` | `MobileTypography.bodyXl.lineHeight` |
+| `body-xl.letter-spacing` | `-0.2px`<br>`font.letter-spacing.6` | `-0.2px`<br>`font.letter-spacing.6` | `-0.2px`<br>`font.letter-spacing.6` | `--unity-body-xl-letter-spacing` | `MobileTypography.bodyXl.letterSpacing` |
+| `body-lg.font-size` | `18px`<br>`font.size.18` | `18px`<br>`font.size.18` | `20px`<br>`font.size.20` | `--unity-body-lg-font-size` | `MobileTypography.bodyLg.fontSize` |
+| `body-lg.line-height` | `28px`<br>`font.line-height.28` | `28px`<br>`font.line-height.28` | `32px`<br>`font.line-height.32` | `--unity-body-lg-line-height` | `MobileTypography.bodyLg.lineHeight` |
+| `body-lg.letter-spacing` | `-0.18px`<br>`font.letter-spacing.5` | `-0.18px`<br>`font.letter-spacing.5` | `-0.18px`<br>`font.letter-spacing.5` | `--unity-body-lg-letter-spacing` | `MobileTypography.bodyLg.letterSpacing` |
+| `body-md.font-size` | `16px`<br>`font.size.16` | `16px`<br>`font.size.16` | `18px`<br>`font.size.18` | `--unity-body-md-font-size` | `MobileTypography.bodyMd.fontSize` |
+| `body-md.line-height` | `24px`<br>`font.line-height.24` | `24px`<br>`font.line-height.24` | `28px`<br>`font.line-height.28` | `--unity-body-md-line-height` | `MobileTypography.bodyMd.lineHeight` |
+| `body-md.letter-spacing` | `-0.16px`<br>`font.letter-spacing.4` | `-0.16px`<br>`font.letter-spacing.4` | `-0.16px`<br>`font.letter-spacing.4` | `--unity-body-md-letter-spacing` | `MobileTypography.bodyMd.letterSpacing` |
+| `body-sm.font-size` | `14px`<br>`font.size.14` | `14px`<br>`font.size.14` | `16px`<br>`font.size.16` | `--unity-body-sm-font-size` | `MobileTypography.bodySm.fontSize` |
+| `body-sm.line-height` | `22px`<br>`font.line-height.22` | `22px`<br>`font.line-height.22` | `26px`<br>`font.line-height.26` | `--unity-body-sm-line-height` | `MobileTypography.bodySm.lineHeight` |
+| `body-sm.letter-spacing` | `-0.14px`<br>`font.letter-spacing.3` | `-0.14px`<br>`font.letter-spacing.3` | `-0.14px`<br>`font.letter-spacing.3` | `--unity-body-sm-letter-spacing` | `MobileTypography.bodySm.letterSpacing` |
+| `body-xsm.font-size` | `12px`<br>`font.size.12` | `12px`<br>`font.size.12` | `14px`<br>`font.size.14` | `--unity-body-xsm-font-size` | `MobileTypography.bodyXsm.fontSize` |
+| `body-xsm.line-height` | `20px`<br>`font.line-height.20` | `20px`<br>`font.line-height.20` | `24px`<br>`font.line-height.24` | `--unity-body-xsm-line-height` | `MobileTypography.bodyXsm.lineHeight` |
+| `body-xsm.letter-spacing` | `-0.12px`<br>`font.letter-spacing.2` | `-0.12px`<br>`font.letter-spacing.2` | `-0.12px`<br>`font.letter-spacing.2` | `--unity-body-xsm-letter-spacing` | `MobileTypography.bodyXsm.letterSpacing` |
+| `label-xl.font-size` | `20px`<br>`font.size.20` | `20px`<br>`font.size.20` | `32px`<br>`font.size.32` | `--unity-label-xl-font-size` | `MobileTypography.labelXl.fontSize` |
+| `label-xl.line-height` | `24px`<br>`font.line-height.24` | `24px`<br>`font.line-height.24` | `28px`<br>`font.line-height.28` | `--unity-label-xl-line-height` | `MobileTypography.labelXl.lineHeight` |
+| `label-lg.font-size` | `18px`<br>`font.size.18` | `18px`<br>`font.size.18` | `28px`<br>`font.size.28` | `--unity-label-lg-font-size` | `MobileTypography.labelLg.fontSize` |
+| `label-lg.line-height` | `22px`<br>`font.line-height.22` | `22px`<br>`font.line-height.22` | `26px`<br>`font.line-height.26` | `--unity-label-lg-line-height` | `MobileTypography.labelLg.lineHeight` |
+| `label-md.font-size` | `16px`<br>`font.size.16` | `16px`<br>`font.size.16` | `24px`<br>`font.size.24` | `--unity-label-md-font-size` | `MobileTypography.labelMd.fontSize` |
+| `label-md.line-height` | `20px`<br>`font.line-height.20` | `20px`<br>`font.line-height.20` | `24px`<br>`font.line-height.24` | `--unity-label-md-line-height` | `MobileTypography.labelMd.lineHeight` |
+| `label-sm.font-size` | `14px`<br>`font.size.14` | `14px`<br>`font.size.14` | `18px`<br>`font.size.18` | `--unity-label-sm-font-size` | `MobileTypography.labelSm.fontSize` |
+| `label-sm.line-height` | `18px`<br>`font.line-height.18` | `18px`<br>`font.line-height.18` | `24px`<br>`font.line-height.24` | `--unity-label-sm-line-height` | `MobileTypography.labelSm.lineHeight` |
+| `label-xsm.font-size` | `12px`<br>`font.size.12` | `12px`<br>`font.size.12` | `16px`<br>`font.size.16` | `--unity-label-xsm-font-size` | `MobileTypography.labelXsm.fontSize` |
+| `label-xsm.line-height` | `16px`<br>`font.line-height.16` | `16px`<br>`font.line-height.16` | `22px`<br>`font.line-height.22` | `--unity-label-xsm-line-height` | `MobileTypography.labelXsm.lineHeight` |
+| `label-xxsm.font-size` | `10px`<br>`font.size.10` | `10px`<br>`font.size.10` | `14px`<br>`font.size.14` | `--unity-label-xxsm-font-size` | `MobileTypography.labelXxsm.fontSize` |
+| `label-xxsm.line-height` | `14px`<br>`font.line-height.14` | `14px`<br>`font.line-height.14` | `16px`<br>`font.line-height.16` | `--unity-label-xxsm-line-height` | `MobileTypography.labelXxsm.lineHeight` |
 
 ## Fonts
 

@@ -34,10 +34,19 @@ test('css has viewport overrides and non-colour primitives', async () => {
   assert.match(css, /--unity-black-alpha-1: rgba\(0, 0, 0, /);
 });
 
-test('kotlin has viewport factories and typed primitives', async () => {
-  const kt = await readFile(`${KT}Viewport.kt`, 'utf8');
-  assert.match(kt, /val h1FontSize: TextUnit,/);
-  assert.match(kt, /fun lockerViewport\(\) = Viewport\([^)]*h1FontSize = PrimitiveTokens\.Font\.FontSize48,/);
+test('kotlin has mobile typography, mobile dimensions and typed primitives', async () => {
+  const typography = await readFile(`${KT}MobileTypography.kt`, 'utf8');
+  assert.match(typography, /import androidx\.compose\.ui\.text\.TextStyle/);
+  assert.match(
+    typography,
+    /val h1 = TextStyle\(fontSize = PrimitiveTokens\.Font\.FontSize42, lineHeight = PrimitiveTokens\.Font\.FontLineHeight52, letterSpacing = PrimitiveTokens\.Font\.FontLetterSpacing12\)/,
+  );
+  // Labels have no letter-spacing token, so TextStyle keeps its default.
+  assert.match(typography, /val labelXxsm = TextStyle\(fontSize = [^,]+, lineHeight = [^,)]+\)\n/);
+  const dimensions = await readFile(`${KT}MobileDimensions.kt`, 'utf8');
+  assert.match(dimensions, /val touchTargetMin = 48\.dp/);
+  assert.doesNotMatch(dimensions, /FontSize/);
+  await assert.rejects(readFile(`${KT}Viewport.kt`, 'utf8'));
   const primitives = await readFile(`${KT}PrimitiveTokens.kt`, 'utf8');
   assert.match(primitives, /val Scale400 = 16\.dp/);
   assert.match(primitives, /val FontLetterSpacing12 = \(-0\.86\)\.sp/);
@@ -86,9 +95,9 @@ test('token diff resolves references and reports changes', async () => {
   const sizes = async (px) => {
     const dir = await mkdtemp(`${tmpdir()}/tokens-`);
     await mkdir(`${dir}/tokens/primitive`, { recursive: true });
-    await mkdir(`${dir}/tokens/viewport`);
+    await mkdir(`${dir}/tokens/screen`);
     await writeFile(`${dir}/tokens/primitive/size.tokens.json`, JSON.stringify({ scale: { 400: { $value: { value: px, unit: 'px' } } }, spacing: { 4: { $value: '{scale.400}' } } }));
-    await writeFile(`${dir}/tokens/viewport/viewport.mobile.tokens.json`, JSON.stringify({ gap: { $value: '{spacing.4}' } }));
+    await writeFile(`${dir}/tokens/screen/mobile.tokens.json`, JSON.stringify({ gap: { $value: '{spacing.4}' } }));
     return loadTokens(dir);
   };
   assert.deepEqual(diffTokens(await sizes(16), await sizes(20)), [
@@ -114,14 +123,14 @@ test('platform overrides drop or replace a token on one platform only', async ()
   const ext = (platforms) => ({ 'com.glsnxt.platforms': platforms });
   for (const mode of ['light', 'dark']) await edit(`semantic/color.${mode}`, (j) => (j.surface['brand-hover'].$extensions = ext({ kotlin: false })));
   await edit('primitive/color', (j) => (j.blue['700'].$extensions = ext({ kotlin: { $value: '#112233' } })));
-  for (const v of ['desktop', 'mobile', 'locker']) await edit(`viewport/viewport.${v}`, (j) => (j.h1['font-size'].$extensions = ext({ kotlin: { $value: '{font.size.24}' } })));
+  for (const v of ['desktop', 'mobile', 'locker']) await edit(`screen/${v}`, (j) => (j.h1['font-size'].$extensions = ext({ kotlin: { $value: '{font.size.24}' } })));
   execFileSync('node', ['build.mjs'], { cwd: dir });
 
   const css = await readFile(`${dir}/packages/web/dist/tokens.css`, 'utf8');
   assert.match(css, /--unity-surface-brand-hover:/);
   assert.match(css, /--unity-h1-font-size: var\(--unity-font-size-42\);/);
   assert.doesNotMatch(await readFile(`${dir}/${KT}color/SurfaceColors.kt`, 'utf8'), /brandHover/);
-  assert.match(await readFile(`${dir}/${KT}Viewport.kt`, 'utf8'), /fun desktopViewport\(\) = Viewport\([^)]*h1FontSize = PrimitiveTokens\.Font\.FontSize24,/);
+  assert.match(await readFile(`${dir}/${KT}MobileTypography.kt`, 'utf8'), /val h1 = TextStyle\(fontSize = PrimitiveTokens\.Font\.FontSize24,/);
   const md = await readFile(`${dir}/TOKENS.md`, 'utf8');
   assert.match(md, /\| `surface\.brand-hover` \|.*\| — \|$/m);
   // The overridden primitive shows in its own table and in every semantic token that references it.

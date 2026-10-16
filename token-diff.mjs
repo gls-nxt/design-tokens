@@ -9,9 +9,9 @@ const MODED = {
   'semantic/color.light': 'light',
   'semantic/color.dark': 'dark',
   'semantic/font': null,
-  'viewport/viewport.desktop': 'desktop',
-  'viewport/viewport.mobile': 'mobile',
-  'viewport/viewport.locker': 'locker',
+  'screen/desktop': 'desktop',
+  'screen/mobile': 'mobile',
+  'screen/locker': 'locker',
 };
 
 // The tokens one platform sees: `com.glsnxt.platforms` drops (`false`) or replaces (`{ $value }`) a token or group.
