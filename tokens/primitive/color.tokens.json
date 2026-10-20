@@ -1,6 +1,7 @@
 {
   "$type": "color",
   "base": {
+    "$description": "Raw color value (primitive). Do not apply directly, use semantic Theme tokens.",
     "black": {
       "$value": "#191919"
     },
@@ -42,13 +43,16 @@
   },
   "brand": {
     "gls-blue": {
+      "$description": "Fixed GLS corporate blue, does not change with the Brand collection. Raw color value (primitive). Do not apply directly, use semantic Theme tokens.",
       "$value": "#061ab1"
     },
     "gls-yellow": {
+      "$description": "Fixed GLS corporate yellow, does not change with the Brand collection. Raw color value (primitive). Do not apply directly, use semantic Theme tokens.",
       "$value": "#ffd100"
     }
   },
   "blue": {
+    "$description": "Raw color value (primitive). Do not apply directly, use semantic Theme tokens.",
     "100": {
       "$value": "#f7f9ff"
     },
@@ -87,6 +91,7 @@
     }
   },
   "yellow": {
+    "$description": "Raw color value (primitive). Do not apply directly, use semantic Theme tokens.",
     "100": {
       "$value": "#fffdf0"
     },
@@ -125,6 +130,7 @@
     }
   },
   "gray": {
+    "$description": "Raw color value (primitive). Do not apply directly, use semantic Theme tokens.",
     "100": {
       "$value": "#fcfcfd"
     },
@@ -166,6 +172,7 @@
     }
   },
   "red": {
+    "$description": "Raw color value (primitive). Do not apply directly, use semantic Theme tokens.",
     "100": {
       "$value": "#fff5f5"
     },
@@ -204,6 +211,7 @@
     }
   },
   "orange": {
+    "$description": "Raw color value (primitive). Do not apply directly, use semantic Theme tokens.",
     "100": {
       "$value": "#fff5eb"
     },
@@ -242,6 +250,7 @@
     }
   },
   "green": {
+    "$description": "Raw color value (primitive). Do not apply directly, use semantic Theme tokens.",
     "100": {
       "$value": "#f3fbf5"
     },
@@ -280,6 +289,7 @@
     }
   },
   "blue-dark": {
+    "$description": "Raw color value (primitive). Do not apply directly, use semantic Theme tokens.",
     "100": {
       "$value": "#06071a"
     },
@@ -318,6 +328,7 @@
     }
   },
   "yellow-dark": {
+    "$description": "Raw color value (primitive). Do not apply directly, use semantic Theme tokens.",
     "100": {
       "$value": "#171400"
     },
@@ -356,6 +367,7 @@
     }
   },
   "gray-dark": {
+    "$description": "Raw color value (primitive). Do not apply directly, use semantic Theme tokens.",
     "100": {
       "$value": "#111113"
     },
@@ -397,6 +409,7 @@
     }
   },
   "red-dark": {
+    "$description": "Raw color value (primitive). Do not apply directly, use semantic Theme tokens.",
     "100": {
       "$value": "#1c0d0d"
     },
@@ -435,6 +448,7 @@
     }
   },
   "orange-dark": {
+    "$description": "Raw color value (primitive). Do not apply directly, use semantic Theme tokens.",
     "100": {
       "$value": "#1a1300"
     },
@@ -473,6 +487,7 @@
     }
   },
   "green-dark": {
+    "$description": "Raw color value (primitive). Do not apply directly, use semantic Theme tokens.",
     "100": {
       "$value": "#0c140e"
     },
