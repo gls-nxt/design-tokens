@@ -2,7 +2,7 @@
   "$type": "color",
   "border": {
     "default": {
-      "$description": "Visible edge of controls such as inputs, checkboxes and the off toggle. Meets 3:1 on the page.",
+      "$description": "Visible edge of controls such as inputs, checkboxes and the off toggle.",
       "$value": "{gray.550}"
     },
     "subtle": {
