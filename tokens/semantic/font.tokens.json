@@ -2,9 +2,11 @@
   "font": {
     "$type": "fontFamily",
     "heading": {
+      "$description": "Brand font for headings. Changes per brand mode.",
       "$value": "{font.family.newson-gls}"
     },
     "body": {
+      "$description": "Brand font for body text. Changes per brand mode.",
       "$value": "{font.family.newson-gls}"
     }
   }

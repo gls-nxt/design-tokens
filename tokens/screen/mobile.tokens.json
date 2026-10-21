@@ -2,6 +2,7 @@
   "touch-target": {
     "$type": "dimension",
     "min": {
+      "$description": "Minimum tap area for small controls. Larger in Locker.",
       "$value": {
         "value": 48,
         "unit": "px"
@@ -11,6 +12,7 @@
   "control": {
     "$type": "dimension",
     "height": {
+      "$description": "Control height (button/input min-height). Desktop/Mobile 0 (no effect), larger in Locker.",
       "$value": {
         "value": 0,
         "unit": "px"
@@ -20,186 +22,231 @@
   "h1": {
     "$type": "dimension",
     "font-size": {
+      "$description": "Font size for h1, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.size.42}"
     },
     "line-height": {
+      "$description": "Line height for h1, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.line-height.52}"
     },
     "letter-spacing": {
+      "$description": "Letter spacing for h1, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.letter-spacing.12}"
     }
   },
   "h2": {
     "$type": "dimension",
     "font-size": {
+      "$description": "Font size for h2, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.size.34}"
     },
     "line-height": {
+      "$description": "Line height for h2, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.line-height.40}"
     },
     "letter-spacing": {
+      "$description": "Letter spacing for h2, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.letter-spacing.11}"
     }
   },
   "h3": {
     "$type": "dimension",
     "font-size": {
+      "$description": "Font size for h3, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.size.24}"
     },
     "line-height": {
+      "$description": "Line height for h3, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.line-height.32}"
     },
     "letter-spacing": {
+      "$description": "Letter spacing for h3, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.letter-spacing.10}"
     }
   },
   "h4": {
     "$type": "dimension",
     "font-size": {
+      "$description": "Font size for h4, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.size.22}"
     },
     "line-height": {
+      "$description": "Line height for h4, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.line-height.28}"
     },
     "letter-spacing": {
+      "$description": "Letter spacing for h4, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.letter-spacing.9}"
     }
   },
   "h5": {
     "$type": "dimension",
     "font-size": {
+      "$description": "Font size for h5, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.size.20}"
     },
     "line-height": {
+      "$description": "Line height for h5, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.line-height.26}"
     },
     "letter-spacing": {
+      "$description": "Letter spacing for h5, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.letter-spacing.8}"
     }
   },
   "h6": {
     "$type": "dimension",
     "font-size": {
+      "$description": "Font size for h6, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.size.18}"
     },
     "line-height": {
+      "$description": "Line height for h6, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.line-height.24}"
     },
     "letter-spacing": {
+      "$description": "Letter spacing for h6, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.letter-spacing.7}"
     }
   },
   "body-xl": {
     "$type": "dimension",
     "font-size": {
+      "$description": "Font size for body xl, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.size.20}"
     },
     "line-height": {
+      "$description": "Line height for body xl, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.line-height.32}"
     },
     "letter-spacing": {
+      "$description": "Letter spacing for body xl, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.letter-spacing.6}"
     }
   },
   "body-lg": {
     "$type": "dimension",
     "font-size": {
+      "$description": "Font size for body lg, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.size.18}"
     },
     "line-height": {
+      "$description": "Line height for body lg, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.line-height.28}"
     },
     "letter-spacing": {
+      "$description": "Letter spacing for body lg, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.letter-spacing.5}"
     }
   },
   "body-md": {
     "$type": "dimension",
     "font-size": {
+      "$description": "Font size for body md, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.size.16}"
     },
     "line-height": {
+      "$description": "Line height for body md, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.line-height.24}"
     },
     "letter-spacing": {
+      "$description": "Letter spacing for body md, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.letter-spacing.4}"
     }
   },
   "body-sm": {
     "$type": "dimension",
     "font-size": {
+      "$description": "Font size for body sm, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.size.14}"
     },
     "line-height": {
+      "$description": "Line height for body sm, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.line-height.22}"
     },
     "letter-spacing": {
+      "$description": "Letter spacing for body sm, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.letter-spacing.3}"
     }
   },
   "body-xsm": {
     "$type": "dimension",
     "font-size": {
+      "$description": "Font size for body xsm, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.size.12}"
     },
     "line-height": {
+      "$description": "Line height for body xsm, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.line-height.20}"
     },
     "letter-spacing": {
+      "$description": "Letter spacing for body xsm, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.letter-spacing.2}"
     }
   },
   "label-xl": {
     "$type": "dimension",
     "font-size": {
+      "$description": "Font size for label xl, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.size.20}"
     },
     "line-height": {
+      "$description": "Line height for label xl, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.line-height.24}"
     }
   },
   "label-lg": {
     "$type": "dimension",
     "font-size": {
+      "$description": "Font size for label lg, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.size.18}"
     },
     "line-height": {
+      "$description": "Line height for label lg, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.line-height.22}"
     }
   },
   "label-md": {
     "$type": "dimension",
     "font-size": {
+      "$description": "Font size for label md, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.size.16}"
     },
     "line-height": {
+      "$description": "Line height for label md, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.line-height.20}"
     }
   },
   "label-sm": {
     "$type": "dimension",
     "font-size": {
+      "$description": "Font size for label sm, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.size.14}"
     },
     "line-height": {
+      "$description": "Line height for label sm, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.line-height.18}"
     }
   },
   "label-xsm": {
     "$type": "dimension",
     "font-size": {
+      "$description": "Font size for label xsm, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.size.12}"
     },
     "line-height": {
+      "$description": "Line height for label xsm, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.line-height.16}"
     }
   },
   "label-xxsm": {
     "$type": "dimension",
     "font-size": {
+      "$description": "Font size for label xxsm, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.size.10}"
     },
     "line-height": {
+      "$description": "Line height for label xxsm, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.line-height.14}"
     }
   }
