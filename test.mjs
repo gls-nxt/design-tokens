@@ -23,11 +23,11 @@ test('kotlin has data class with light and dark factories', async () => {
 
 test('css has viewport overrides and non-colour primitives', async () => {
   const css = await readFile('packages/web/dist/tokens.css', 'utf8');
-  assert.match(css, /:root \{[^}]*--unity-spacing-4: var\(--unity-scale-400\);/);
+  assert.match(css, /:root \{[^}]*--unity-spacing-4: 1rem;/);
   assert.match(css, /:root \{[^}]*--unity-h1-font-size: var\(--unity-font-size-42\);/);
   assert.match(css, /\[data-viewport="locker"\] \{[^}]*--unity-h1-font-size: var\(--unity-font-size-48\);/);
-  assert.match(css, /--unity-scale-400: 1rem;/);
-  assert.match(css, /--unity-scale-0: 0;/);
+  assert.match(css, /--unity-spacing-0: 0;/);
+  assert.doesNotMatch(css, /--unity-scale-/);
   assert.match(css, /--unity-font-letter-spacing-12: -0\.05375rem;/);
   assert.doesNotMatch(css, /\dpx;/);
   // Group-level $type must not leak across files: colours stay colours.
@@ -48,7 +48,7 @@ test('kotlin has mobile typography, mobile dimensions and typed primitives', asy
   assert.doesNotMatch(dimensions, /FontSize/);
   await assert.rejects(readFile(`${KT}Viewport.kt`, 'utf8'));
   const primitives = await readFile(`${KT}PrimitiveTokens.kt`, 'utf8');
-  assert.match(primitives, /val Scale400 = 16\.dp/);
+  assert.match(primitives, /val Spacing4 = 16\.dp/);
   assert.match(primitives, /val FontLetterSpacing12 = \(-0\.86\)\.sp/);
 });
 
@@ -96,13 +96,12 @@ test('token diff resolves references and reports changes', async () => {
     const dir = await mkdtemp(`${tmpdir()}/tokens-`);
     await mkdir(`${dir}/tokens/primitive`, { recursive: true });
     await mkdir(`${dir}/tokens/target`);
-    await writeFile(`${dir}/tokens/primitive/size.tokens.json`, JSON.stringify({ scale: { 400: { $value: { value: px, unit: 'px' } } }, spacing: { 4: { $value: '{scale.400}' } } }));
+    await writeFile(`${dir}/tokens/primitive/size.tokens.json`, JSON.stringify({ spacing: { 4: { $value: { value: px, unit: 'px' } } } }));
     await writeFile(`${dir}/tokens/target/mobile.tokens.json`, JSON.stringify({ gap: { $value: '{spacing.4}' } }));
     return loadTokens(dir);
   };
   assert.deepEqual(diffTokens(await sizes(16), await sizes(20)), [
     ['gap (mobile)', '16px', '20px'],
-    ['scale.400', '16px', '20px'],
     ['spacing.4', '16px', '20px'],
   ]);
 

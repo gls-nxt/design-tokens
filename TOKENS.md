@@ -333,68 +333,45 @@ CSS `--unity-<family>-<step>`, Kotlin `PrimitiveColors.<Family>.<Family><Step>`.
 | `font.letter-spacing.11` | `-0.68px` | `--unity-font-letter-spacing-11` | `PrimitiveTokens.Font.FontLetterSpacing11` |
 | `font.letter-spacing.12` | `-0.86px` | `--unity-font-letter-spacing-12` | `PrimitiveTokens.Font.FontLetterSpacing12` |
 
-### scale
-
-| Token | Value | CSS | Kotlin |
-| --- | --- | --- | --- |
-| `scale.0` | `0px` | `--unity-scale-0` | `PrimitiveTokens.Scale.Scale0` |
-| `scale.25` | `1px` | `--unity-scale-25` | `PrimitiveTokens.Scale.Scale25` |
-| `scale.50` | `2px` | `--unity-scale-50` | `PrimitiveTokens.Scale.Scale50` |
-| `scale.100` | `4px` | `--unity-scale-100` | `PrimitiveTokens.Scale.Scale100` |
-| `scale.150` | `6px` | `--unity-scale-150` | `PrimitiveTokens.Scale.Scale150` |
-| `scale.200` | `8px` | `--unity-scale-200` | `PrimitiveTokens.Scale.Scale200` |
-| `scale.250` | `10px` | `--unity-scale-250` | `PrimitiveTokens.Scale.Scale250` |
-| `scale.300` | `12px` | `--unity-scale-300` | `PrimitiveTokens.Scale.Scale300` |
-| `scale.400` | `16px` | `--unity-scale-400` | `PrimitiveTokens.Scale.Scale400` |
-| `scale.500` | `20px` | `--unity-scale-500` | `PrimitiveTokens.Scale.Scale500` |
-| `scale.600` | `24px` | `--unity-scale-600` | `PrimitiveTokens.Scale.Scale600` |
-| `scale.700` | `28px` | `--unity-scale-700` | `PrimitiveTokens.Scale.Scale700` |
-| `scale.800` | `32px` | `--unity-scale-800` | `PrimitiveTokens.Scale.Scale800` |
-| `scale.850` | `36px` | `--unity-scale-850` | `PrimitiveTokens.Scale.Scale850` |
-| `scale.900` | `40px` | `--unity-scale-900` | `PrimitiveTokens.Scale.Scale900` |
-| `scale.1000` | `48px` | `--unity-scale-1000` | `PrimitiveTokens.Scale.Scale1000` |
-| `scale.1600` | `64px` | `--unity-scale-1600` | `PrimitiveTokens.Scale.Scale1600` |
-| `scale.full` | `9999999px` | `--unity-scale-full` | `PrimitiveTokens.Scale.ScaleFull` |
-
 ### spacing
 
 | Token | Value | CSS | Kotlin |
 | --- | --- | --- | --- |
-| `spacing.0` | `0px`<br>`scale.0` | `--unity-spacing-0` | `PrimitiveTokens.Spacing.Spacing0` |
-| `spacing.1` | `4px`<br>`scale.100` | `--unity-spacing-1` | `PrimitiveTokens.Spacing.Spacing1` |
-| `spacing.2` | `8px`<br>`scale.200` | `--unity-spacing-2` | `PrimitiveTokens.Spacing.Spacing2` |
-| `spacing.3` | `12px`<br>`scale.300` | `--unity-spacing-3` | `PrimitiveTokens.Spacing.Spacing3` |
-| `spacing.4` | `16px`<br>`scale.400` | `--unity-spacing-4` | `PrimitiveTokens.Spacing.Spacing4` |
-| `spacing.5` | `20px`<br>`scale.500` | `--unity-spacing-5` | `PrimitiveTokens.Spacing.Spacing5` |
-| `spacing.6` | `24px`<br>`scale.600` | `--unity-spacing-6` | `PrimitiveTokens.Spacing.Spacing6` |
-| `spacing.7` | `28px`<br>`scale.700` | `--unity-spacing-7` | `PrimitiveTokens.Spacing.Spacing7` |
-| `spacing.8` | `32px`<br>`scale.800` | `--unity-spacing-8` | `PrimitiveTokens.Spacing.Spacing8` |
-| `spacing.9` | `36px`<br>`scale.850` | `--unity-spacing-9` | `PrimitiveTokens.Spacing.Spacing9` |
-| `spacing.10` | `40px`<br>`scale.900` | `--unity-spacing-10` | `PrimitiveTokens.Spacing.Spacing10` |
-| `spacing.12` | `48px`<br>`scale.1000` | `--unity-spacing-12` | `PrimitiveTokens.Spacing.Spacing12` |
-| `spacing.16` | `64px`<br>`scale.1600` | `--unity-spacing-16` | `PrimitiveTokens.Spacing.Spacing16` |
-| `spacing.0-5` | `2px`<br>`scale.50` | `--unity-spacing-0-5` | `PrimitiveTokens.Spacing.Spacing05` |
-| `spacing.1-5` | `6px`<br>`scale.150` | `--unity-spacing-1-5` | `PrimitiveTokens.Spacing.Spacing15` |
+| `spacing.0` | `0px` | `--unity-spacing-0` | `PrimitiveTokens.Spacing.Spacing0` |
+| `spacing.1` | `4px` | `--unity-spacing-1` | `PrimitiveTokens.Spacing.Spacing1` |
+| `spacing.2` | `8px` | `--unity-spacing-2` | `PrimitiveTokens.Spacing.Spacing2` |
+| `spacing.3` | `12px` | `--unity-spacing-3` | `PrimitiveTokens.Spacing.Spacing3` |
+| `spacing.4` | `16px` | `--unity-spacing-4` | `PrimitiveTokens.Spacing.Spacing4` |
+| `spacing.5` | `20px` | `--unity-spacing-5` | `PrimitiveTokens.Spacing.Spacing5` |
+| `spacing.6` | `24px` | `--unity-spacing-6` | `PrimitiveTokens.Spacing.Spacing6` |
+| `spacing.7` | `28px` | `--unity-spacing-7` | `PrimitiveTokens.Spacing.Spacing7` |
+| `spacing.8` | `32px` | `--unity-spacing-8` | `PrimitiveTokens.Spacing.Spacing8` |
+| `spacing.9` | `36px` | `--unity-spacing-9` | `PrimitiveTokens.Spacing.Spacing9` |
+| `spacing.10` | `40px` | `--unity-spacing-10` | `PrimitiveTokens.Spacing.Spacing10` |
+| `spacing.12` | `48px` | `--unity-spacing-12` | `PrimitiveTokens.Spacing.Spacing12` |
+| `spacing.16` | `64px` | `--unity-spacing-16` | `PrimitiveTokens.Spacing.Spacing16` |
+| `spacing.0-5` | `2px` | `--unity-spacing-0-5` | `PrimitiveTokens.Spacing.Spacing05` |
+| `spacing.1-5` | `6px` | `--unity-spacing-1-5` | `PrimitiveTokens.Spacing.Spacing15` |
 
 ### radius
 
 | Token | Value | CSS | Kotlin |
 | --- | --- | --- | --- |
-| `radius.0` | `0px`<br>`scale.0` | `--unity-radius-0` | `PrimitiveTokens.Radius.Radius0` |
-| `radius.sm` | `4px`<br>`scale.100` | `--unity-radius-sm` | `PrimitiveTokens.Radius.RadiusSm` |
-| `radius.md` | `8px`<br>`scale.200` | `--unity-radius-md` | `PrimitiveTokens.Radius.RadiusMd` |
-| `radius.lg` | `12px`<br>`scale.300` | `--unity-radius-lg` | `PrimitiveTokens.Radius.RadiusLg` |
-| `radius.xl` | `16px`<br>`scale.400` | `--unity-radius-xl` | `PrimitiveTokens.Radius.RadiusXl` |
-| `radius.2xl` | `20px`<br>`scale.500` | `--unity-radius-2xl` | `PrimitiveTokens.Radius.Radius2xl` |
-| `radius.full` | `9999999px`<br>`scale.full` | `--unity-radius-full` | `PrimitiveTokens.Radius.RadiusFull` |
+| `radius.0` | `0px` | `--unity-radius-0` | `PrimitiveTokens.Radius.Radius0` |
+| `radius.sm` | `4px` | `--unity-radius-sm` | `PrimitiveTokens.Radius.RadiusSm` |
+| `radius.md` | `8px` | `--unity-radius-md` | `PrimitiveTokens.Radius.RadiusMd` |
+| `radius.lg` | `12px` | `--unity-radius-lg` | `PrimitiveTokens.Radius.RadiusLg` |
+| `radius.xl` | `16px` | `--unity-radius-xl` | `PrimitiveTokens.Radius.RadiusXl` |
+| `radius.2xl` | `20px` | `--unity-radius-2xl` | `PrimitiveTokens.Radius.Radius2xl` |
+| `radius.full` | `9999999px` | `--unity-radius-full` | `PrimitiveTokens.Radius.RadiusFull` |
 
 ### border-width
 
 | Token | Value | CSS | Kotlin |
 | --- | --- | --- | --- |
-| `border-width.none` | `0px`<br>`scale.0` | `--unity-border-width-none` | `PrimitiveTokens.BorderWidth.BorderWidthNone` |
-| `border-width.sm` | `1px`<br>`scale.25` | `--unity-border-width-sm` | `PrimitiveTokens.BorderWidth.BorderWidthSm` |
-| `border-width.md` | `2px`<br>`scale.50` | `--unity-border-width-md` | `PrimitiveTokens.BorderWidth.BorderWidthMd` |
+| `border-width.none` | `0px` | `--unity-border-width-none` | `PrimitiveTokens.BorderWidth.BorderWidthNone` |
+| `border-width.sm` | `1px` | `--unity-border-width-sm` | `PrimitiveTokens.BorderWidth.BorderWidthSm` |
+| `border-width.md` | `2px` | `--unity-border-width-md` | `PrimitiveTokens.BorderWidth.BorderWidthMd` |
 
 ### component-height
 
