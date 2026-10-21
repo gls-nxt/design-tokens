@@ -6,8 +6,8 @@ const KT_PACKAGE = 'com.glsnxt.designtokens';
 const KT_DIR = `packages/kotlin/src/commonMain/kotlin/${KT_PACKAGE.replaceAll('.', '/')}/`;
 const HEADER = '// Generated from tokens/ by build.mjs. Do not edit.';
 const KOTLIN_KEYWORDS = new Set('as break class continue do else false for fun if in interface is null object package return super this throw true try typealias typeof val var when while'.split(' '));
-// Screen modes from Figma's Viewport collection. The web gets all three; Kotlin only gets mobile.
-const SCREENS = ['desktop', 'mobile', 'locker'];
+// Targets from Figma's Viewport collection. The web gets all three; Kotlin only gets mobile.
+const TARGETS = ['desktop', 'mobile', 'locker'];
 
 const inFile = (name) => (token) => token.filePath.endsWith(`tokens/${name}.tokens.json`);
 const isPrimitive = (token) => token.filePath.includes('/primitive/');
@@ -55,15 +55,15 @@ const sdFor = (sources, files) =>
 // :root holds every primitive and the default modes (light, desktop). The other modes override only their own tokens.
 const sds = {
   light: sdFor(
-    ['tokens/semantic/color.light.tokens.json', 'tokens/screen/desktop.tokens.json'],
+    ['tokens/semantic/color.light.tokens.json', 'tokens/target/desktop.tokens.json'],
     [{ format: 'css/variables', options: { outputReferences: true, selector: ':root' } }],
   ),
   dark: sdFor(['tokens/semantic/color.dark.tokens.json'], [
     cssFile('[data-theme="dark"]', inFile('semantic/color.dark')),
     cssFile(['@media (prefers-color-scheme: dark)', ':root:not([data-theme="light"])'], inFile('semantic/color.dark')),
   ]),
-  mobile: sdFor(['tokens/screen/mobile.tokens.json'], [cssFile('[data-viewport="mobile"]', inFile('screen/mobile'))]),
-  locker: sdFor(['tokens/screen/locker.tokens.json'], [cssFile('[data-viewport="locker"]', inFile('screen/locker'))]),
+  mobile: sdFor(['tokens/target/mobile.tokens.json'], [cssFile('[data-viewport="mobile"]', inFile('target/mobile'))]),
+  locker: sdFor(['tokens/target/locker.tokens.json'], [cssFile('[data-viewport="locker"]', inFile('target/locker'))]),
 };
 
 // --- Kotlin naming: primitives `PrimitiveColors.BlueDark.BlueDark700`, `PrimitiveTokens.Spacing.Spacing4`;
@@ -130,25 +130,25 @@ const ktDataClass = (cls, field, modes) => {
 const groupField = (t) => camel(t.path.slice(1).join('-'));
 const pathField = (t) => camel(t.path.join('-'));
 
-// Screen tokens for Kotlin: a group made only of these keys (`h1.font-size`, `h1.line-height`, …) becomes one
+// Target tokens for Kotlin: a group made only of these keys (`h1.font-size`, `h1.line-height`, …) becomes one
 // `TextStyle` in `MobileTypography`; every other token becomes a `Dp` in `MobileDimensions`.
 const TEXT_STYLE_KEYS = ['font-size', 'line-height', 'letter-spacing'];
-function screenGroups(tokens) {
+function targetGroups(tokens) {
   const text = new Map();
   const other = [];
   for (const [group, list] of groupBy(tokens)) {
     const isStyle = list.map((t) => t.path.length === 2 && TEXT_STYLE_KEYS.includes(t.path[1]));
     if (isStyle.every(Boolean)) text.set(group, list);
     else if (isStyle.some(Boolean)) {
-      throw new Error(`Screen group "${group}" mixes text style keys (${TEXT_STYLE_KEYS.join(', ')}) with others: ${list.map((t) => t.path.join('.')).join(', ')}`);
+      throw new Error(`Target group "${group}" mixes text style keys (${TEXT_STYLE_KEYS.join(', ')}) with others: ${list.map((t) => t.path.join('.')).join(', ')}`);
     } else other.push(...list);
   }
   return { text, other };
 }
-const screenKotlinName = (t, text) => (text.has(t.path[0]) ? `MobileTypography.${camel(t.path[0])}.${camel(t.path[1])}` : `MobileDimensions.${pathField(t)}`);
+const targetKotlinName = (t, text) => (text.has(t.path[0]) ? `MobileTypography.${camel(t.path[0])}.${camel(t.path[1])}` : `MobileDimensions.${pathField(t)}`);
 
 function ktMobileFiles(tokens) {
-  const { text, other } = screenGroups(tokens);
+  const { text, other } = targetGroups(tokens);
   const styles = [...text].map(([group, list]) => `    val ${camel(group)} = TextStyle(${list.map((t) => `${camel(t.path[1])} = ${ktValue(t)}`).join(', ')})`);
   return {
     'MobileTypography.kt': ktFile(
@@ -163,7 +163,7 @@ function ktMobileFiles(tokens) {
   };
 }
 
-function kotlinFiles({ colorPrimitives, otherPrimitives, light, dark, fonts, screens }) {
+function kotlinFiles({ colorPrimitives, otherPrimitives, light, dark, fonts, targets }) {
   const color = `${KT_PACKAGE}.color`;
   const files = { 'color/PrimitiveColors.kt': ktFile(color, ktPrimitives('PrimitiveColors', colorPrimitives)) };
   const darkGroups = groupBy(dark);
@@ -176,10 +176,10 @@ function kotlinFiles({ colorPrimitives, otherPrimitives, light, dark, fonts, scr
     const obj = `${pascal(group)}Tokens`;
     files[`${obj}.kt`] = ktFile(KT_PACKAGE, `object ${obj} {\n${tokens.map((t) => `    val ${groupField(t)} = ${ktValue(t)}`).join('\n')}\n}\n`);
   }
-  return { ...files, ...ktMobileFiles(screens.mobile) };
+  return { ...files, ...ktMobileFiles(targets.mobile) };
 }
 
-function kotlinNames({ colorPrimitives, otherPrimitives, light, fonts, screens }) {
+function kotlinNames({ colorPrimitives, otherPrimitives, light, fonts, targets }) {
   const primitive = (obj) => (t) => `${obj}.${pascal(t.path[0])}.${pascal(t.path.join('-'))}`;
   return [
     ...colorPrimitives.map(primitive('PrimitiveColors')),
@@ -187,8 +187,8 @@ function kotlinNames({ colorPrimitives, otherPrimitives, light, fonts, screens }
     ...light.map((t) => `${pascal(t.path[0])}Colors.${groupField(t)}`),
     ...fonts.map((t) => `${pascal(t.path[0])}Tokens.${groupField(t)}`),
     // One name per text style, since `title-1.font-size` and `title1.line-height` both land in `val title1`.
-    ...[...screenGroups(screens.mobile).text.keys()].map((group) => `MobileTypography.${camel(group)}`),
-    ...screenGroups(screens.mobile).other.map((t) => `MobileDimensions.${pathField(t)}`),
+    ...[...targetGroups(targets.mobile).text.keys()].map((group) => `MobileTypography.${camel(group)}`),
+    ...targetGroups(targets.mobile).other.map((t) => `MobileDimensions.${pathField(t)}`),
   ];
 }
 
@@ -265,18 +265,18 @@ function tokensMarkdown(web, kotlin, cssNames) {
 
   out.push(
     '',
-    '## Screen sizes',
+    '## Target sizes',
     '',
-    'Text and touch sizes per screen, with the primitive each one references. On the web, desktop is the default; set `data-viewport="mobile"` or `data-viewport="locker"` to switch. Kotlin gets the mobile values only.',
+    'Text and touch sizes per target (desktop, mobile, locker), with the primitive each one references. On the web, desktop is the default; set `data-viewport="mobile"` or `data-viewport="locker"` to switch. Kotlin gets the mobile values only.',
     '',
-    `| Token | ${SCREENS.map(pascal).join(' | ')} | CSS | Kotlin |`,
-    `| --- | ${SCREENS.map(() => '---').join(' | ')} | --- | --- |`,
+    `| Token | ${TARGETS.map(pascal).join(' | ')} | CSS | Kotlin |`,
+    `| --- | ${TARGETS.map(() => '---').join(' | ')} | --- | --- |`,
   );
-  const [wScr, kScr] = [web, kotlin].map((set) => Object.fromEntries(SCREENS.map((v) => [v, byPath(set.screens[v])])));
-  const { text } = screenGroups(kotlin.screens.mobile);
-  for (const t of rows(web.screens.desktop, kotlin.screens.desktop)) {
-    const modes = SCREENS.map((v) => mode(v, key(t), wScr[v], kScr[v]));
-    const kt = ktCell(screenKotlinName(t, text), [mode('mobile', key(t), wScr.mobile, kScr.mobile)], valueCell);
+  const [wTgt, kTgt] = [web, kotlin].map((set) => Object.fromEntries(TARGETS.map((v) => [v, byPath(set.targets[v])])));
+  const { text } = targetGroups(kotlin.targets.mobile);
+  for (const t of rows(web.targets.desktop, kotlin.targets.desktop)) {
+    const modes = TARGETS.map((v) => mode(v, key(t), wTgt[v], kTgt[v]));
+    const kt = ktCell(targetKotlinName(t, text), [mode('mobile', key(t), wTgt.mobile, kTgt.mobile)], valueCell);
     out.push(`| \`${key(t)}\` | ${modes.map(([, v]) => valueCell(v)).join(' | ')} | ${css(t)} | ${kt} |`);
   }
 
@@ -333,7 +333,7 @@ const tokenSets = (resolved) => {
     light: resolved.light.filter(inFile('semantic/color.light')),
     dark: resolved.dark.filter(inFile('semantic/color.dark')),
     fonts: resolved.light.filter(inFile('semantic/font')),
-    screens: Object.fromEntries(SCREENS.map((v) => [v, resolved[v === 'desktop' ? 'light' : v].filter(inFile(`screen/${v}`))])),
+    targets: Object.fromEntries(TARGETS.map((v) => [v, resolved[v === 'desktop' ? 'light' : v].filter(inFile(`target/${v}`))])),
   };
 };
 const resolved = { web: await resolveFor('web'), kotlin: await resolveFor('kotlin') };
@@ -342,7 +342,7 @@ const kotlin = tokenSets(resolved.kotlin);
 
 for (const set of [web, kotlin]) {
   checkParity({ light: set.light, dark: set.dark });
-  checkParity(set.screens);
+  checkParity(set.targets);
 }
 checkNames(kotlinNames(kotlin));
 
@@ -366,5 +366,5 @@ for (const hex of hexes) await fs.writeFile(swatchFile(hex), swatchSvg(hex));
 await fs.writeFile('TOKENS.md', tokensMarkdown(web, kotlin, cssNames));
 console.log(
   `Built ${web.colorPrimitives.length + web.otherPrimitives.length} primitives, ${web.light.length} colour tokens × 2 modes, ` +
-    `${web.screens.desktop.length} screen tokens × ${SCREENS.length} screens, ${web.fonts.length} font tokens (web).`,
+    `${web.targets.desktop.length} target tokens × ${TARGETS.length} targets, ${web.fonts.length} font tokens (web).`,
 );

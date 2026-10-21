@@ -113,9 +113,9 @@ Light and dark values, with the primitive each one references. The Kotlin column
 | `text.warning` | ![#813600](docs/swatches/813600.svg) `#813600`<br>`orange.1000` | ![#ffd9b3](docs/swatches/ffd9b3.svg) `#ffd9b3`<br>`orange-dark.900` | `--unity-text-warning` | `TextColors.warning` |
 | `text.info` | ![#3242c0](docs/swatches/3242c0.svg) `#3242c0`<br>`blue.600` | ![#89a0ff](docs/swatches/89a0ff.svg) `#89a0ff`<br>`blue-dark.900` | `--unity-text-info` | `TextColors.info` |
 
-## Screen sizes
+## Target sizes
 
-Text and touch sizes per screen, with the primitive each one references. On the web, desktop is the default; set `data-viewport="mobile"` or `data-viewport="locker"` to switch. Kotlin gets the mobile values only.
+Text and touch sizes per target (desktop, mobile, locker), with the primitive each one references. On the web, desktop is the default; set `data-viewport="mobile"` or `data-viewport="locker"` to switch. Kotlin gets the mobile values only.
 
 | Token | Desktop | Mobile | Locker | CSS | Kotlin |
 | --- | --- | --- | --- | --- | --- |

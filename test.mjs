@@ -95,9 +95,9 @@ test('token diff resolves references and reports changes', async () => {
   const sizes = async (px) => {
     const dir = await mkdtemp(`${tmpdir()}/tokens-`);
     await mkdir(`${dir}/tokens/primitive`, { recursive: true });
-    await mkdir(`${dir}/tokens/screen`);
+    await mkdir(`${dir}/tokens/target`);
     await writeFile(`${dir}/tokens/primitive/size.tokens.json`, JSON.stringify({ scale: { 400: { $value: { value: px, unit: 'px' } } }, spacing: { 4: { $value: '{scale.400}' } } }));
-    await writeFile(`${dir}/tokens/screen/mobile.tokens.json`, JSON.stringify({ gap: { $value: '{spacing.4}' } }));
+    await writeFile(`${dir}/tokens/target/mobile.tokens.json`, JSON.stringify({ gap: { $value: '{spacing.4}' } }));
     return loadTokens(dir);
   };
   assert.deepEqual(diffTokens(await sizes(16), await sizes(20)), [
@@ -106,20 +106,20 @@ test('token diff resolves references and reports changes', async () => {
     ['spacing.4', '16px', '20px'],
   ]);
 
-  // A base checkout from before the move to tokens/screen/ still compares values: only the real change shows.
+  // A base checkout from before the move to tokens/target/ still compares values: only the real change shows.
   const legacy = async (px) => {
     const dir = await mkdtemp(`${tmpdir()}/tokens-`);
     await mkdir(`${dir}/tokens/viewport`, { recursive: true });
     await writeFile(`${dir}/tokens/viewport/viewport.mobile.tokens.json`, JSON.stringify({ gap: { $value: { value: px, unit: 'px' } }, pad: { $value: { value: 8, unit: 'px' } } }));
     return loadTokens(dir);
   };
-  const screen = async (px) => {
+  const target = async (px) => {
     const dir = await mkdtemp(`${tmpdir()}/tokens-`);
-    await mkdir(`${dir}/tokens/screen`, { recursive: true });
-    await writeFile(`${dir}/tokens/screen/mobile.tokens.json`, JSON.stringify({ gap: { $value: { value: px, unit: 'px' } }, pad: { $value: { value: 8, unit: 'px' } } }));
+    await mkdir(`${dir}/tokens/target`, { recursive: true });
+    await writeFile(`${dir}/tokens/target/mobile.tokens.json`, JSON.stringify({ gap: { $value: { value: px, unit: 'px' } }, pad: { $value: { value: 8, unit: 'px' } } }));
     return loadTokens(dir);
   };
-  assert.deepEqual(diffTokens(await legacy(16), await screen(20)), [['gap (mobile)', '16px', '20px']]);
+  assert.deepEqual(diffTokens(await legacy(16), await target(20)), [['gap (mobile)', '16px', '20px']]);
 });
 
 test('platform overrides drop or replace a token on one platform only', async () => {
@@ -139,7 +139,7 @@ test('platform overrides drop or replace a token on one platform only', async ()
   for (const mode of ['light', 'dark']) await edit(`semantic/color.${mode}`, (j) => (j.surface['brand-hover'].$extensions = ext({ kotlin: false })));
   await edit('primitive/color', (j) => (j.blue['700'].$extensions = ext({ kotlin: { $value: '#112233' } })));
   for (const v of ['desktop', 'mobile', 'locker']) {
-    await edit(`screen/${v}`, (j) => {
+    await edit(`target/${v}`, (j) => {
       j.h1['font-size'].$extensions = ext({ kotlin: { $value: '{font.size.24}' } });
       j['touch-target'].min.$extensions = ext({ web: false });
     });
@@ -152,7 +152,7 @@ test('platform overrides drop or replace a token on one platform only', async ()
   assert.doesNotMatch(await readFile(`${dir}/${KT}color/SurfaceColors.kt`, 'utf8'), /brandHover/);
   assert.match(await readFile(`${dir}/${KT}MobileTypography.kt`, 'utf8'), /val h1 = TextStyle\(fontSize = PrimitiveTokens\.Font\.FontSize24,/);
   const md = await readFile(`${dir}/TOKENS.md`, 'utf8');
-  // A screen token only Kotlin has: no CSS name, Kotlin values in the screen columns.
+  // A target token only Kotlin has: no CSS name, Kotlin values in the target columns.
   assert.doesNotMatch(css, /--unity-touch-target-min:/);
   assert.match(await readFile(`${dir}/${KT}MobileDimensions.kt`, 'utf8'), /val touchTargetMin = 48\.dp/);
   assert.match(md, /^\| `touch-target\.min` \| `24px` \| `48px` \| `64px` \| — \| `MobileDimensions\.touchTargetMin` \|$/m);
@@ -177,7 +177,7 @@ test('build fails when two text style groups generate the same Kotlin name', asy
   await cp('build.mjs', `${dir}/build.mjs`);
   await symlink(`${process.cwd()}/node_modules`, `${dir}/node_modules`);
   for (const v of ['desktop', 'mobile', 'locker']) {
-    const file = `${dir}/tokens/screen/${v}.tokens.json`;
+    const file = `${dir}/tokens/target/${v}.tokens.json`;
     const json = JSON.parse(await readFile(file, 'utf8'));
     // Different groups and different fields, but both become `MobileTypography.title1`.
     json['title-1'] = { $type: 'dimension', 'font-size': { $value: '{font.size.24}' } };

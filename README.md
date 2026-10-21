@@ -11,7 +11,7 @@ Neither platform parses JSON at runtime, and Kotlin developers never need Node.
 The tokens cover:
 - colours, in light and dark mode;
 - sizes, spacing, radii, breakpoints and type scales as primitives;
-- text and touch sizes per screen (desktop, mobile, locker). Kotlin gets the mobile ones only;
+- text and touch sizes per target (desktop, mobile, locker). Kotlin gets the mobile ones only;
 - brand fonts.
 
 ## Packages
@@ -42,7 +42,7 @@ Both packages are published to GitHub Packages and share one version.
 
    Sizes are in `rem` (16px = 1rem), so they scale with the user's browser font size.
 
-   Screen tokens default to desktop. For mobile or the locker, set `data-viewport="mobile"` or `data-viewport="locker"` on `<html>`.
+   Target tokens default to desktop. For mobile or the locker, set `data-viewport="mobile"` or `data-viewport="locker"` on `<html>`.
 
 Use the CSS variables only. The package has no JavaScript or TypeScript exports, so components can't hard-code a colour value that ignores the active mode.
 
@@ -84,7 +84,7 @@ The library targets Android, `iosArm64` and `iosSimulatorArm64`. It is built wit
    - `primitive/` holds the raw values: `color`, `size` and `font`.
    - `semantic/color.light.tokens.json` and `color.dark.tokens.json` reference the primitives, as in `{blue.700}`.
    - `semantic/font.tokens.json` holds the brand fonts.
-   - `screen/<desktop|mobile|locker>.tokens.json` reference the primitives, as in `{font.size.42}`. A group made only of `font-size`, `line-height` and `letter-spacing` becomes one Kotlin `TextStyle`; any other token becomes a `Dp`. A group can't mix the two.
+   - `target/<desktop|mobile|locker>.tokens.json` reference the primitives, as in `{font.size.42}`. A group made only of `font-size`, `line-height` and `letter-spacing` becomes one Kotlin `TextStyle`; any other token becomes a `Dp`. A group can't mix the two.
    - Set `$type` on groups, not at the top of a file. Style Dictionary merges all files, so a top-level `$type` overrides the other files.
 2. **Set platform-specific values if you need them.** A token can differ per platform (`web` or `kotlin`). Add `$extensions` to the token:
    ```json
@@ -100,14 +100,14 @@ The library targets Android, `iosArm64` and `iosSimulatorArm64`. It is built wit
    - `false` leaves the token out of that platform. On a group, it leaves out the whole group.
    - `{ "$value": … }` gives that platform its own value.
    - Platforms you don't list get the token's own `$value`.
-   - Set the override in every mode file (light and dark, or all three screens). Otherwise the build fails because the modes define different tokens.
+   - Set the override in every mode file (light and dark, or all three targets). Otherwise the build fails because the modes define different tokens.
 3. **Run `pnpm install && pnpm build && pnpm test`.** To set up pnpm, see the [prerequisites in CONTRIBUTING.md](CONTRIBUTING.md#prerequisites).
 4. **Commit `TOKENS.md` and `docs/swatches/` with your token change.** The build regenerates them, and CI fails if they're out of date.
 
 [`TOKENS.md`](TOKENS.md) previews every token in every mode, with its CSS and Kotlin names. On a pull request, CI posts a comment that lists each changed token before and after.
 
 The build fails in four cases:
-- the light and dark files, or the three screen files, define different tokens on a platform;
+- the light and dark files, or the three target files, define different tokens on a platform;
 - a `com.glsnxt.platforms` entry names an unknown platform or has an invalid value;
 - a generated name is not a valid identifier;
 - two tokens generate the same Kotlin name.
@@ -155,7 +155,7 @@ A renamed or removed token breaks consumers, so it needs a major version.
 The tokens are exported from the Unity Design System Figma library:
 - the **Primitives** collection;
 - the **Theme** collection, with its Light and Dark modes;
-- the **Viewport** collection, with its Desktop, Mobile and Locker modes, exported to `tokens/screen/`.
+- the **Viewport** collection, with its Desktop, Mobile and Locker modes, exported to `tokens/target/`.
 
 References to the **Brand** collection are resolved to its `GLS` mode (`light/N` → `blue/N`, `dark/N` → `blue-dark/N`, fonts → Newson GLS). The other Brand modes are not exported yet.
 

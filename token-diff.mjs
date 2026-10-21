@@ -9,10 +9,10 @@ const MODED = {
   'semantic/color.light': 'light',
   'semantic/color.dark': 'dark',
   'semantic/font': null,
-  'screen/desktop': 'desktop',
-  'screen/mobile': 'mobile',
-  'screen/locker': 'locker',
-  // Before the move to tokens/screen/. Kept so a diff against an older base compares values instead of listing every screen token as new.
+  'target/desktop': 'desktop',
+  'target/mobile': 'mobile',
+  'target/locker': 'locker',
+  // Before the move to tokens/target/. Kept so a diff against an older base compares values instead of listing every target token as new.
   'viewport/viewport.desktop': 'desktop',
   'viewport/viewport.mobile': 'mobile',
   'viewport/viewport.locker': 'locker',
