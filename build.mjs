@@ -186,7 +186,9 @@ function kotlinNames({ colorPrimitives, otherPrimitives, light, fonts, screens }
     ...otherPrimitives.map(primitive('PrimitiveTokens')),
     ...light.map((t) => `${pascal(t.path[0])}Colors.${groupField(t)}`),
     ...fonts.map((t) => `${pascal(t.path[0])}Tokens.${groupField(t)}`),
-    ...screens.mobile.map((t) => screenKotlinName(t, screenGroups(screens.mobile).text)),
+    // One name per text style, since `title-1.font-size` and `title1.line-height` both land in `val title1`.
+    ...[...screenGroups(screens.mobile).text.keys()].map((group) => `MobileTypography.${camel(group)}`),
+    ...screenGroups(screens.mobile).other.map((t) => `MobileDimensions.${pathField(t)}`),
   ];
 }
 

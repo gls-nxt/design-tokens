@@ -167,3 +167,22 @@ test('platform overrides drop or replace a token on one platform only', async ()
   await edit('semantic/color.light', (j) => (j.surface['brand-default'].$extensions = { 'com.glsnxt.platforms': [] }));
   assert.throws(() => execFileSync('node', ['build.mjs'], { cwd: dir, stdio: 'pipe' }), /com\.glsnxt\.platforms must be an object/);
 });
+
+test('build fails when two text style groups generate the same Kotlin name', async () => {
+  const { cp, mkdtemp, symlink, writeFile } = await import('node:fs/promises');
+  const { execFileSync } = await import('node:child_process');
+  const { tmpdir } = await import('node:os');
+  const dir = await mkdtemp(`${tmpdir()}/tokens-`);
+  await cp('tokens', `${dir}/tokens`, { recursive: true });
+  await cp('build.mjs', `${dir}/build.mjs`);
+  await symlink(`${process.cwd()}/node_modules`, `${dir}/node_modules`);
+  for (const v of ['desktop', 'mobile', 'locker']) {
+    const file = `${dir}/tokens/screen/${v}.tokens.json`;
+    const json = JSON.parse(await readFile(file, 'utf8'));
+    // Different groups and different fields, but both become `MobileTypography.title1`.
+    json['title-1'] = { $type: 'dimension', 'font-size': { $value: '{font.size.24}' } };
+    json.title1 = { $type: 'dimension', 'line-height': { $value: '{font.line-height.32}' } };
+    await writeFile(file, JSON.stringify(json));
+  }
+  assert.throws(() => execFileSync('node', ['build.mjs'], { cwd: dir, stdio: 'pipe' }), /Generated names collide: MobileTypography\.title1/);
+});
