@@ -67,7 +67,7 @@ const sds = {
 };
 
 // --- Kotlin naming: primitives `PrimitiveColors.BlueDark.BlueDark700`, `PrimitiveTokens.Spacing.Spacing4`;
-// semantic `SurfaceColors.selectionDefault`, `MobileTypography.h1`, `MobileDimensions.touchTargetMin`, `FontTokens.heading`
+// semantic `SurfaceColors.selectionDefault`, `MobileTypography.headingXl`, `MobileDimensions.touchTargetMin`, `FontTokens.heading`
 const pascal = (s) => s.replace(/(?:^|-)(\w)/g, (_, c) => c.toUpperCase());
 const camel = (s) => pascal(s).replace(/^./, (c) => c.toLowerCase());
 const primitiveObject = (token) => (token.$type === 'color' ? 'PrimitiveColors' : 'PrimitiveTokens');
@@ -130,7 +130,7 @@ const ktDataClass = (cls, field, modes) => {
 const groupField = (t) => camel(t.path.slice(1).join('-'));
 const pathField = (t) => camel(t.path.join('-'));
 
-// Target tokens for Kotlin: a group made only of these keys (`h1.font-size`, `h1.line-height`, …) becomes one
+// Target tokens for Kotlin: a group made only of these keys (`heading-xl.font-size`, `heading-xl.line-height`, …) becomes one
 // `TextStyle` in `MobileTypography`; every other token becomes a `Dp` in `MobileDimensions`.
 const TEXT_STYLE_KEYS = ['font-size', 'line-height', 'letter-spacing'];
 function targetGroups(tokens) {
