@@ -68,7 +68,7 @@ Use the CSS variables only. The package has no JavaScript or TypeScript exports,
    ```kotlin
    val surface = if (isSystemInDarkTheme()) darkSurfaceColors() else lightSurfaceColors()
    Box(Modifier.background(surface.selectionDefault).padding(PrimitiveTokens.Spacing.Spacing4))
-   Text("Hi", style = MobileTypography.h1.merge(TextStyle(fontFamily = newsonGls, fontWeight = FontWeight.Bold)))
+   Text("Hi", style = MobileTypography.headingXl.merge(TextStyle(fontFamily = newsonGls, fontWeight = FontWeight.Bold)))
    Box(Modifier.sizeIn(minWidth = MobileDimensions.touchTargetMin, minHeight = MobileDimensions.touchTargetMin))
    ```
    `MobileTypography` sets size, line height and letter spacing. The font files live in your app, so merge in the font family and weight.
@@ -122,7 +122,7 @@ Token path segments are lowercase kebab-case. Each platform derives its names fr
 | `surface.selection-default` | `--unity-surface-selection-default` | `SurfaceColors.selectionDefault` |
 | `surface.base-1` | `--unity-surface-base-1` | `SurfaceColors.base1` |
 | `spacing.4` | `--unity-spacing-4` | `PrimitiveTokens.Spacing.Spacing4` |
-| `h1.font-size` | `--unity-h1-font-size` | `MobileTypography.h1.fontSize` |
+| `heading-xl.font-size` | `--unity-heading-xl-font-size` | `MobileTypography.headingXl.fontSize` |
 | `touch-target.min` | `--unity-touch-target-min` | `MobileDimensions.touchTargetMin` |
 
 Two rules apply:
@@ -155,7 +155,7 @@ A renamed or removed token breaks consumers, so it needs a major version.
 The tokens are exported from the Unity Design System Figma library:
 - the **Primitives** collection;
 - the **Theme** collection, with its Light and Dark modes;
-- the **Viewport** collection, with its Desktop, Mobile and Locker modes, exported to `tokens/target/`.
+- the **Device target** collection (formerly Viewport), with its Desktop, Mobile and Locker modes, exported to `tokens/target/`.
 
 References to the **Brand** collection are resolved to its `GLS` mode (`light/N` → `blue/N`, `dark/N` → `blue-dark/N`, fonts → Newson GLS). The other Brand modes are not exported yet.
 

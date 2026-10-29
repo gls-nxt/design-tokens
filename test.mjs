@@ -24,8 +24,8 @@ test('kotlin has data class with light and dark factories', async () => {
 test('css has viewport overrides and non-colour primitives', async () => {
   const css = await readFile('packages/web/dist/tokens.css', 'utf8');
   assert.match(css, /:root \{[^}]*--unity-spacing-4: 1rem;/);
-  assert.match(css, /:root \{[^}]*--unity-h1-font-size: var\(--unity-font-size-42\);/);
-  assert.match(css, /\[data-viewport="locker"\] \{[^}]*--unity-h1-font-size: var\(--unity-font-size-48\);/);
+  assert.match(css, /:root \{[^}]*--unity-heading-xl-font-size: var\(--unity-font-size-42\);/);
+  assert.match(css, /\[data-viewport="locker"\] \{[^}]*--unity-heading-xl-font-size: var\(--unity-font-size-48\);/);
   assert.match(css, /--unity-spacing-0: 0;/);
   assert.doesNotMatch(css, /--unity-scale-/);
   assert.match(css, /--unity-font-letter-spacing-12: -0\.05375rem;/);
@@ -39,7 +39,7 @@ test('kotlin has mobile typography, mobile dimensions and typed primitives', asy
   assert.match(typography, /import androidx\.compose\.ui\.text\.TextStyle/);
   assert.match(
     typography,
-    /val h1 = TextStyle\(fontSize = PrimitiveTokens\.Font\.FontSize42, lineHeight = PrimitiveTokens\.Font\.FontLineHeight52, letterSpacing = PrimitiveTokens\.Font\.FontLetterSpacing12\)/,
+    /val headingXl = TextStyle\(fontSize = PrimitiveTokens\.Font\.FontSize42, lineHeight = PrimitiveTokens\.Font\.FontLineHeight52, letterSpacing = PrimitiveTokens\.Font\.FontLetterSpacing12\)/,
   );
   // Labels have no letter-spacing token, so TextStyle keeps its default.
   assert.match(typography, /val labelXxsm = TextStyle\(fontSize = [^,]+, lineHeight = [^,)]+\)\n/);
@@ -139,7 +139,7 @@ test('platform overrides drop or replace a token on one platform only', async ()
   await edit('primitive/color', (j) => (j.blue['700'].$extensions = ext({ kotlin: { $value: '#112233' } })));
   for (const v of ['desktop', 'mobile', 'locker']) {
     await edit(`target/${v}`, (j) => {
-      j.h1['font-size'].$extensions = ext({ kotlin: { $value: '{font.size.24}' } });
+      j["heading-xl"]['font-size'].$extensions = ext({ kotlin: { $value: '{font.size.24}' } });
       j['touch-target'].min.$extensions = ext({ web: false });
     });
   }
@@ -147,9 +147,9 @@ test('platform overrides drop or replace a token on one platform only', async ()
 
   const css = await readFile(`${dir}/packages/web/dist/tokens.css`, 'utf8');
   assert.match(css, /--unity-surface-brand-hover:/);
-  assert.match(css, /--unity-h1-font-size: var\(--unity-font-size-42\);/);
+  assert.match(css, /--unity-heading-xl-font-size: var\(--unity-font-size-42\);/);
   assert.doesNotMatch(await readFile(`${dir}/${KT}color/SurfaceColors.kt`, 'utf8'), /brandHover/);
-  assert.match(await readFile(`${dir}/${KT}MobileTypography.kt`, 'utf8'), /val h1 = TextStyle\(fontSize = PrimitiveTokens\.Font\.FontSize24,/);
+  assert.match(await readFile(`${dir}/${KT}MobileTypography.kt`, 'utf8'), /val headingXl = TextStyle\(fontSize = PrimitiveTokens\.Font\.FontSize24,/);
   const md = await readFile(`${dir}/TOKENS.md`, 'utf8');
   // A target token only Kotlin has: no CSS name, Kotlin values in the target columns.
   assert.doesNotMatch(css, /--unity-touch-target-min:/);
