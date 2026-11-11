@@ -19,7 +19,7 @@
       }
     }
   },
-  "heading-xl": {
+  "heading-1": {
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for h1, scaled per viewport (Desktop/Mobile/Locker).",
@@ -34,7 +34,7 @@
       "$value": "{font.letter-spacing.12}"
     }
   },
-  "heading-lg": {
+  "heading-2": {
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for h2, scaled per viewport (Desktop/Mobile/Locker).",
@@ -49,7 +49,7 @@
       "$value": "{font.letter-spacing.11}"
     }
   },
-  "heading-md": {
+  "heading-3": {
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for h3, scaled per viewport (Desktop/Mobile/Locker).",
@@ -64,7 +64,7 @@
       "$value": "{font.letter-spacing.10}"
     }
   },
-  "heading-sm": {
+  "heading-4": {
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for h4, scaled per viewport (Desktop/Mobile/Locker).",
@@ -79,7 +79,7 @@
       "$value": "{font.letter-spacing.9}"
     }
   },
-  "heading-xs": {
+  "heading-5": {
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for h5, scaled per viewport (Desktop/Mobile/Locker).",
@@ -94,7 +94,7 @@
       "$value": "{font.letter-spacing.8}"
     }
   },
-  "heading-xxsm": {
+  "heading-6": {
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for h6, scaled per viewport (Desktop/Mobile/Locker).",

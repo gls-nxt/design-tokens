@@ -9,7 +9,7 @@ This guide sets up `com.glsnxt:design-tokens` in a Kotlin Multiplatform + Compos
 | `PrimitiveColors` | Raw palette. Use the semantic colours instead. | `PrimitiveColors.Blue.Blue700` |
 | `<Group>Colors` + `light…()` / `dark…()` | Semantic colours per mode | `lightSurfaceColors().selectionDefault` |
 | `PrimitiveTokens` | Spacing, radius, sizes, font scale | `PrimitiveTokens.Spacing.Spacing4` |
-| `MobileTypography` | One `TextStyle` per text style: size, line height, letter spacing | `MobileTypography.headingXl` |
+| `MobileTypography` | One `TextStyle` per text style: size, line height, letter spacing | `MobileTypography.heading1` |
 | `MobileDimensions` | Mobile sizes that aren't text | `MobileDimensions.touchTargetMin` |
 | `FontTokens` | Brand font names | `FontTokens.heading` |
 
@@ -105,7 +105,7 @@ fun glsTypography(): GLSTypography {
     val newson = NewsonGLSDTP()
     fun TextStyle.withFont(weight: FontWeight) = merge(TextStyle(fontFamily = newson, fontWeight = weight))
     return GLSTypography(
-        h1 = MobileTypography.headingXl.withFont(FontWeight.Bold),
+        h1 = MobileTypography.heading1.withFont(FontWeight.Bold),
         bodyMd = MobileTypography.bodyMd.withFont(FontWeight.Normal),
         labelSm = MobileTypography.labelSm.withFont(FontWeight.Medium),
         // …
