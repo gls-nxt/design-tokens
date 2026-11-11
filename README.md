@@ -36,7 +36,7 @@ Both packages are published to GitHub Packages and share one version.
    ```css
    @import '@gls-nxt/design-tokens/tokens.css';
 
-   .button { background: var(--unity-surface-selection-default); }
+   .button { background: var(--unity-surface-selection); }
    ```
    Dark mode follows the OS setting. To force a mode, set `data-theme="dark"` or `data-theme="light"` on `<html>`.
 
@@ -67,8 +67,8 @@ Use the CSS variables only. The package has no JavaScript or TypeScript exports,
 3. **Use the tokens.** Choose the colour mode in your theme. Text and touch sizes are already the mobile ones:
    ```kotlin
    val surface = if (isSystemInDarkTheme()) darkSurfaceColors() else lightSurfaceColors()
-   Box(Modifier.background(surface.selectionDefault).padding(PrimitiveTokens.Spacing.Spacing4))
-   Text("Hi", style = MobileTypography.headingXl.merge(TextStyle(fontFamily = newsonGls, fontWeight = FontWeight.Bold)))
+   Box(Modifier.background(surface.selection).padding(PrimitiveTokens.Spacing.Spacing4))
+   Text("Hi", style = MobileTypography.heading1.merge(TextStyle(fontFamily = newsonGls, fontWeight = FontWeight.Bold)))
    Box(Modifier.sizeIn(minWidth = MobileDimensions.touchTargetMin, minHeight = MobileDimensions.touchTargetMin))
    ```
    `MobileTypography` sets size, line height and letter spacing. The font files live in your app, so merge in the font family and weight.
@@ -119,10 +119,10 @@ Token path segments are lowercase kebab-case. Each platform derives its names fr
 | Token | CSS | Kotlin |
 | --- | --- | --- |
 | `blue.700` | `--unity-blue-700` | `PrimitiveColors.Blue.Blue700` |
-| `surface.selection-default` | `--unity-surface-selection-default` | `SurfaceColors.selectionDefault` |
+| `surface.selection` | `--unity-surface-selection` | `SurfaceColors.selection` |
 | `surface.base-1` | `--unity-surface-base-1` | `SurfaceColors.base1` |
 | `spacing.4` | `--unity-spacing-4` | `PrimitiveTokens.Spacing.Spacing4` |
-| `heading-xl.font-size` | `--unity-heading-xl-font-size` | `MobileTypography.headingXl.fontSize` |
+| `heading-1.font-size` | `--unity-heading-1-font-size` | `MobileTypography.heading1.fontSize` |
 | `touch-target.min` | `--unity-touch-target-min` | `MobileDimensions.touchTargetMin` |
 
 Two rules apply:
