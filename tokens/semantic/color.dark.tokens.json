@@ -265,6 +265,32 @@
     "inverse": {
       "$description": "Background of tooltips and toasts. Dark in Light mode, white in Dark mode.",
       "$value": "{base.white}"
+    },
+    "track-default": {
+      "$description": "Track of a segmented control.",
+      "$value": "{gray-dark.200}"
+    },
+    "track-hover": {
+      "$description": "Track of a segmented control. Hover state.",
+      "$value": "{gray-dark.300}",
+      "$extensions": { "com.glsnxt.platforms": { "kotlin": false } }
+    },
+    "track-pressed": {
+      "$description": "Track of a segmented control. Pressed state.",
+      "$value": "{gray-dark.400}"
+    },
+    "track-selected-default": {
+      "$description": "Selected segment of a segmented control.",
+      "$value": "{gray-dark.600}"
+    },
+    "track-selected-hover": {
+      "$description": "Selected segment of a segmented control. Hover state.",
+      "$value": "{gray-dark.700}",
+      "$extensions": { "com.glsnxt.platforms": { "kotlin": false } }
+    },
+    "track-selected-pressed": {
+      "$description": "Selected segment of a segmented control. Pressed state.",
+      "$value": "{gray-dark.700}"
     }
   },
   "text": {
