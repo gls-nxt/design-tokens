@@ -67,7 +67,7 @@ const sds = {
 };
 
 // --- Kotlin naming: primitives `PrimitiveColors.BlueDark.BlueDark700`, `PrimitiveTokens.Spacing.Spacing4`;
-// semantic `SurfaceColors.selectionDefault`, `MobileTypography.heading1`, `MobileDimensions.touchTargetMin`, `FontTokens.heading`
+// semantic `SurfaceColors.selection`, `MobileTypography.heading1`, `MobileDimensions.touchTargetMin`, `FontTokens.heading`
 const pascal = (s) => s.replace(/(?:^|-)(\w)/g, (_, c) => c.toUpperCase());
 const camel = (s) => pascal(s).replace(/^./, (c) => c.toLowerCase());
 const primitiveObject = (token) => (token.$type === 'color' ? 'PrimitiveColors' : 'PrimitiveTokens');

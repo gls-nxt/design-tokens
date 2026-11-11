@@ -109,7 +109,7 @@
       "$value": "{font.letter-spacing.7}"
     }
   },
-  "body-xl": {
+  "body-1": {
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for body xl, scaled per viewport (Desktop/Mobile/Locker).",
@@ -124,7 +124,7 @@
       "$value": "{font.letter-spacing.6}"
     }
   },
-  "body-lg": {
+  "body-2": {
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for body lg, scaled per viewport (Desktop/Mobile/Locker).",
@@ -139,7 +139,7 @@
       "$value": "{font.letter-spacing.5}"
     }
   },
-  "body-md": {
+  "body-3": {
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for body md, scaled per viewport (Desktop/Mobile/Locker).",
@@ -154,7 +154,7 @@
       "$value": "{font.letter-spacing.4}"
     }
   },
-  "body-sm": {
+  "body-4": {
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for body sm, scaled per viewport (Desktop/Mobile/Locker).",
@@ -169,7 +169,7 @@
       "$value": "{font.letter-spacing.3}"
     }
   },
-  "body-xsm": {
+  "body-5": {
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for body xsm, scaled per viewport (Desktop/Mobile/Locker).",
@@ -184,7 +184,7 @@
       "$value": "{font.letter-spacing.2}"
     }
   },
-  "label-xl": {
+  "label-1": {
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for label xl, scaled per viewport (Desktop/Mobile/Locker).",
@@ -195,7 +195,7 @@
       "$value": "{font.line-height.24}"
     }
   },
-  "label-lg": {
+  "label-2": {
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for label lg, scaled per viewport (Desktop/Mobile/Locker).",
@@ -206,7 +206,7 @@
       "$value": "{font.line-height.22}"
     }
   },
-  "label-md": {
+  "label-3": {
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for label md, scaled per viewport (Desktop/Mobile/Locker).",
@@ -217,7 +217,7 @@
       "$value": "{font.line-height.20}"
     }
   },
-  "label-sm": {
+  "label-4": {
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for label sm, scaled per viewport (Desktop/Mobile/Locker).",
@@ -228,7 +228,7 @@
       "$value": "{font.line-height.18}"
     }
   },
-  "label-xsm": {
+  "label-5": {
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for label xsm, scaled per viewport (Desktop/Mobile/Locker).",
@@ -239,7 +239,7 @@
       "$value": "{font.line-height.16}"
     }
   },
-  "label-xxsm": {
+  "label-6": {
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for label xxsm, scaled per viewport (Desktop/Mobile/Locker).",
