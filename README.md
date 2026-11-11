@@ -88,7 +88,7 @@ The library targets Android, `iosArm64` and `iosSimulatorArm64`. It is built wit
    - Set `$type` on groups, not at the top of a file. Style Dictionary merges all files, so a top-level `$type` overrides the other files.
 2. **Set platform-specific values if you need them.** A token can differ per platform (`web` or `kotlin`). Add `$extensions` to the token:
    ```json
-   "brand-hover": {
+   "brand-strong-hover": {
      "$value": "{blue.800}",
      "$extensions": { "com.glsnxt.platforms": { "kotlin": false } }
    },
