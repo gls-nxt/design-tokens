@@ -42,11 +42,11 @@
     }
   },
   "brand": {
-    "gls-blue": {
+    "brand-blue": {
       "$description": "Fixed GLS corporate blue, does not change with the Brand collection. Raw color value (primitive). Do not apply directly, use semantic Theme tokens.",
       "$value": "#061ab1"
     },
-    "gls-yellow": {
+    "brand-yellow": {
       "$description": "Fixed GLS corporate yellow, does not change with the Brand collection. Raw color value (primitive). Do not apply directly, use semantic Theme tokens.",
       "$value": "#ffd100"
     }
@@ -294,19 +294,19 @@
       "$value": "#06071a"
     },
     "200": {
-      "$value": "#080a2a"
+      "$value": "#111422"
     },
     "300": {
-      "$value": "#0b114c"
+      "$value": "#191f38"
     },
     "400": {
-      "$value": "#0d1a73"
+      "$value": "#1f2747"
     },
     "500": {
-      "$value": "#0f28a3"
+      "$value": "#232e57"
     },
     "600": {
-      "$value": "#061ab1"
+      "$value": "#2b3769"
     },
     "700": {
       "$value": "#1238d2"

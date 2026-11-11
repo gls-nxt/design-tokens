@@ -34,7 +34,7 @@ const flatten = (node, platform, path = [], out = {}) => {
 
 const readJson = async (file) => JSON.parse(await readFile(file, 'utf8').catch(() => '{}'));
 
-// { 'blue.700': '#061ab1', 'surface.base-1 (light)': '#ffffff', 'h1.font-size (locker)': '48px', … }, with references resolved.
+// { 'blue.700': '#061ab1', 'surface.base-1 (light)': '#ffffff', 'heading-xl.font-size (locker)': '48px', … }, with references resolved.
 // Web values, plus a `[kotlin]` row wherever Kotlin's resolved value differs, as in `surface.brand-hover [kotlin] (light)`.
 export async function loadTokens(dir) {
   const web = await loadPlatform(dir, 'web');

@@ -246,7 +246,7 @@
       "$description": "Solid success fill for badges and strong emphasis. Disabled state.",
       "$value": "{green-dark.200}"
     },
-    "success-light-default": {
+    "success-light": {
       "$description": "Soft success background for alerts, banners and success fields.",
       "$value": "{green-dark.300}"
     },
@@ -279,12 +279,31 @@
       "$description": "Background of tooltips and toasts. Dark in Light mode, white in Dark mode.",
       "$value": "{base.white}"
     },
-    "neutral-strong-default": {
-      "$value": "{gray-dark.700}"
+    "segment-track-default": {
+      "$description": "Track of a segmented control.",
+      "$value": "{gray-dark.200}"
     },
-    "neutral-strong-hover": {
-      "$value": "{gray-dark.800}",
+    "segment-track-hover": {
+      "$description": "Track of a segmented control. Hover state.",
+      "$value": "{gray-dark.300}",
       "$extensions": { "com.glsnxt.platforms": { "kotlin": false } }
+    },
+    "segment-track-pressed": {
+      "$description": "Track of a segmented control. Pressed state.",
+      "$value": "{gray-dark.400}"
+    },
+    "segment-selected-default": {
+      "$description": "Selected segment of a segmented control.",
+      "$value": "{gray-dark.600}"
+    },
+    "segment-selected-hover": {
+      "$description": "Selected segment of a segmented control. Hover state.",
+      "$value": "{gray-dark.700}",
+      "$extensions": { "com.glsnxt.platforms": { "kotlin": false } }
+    },
+    "segment-selected-pressed": {
+      "$description": "Selected segment of a segmented control. Pressed state.",
+      "$value": "{gray-dark.700}"
     }
   },
   "text": {

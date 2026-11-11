@@ -19,7 +19,7 @@
       }
     }
   },
-  "h1": {
+  "heading-xl": {
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for h1, scaled per viewport (Desktop/Mobile/Locker).",
@@ -34,7 +34,7 @@
       "$value": "{font.letter-spacing.12}"
     }
   },
-  "h2": {
+  "heading-lg": {
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for h2, scaled per viewport (Desktop/Mobile/Locker).",
@@ -49,7 +49,7 @@
       "$value": "{font.letter-spacing.11}"
     }
   },
-  "h3": {
+  "heading-md": {
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for h3, scaled per viewport (Desktop/Mobile/Locker).",
@@ -64,45 +64,45 @@
       "$value": "{font.letter-spacing.10}"
     }
   },
-  "h4": {
+  "heading-sm": {
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for h4, scaled per viewport (Desktop/Mobile/Locker).",
-      "$value": "{font.size.28}"
+      "$value": "{font.size.32}"
     },
     "line-height": {
       "$description": "Line height for h4, scaled per viewport (Desktop/Mobile/Locker).",
-      "$value": "{font.line-height.32}"
+      "$value": "{font.line-height.40}"
     },
     "letter-spacing": {
       "$description": "Letter spacing for h4, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.letter-spacing.9}"
     }
   },
-  "h5": {
+  "heading-xs": {
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for h5, scaled per viewport (Desktop/Mobile/Locker).",
-      "$value": "{font.size.24}"
+      "$value": "{font.size.28}"
     },
     "line-height": {
       "$description": "Line height for h5, scaled per viewport (Desktop/Mobile/Locker).",
-      "$value": "{font.line-height.32}"
+      "$value": "{font.line-height.36}"
     },
     "letter-spacing": {
       "$description": "Letter spacing for h5, scaled per viewport (Desktop/Mobile/Locker).",
       "$value": "{font.letter-spacing.8}"
     }
   },
-  "h6": {
+  "heading-xxsm": {
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for h6, scaled per viewport (Desktop/Mobile/Locker).",
-      "$value": "{font.size.20}"
+      "$value": "{font.size.26}"
     },
     "line-height": {
       "$description": "Line height for h6, scaled per viewport (Desktop/Mobile/Locker).",
-      "$value": "{font.line-height.26}"
+      "$value": "{font.line-height.34}"
     },
     "letter-spacing": {
       "$description": "Letter spacing for h6, scaled per viewport (Desktop/Mobile/Locker).",
@@ -113,11 +113,11 @@
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for body xl, scaled per viewport (Desktop/Mobile/Locker).",
-      "$value": "{font.size.22}"
+      "$value": "{font.size.28}"
     },
     "line-height": {
       "$description": "Line height for body xl, scaled per viewport (Desktop/Mobile/Locker).",
-      "$value": "{font.line-height.32}"
+      "$value": "{font.line-height.36}"
     },
     "letter-spacing": {
       "$description": "Letter spacing for body xl, scaled per viewport (Desktop/Mobile/Locker).",
@@ -128,11 +128,11 @@
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for body lg, scaled per viewport (Desktop/Mobile/Locker).",
-      "$value": "{font.size.20}"
+      "$value": "{font.size.26}"
     },
     "line-height": {
       "$description": "Line height for body lg, scaled per viewport (Desktop/Mobile/Locker).",
-      "$value": "{font.line-height.32}"
+      "$value": "{font.line-height.34}"
     },
     "letter-spacing": {
       "$description": "Letter spacing for body lg, scaled per viewport (Desktop/Mobile/Locker).",
@@ -143,11 +143,11 @@
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for body md, scaled per viewport (Desktop/Mobile/Locker).",
-      "$value": "{font.size.18}"
+      "$value": "{font.size.24}"
     },
     "line-height": {
       "$description": "Line height for body md, scaled per viewport (Desktop/Mobile/Locker).",
-      "$value": "{font.line-height.28}"
+      "$value": "{font.line-height.32}"
     },
     "letter-spacing": {
       "$description": "Letter spacing for body md, scaled per viewport (Desktop/Mobile/Locker).",
@@ -158,11 +158,11 @@
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for body sm, scaled per viewport (Desktop/Mobile/Locker).",
-      "$value": "{font.size.16}"
+      "$value": "{font.size.22}"
     },
     "line-height": {
       "$description": "Line height for body sm, scaled per viewport (Desktop/Mobile/Locker).",
-      "$value": "{font.line-height.26}"
+      "$value": "{font.line-height.30}"
     },
     "letter-spacing": {
       "$description": "Letter spacing for body sm, scaled per viewport (Desktop/Mobile/Locker).",
@@ -173,11 +173,11 @@
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for body xsm, scaled per viewport (Desktop/Mobile/Locker).",
-      "$value": "{font.size.14}"
+      "$value": "{font.size.22}"
     },
     "line-height": {
       "$description": "Line height for body xsm, scaled per viewport (Desktop/Mobile/Locker).",
-      "$value": "{font.line-height.24}"
+      "$value": "{font.line-height.30}"
     },
     "letter-spacing": {
       "$description": "Letter spacing for body xsm, scaled per viewport (Desktop/Mobile/Locker).",
@@ -192,7 +192,7 @@
     },
     "line-height": {
       "$description": "Line height for label xl, scaled per viewport (Desktop/Mobile/Locker).",
-      "$value": "{font.line-height.28}"
+      "$value": "{font.line-height.36}"
     }
   },
   "label-lg": {
@@ -203,7 +203,7 @@
     },
     "line-height": {
       "$description": "Line height for label lg, scaled per viewport (Desktop/Mobile/Locker).",
-      "$value": "{font.line-height.26}"
+      "$value": "{font.line-height.32}"
     }
   },
   "label-md": {
@@ -214,40 +214,40 @@
     },
     "line-height": {
       "$description": "Line height for label md, scaled per viewport (Desktop/Mobile/Locker).",
-      "$value": "{font.line-height.24}"
+      "$value": "{font.line-height.28}"
     }
   },
   "label-sm": {
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for label sm, scaled per viewport (Desktop/Mobile/Locker).",
-      "$value": "{font.size.18}"
+      "$value": "{font.size.22}"
     },
     "line-height": {
       "$description": "Line height for label sm, scaled per viewport (Desktop/Mobile/Locker).",
-      "$value": "{font.line-height.24}"
+      "$value": "{font.line-height.26}"
     }
   },
   "label-xsm": {
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for label xsm, scaled per viewport (Desktop/Mobile/Locker).",
-      "$value": "{font.size.16}"
+      "$value": "{font.size.22}"
     },
     "line-height": {
       "$description": "Line height for label xsm, scaled per viewport (Desktop/Mobile/Locker).",
-      "$value": "{font.line-height.22}"
+      "$value": "{font.line-height.26}"
     }
   },
   "label-xxsm": {
     "$type": "dimension",
     "font-size": {
       "$description": "Font size for label xxsm, scaled per viewport (Desktop/Mobile/Locker).",
-      "$value": "{font.size.14}"
+      "$value": "{font.size.22}"
     },
     "line-height": {
       "$description": "Line height for label xxsm, scaled per viewport (Desktop/Mobile/Locker).",
-      "$value": "{font.line-height.16}"
+      "$value": "{font.line-height.26}"
     }
   }
 }
