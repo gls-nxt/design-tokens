@@ -41,12 +41,12 @@
       "$value": "#00000052"
     }
   },
-  "brand": {
-    "gls-blue": {
+  "gls": {
+    "blue": {
       "$description": "Fixed GLS corporate blue, does not change with the Brand collection. Raw color value (primitive). Do not apply directly, use semantic Theme tokens.",
       "$value": "#061ab1"
     },
-    "gls-yellow": {
+    "yellow": {
       "$description": "Fixed GLS corporate yellow, does not change with the Brand collection. Raw color value (primitive). Do not apply directly, use semantic Theme tokens.",
       "$value": "#ffd100"
     }

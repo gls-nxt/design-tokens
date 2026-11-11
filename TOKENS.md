@@ -19,7 +19,7 @@ Light and dark values, with the primitive each one references. The Kotlin column
 | `border.success` | ![#239e69](docs/swatches/239e69.svg) `#239e69`<br>`green.800` | ![#30a46c](docs/swatches/30a46c.svg) `#30a46c`<br>`green-dark.700` | `--unity-border-success` | `BorderColors.success` |
 | `border.warning` | ![#e66d00](docs/swatches/e66d00.svg) `#e66d00`<br>`orange.700` | ![#f76b15](docs/swatches/f76b15.svg) `#f76b15`<br>`orange-dark.700` | `--unity-border-warning` | `BorderColors.warning` |
 | `border.info` | ![#3242c0](docs/swatches/3242c0.svg) `#3242c0`<br>`blue.600` | ![#4f6cff](docs/swatches/4f6cff.svg) `#4f6cff`<br>`blue-dark.800` | `--unity-border-info` | `BorderColors.info` |
-| `border.selection-default` | ![#061ab1](docs/swatches/061ab1.svg) `#061ab1`<br>`blue.700` | ![#4f6cff](docs/swatches/4f6cff.svg) `#4f6cff`<br>`blue-dark.800` | `--unity-border-selection-default` | `BorderColors.selectionDefault` |
+| `border.selection` | ![#061ab1](docs/swatches/061ab1.svg) `#061ab1`<br>`blue.700` | ![#4f6cff](docs/swatches/4f6cff.svg) `#4f6cff`<br>`blue-dark.800` | `--unity-border-selection` | `BorderColors.selection` |
 
 ### effects
 
@@ -36,7 +36,7 @@ Light and dark values, with the primitive each one references. The Kotlin column
 | Token | Light | Dark | CSS | Kotlin |
 | --- | --- | --- | --- | --- |
 | `icon.default` | ![#09101c](docs/swatches/09101c.svg) `#09101c`<br>`gray.1200` | ![#edeef0](docs/swatches/edeef0.svg) `#edeef0`<br>`gray-dark.1200` | `--unity-icon-default` | `IconColors.default` |
-| `icon.secondary` | ![#667085](docs/swatches/667085.svg) `#667085`<br>`gray.600` | ![#afb3ba](docs/swatches/afb3ba.svg) `#afb3ba`<br>`gray-dark.1100` | `--unity-icon-secondary` | `IconColors.secondary` |
+| `icon.subtle` | ![#667085](docs/swatches/667085.svg) `#667085`<br>`gray.600` | ![#afb3ba](docs/swatches/afb3ba.svg) `#afb3ba`<br>`gray-dark.1100` | `--unity-icon-subtle` | `IconColors.subtle` |
 | `icon.disabled` | ![#98a2b3](docs/swatches/98a2b3.svg) `#98a2b3`<br>`gray.500` | ![#92979e](docs/swatches/92979e.svg) `#92979e`<br>`gray-dark.1000` | `--unity-icon-disabled` | `IconColors.disabled` |
 | `icon.on-action` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | `--unity-icon-on-action` | `IconColors.onAction` |
 | `icon.action` | ![#061ab1](docs/swatches/061ab1.svg) `#061ab1`<br>`blue.700` | ![#b8c6ff](docs/swatches/b8c6ff.svg) `#b8c6ff`<br>`blue-dark.1000` | `--unity-icon-action` | `IconColors.action` |
@@ -66,45 +66,40 @@ Light and dark values, with the primitive each one references. The Kotlin column
 | `surface.selection-default` | ![#061ab1](docs/swatches/061ab1.svg) `#061ab1`<br>`blue.700` | ![#1238d2](docs/swatches/1238d2.svg) `#1238d2`<br>`blue-dark.700` | `--unity-surface-selection-default` | `SurfaceColors.selectionDefault` |
 | `surface.selection-hover` | ![#05168f](docs/swatches/05168f.svg) `#05168f`<br>`blue.800` | ![#4f6cff](docs/swatches/4f6cff.svg) `#4f6cff`<br>`blue-dark.800` | `--unity-surface-selection-hover` | — |
 | `surface.selection-disabled` | ![#dee6ff](docs/swatches/dee6ff.svg) `#dee6ff`<br>`blue.300` | ![#0b114c](docs/swatches/0b114c.svg) `#0b114c`<br>`blue-dark.300` | `--unity-surface-selection-disabled` | `SurfaceColors.selectionDisabled` |
-| `surface.brand-default` | ![#061ab1](docs/swatches/061ab1.svg) `#061ab1`<br>`blue.700` | ![#1238d2](docs/swatches/1238d2.svg) `#1238d2`<br>`blue-dark.700` | `--unity-surface-brand-default` | `SurfaceColors.brandDefault` |
-| `surface.brand-hover` | ![#05168f](docs/swatches/05168f.svg) `#05168f`<br>`blue.800` | ![#4f6cff](docs/swatches/4f6cff.svg) `#4f6cff`<br>`blue-dark.800` | `--unity-surface-brand-hover` | — |
-| `surface.brand-pressed` | ![#04106e](docs/swatches/04106e.svg) `#04106e`<br>`blue.900` | ![#89a0ff](docs/swatches/89a0ff.svg) `#89a0ff`<br>`blue-dark.900` | `--unity-surface-brand-pressed` | `SurfaceColors.brandPressed` |
-| `surface.brand-disabled` | ![#edf2ff](docs/swatches/edf2ff.svg) `#edf2ff`<br>`blue.200` | ![#080a2a](docs/swatches/080a2a.svg) `#080a2a`<br>`blue-dark.200` | `--unity-surface-brand-disabled` | `SurfaceColors.brandDisabled` |
-| `surface.brand-light-default` | ![#dee6ff](docs/swatches/dee6ff.svg) `#dee6ff`<br>`blue.300` | ![#0f28a3](docs/swatches/0f28a3.svg) `#0f28a3`<br>`blue-dark.500` | `--unity-surface-brand-light-default` | `SurfaceColors.brandLightDefault` |
-| `surface.brand-light-hover` | ![#c4d1ff](docs/swatches/c4d1ff.svg) `#c4d1ff`<br>`blue.400` | ![#061ab1](docs/swatches/061ab1.svg) `#061ab1`<br>`blue-dark.600` | `--unity-surface-brand-light-hover` | — |
-| `surface.brand-light-pressed` | ![#8692db](docs/swatches/8692db.svg) `#8692db`<br>`blue.500` | ![#1238d2](docs/swatches/1238d2.svg) `#1238d2`<br>`blue-dark.700` | `--unity-surface-brand-light-pressed` | `SurfaceColors.brandLightPressed` |
-| `surface.brand-light-disabled` | ![#edf2ff](docs/swatches/edf2ff.svg) `#edf2ff`<br>`blue.200` | ![#0b114c](docs/swatches/0b114c.svg) `#0b114c`<br>`blue-dark.300` | `--unity-surface-brand-light-disabled` | `SurfaceColors.brandLightDisabled` |
-| `surface.error-default` | ![#ffe1e1](docs/swatches/ffe1e1.svg) `#ffe1e1`<br>`red.200` | ![#4a1316](docs/swatches/4a1316.svg) `#4a1316`<br>`red-dark.300` | `--unity-surface-error-default` | `SurfaceColors.errorDefault` |
-| `surface.error-hover` | ![#ffc7c7](docs/swatches/ffc7c7.svg) `#ffc7c7`<br>`red.300` | ![#63181c](docs/swatches/63181c.svg) `#63181c`<br>`red-dark.400` | `--unity-surface-error-hover` | — |
-| `surface.error-pressed` | ![#ffaaaa](docs/swatches/ffaaaa.svg) `#ffaaaa`<br>`red.400` | ![#7c1e23](docs/swatches/7c1e23.svg) `#7c1e23`<br>`red-dark.500` | `--unity-surface-error-pressed` | `SurfaceColors.errorPressed` |
-| `surface.error-disabled` | ![#fff5f5](docs/swatches/fff5f5.svg) `#fff5f5`<br>`red.100` | ![#330f11](docs/swatches/330f11.svg) `#330f11`<br>`red-dark.200` | `--unity-surface-error-disabled` | `SurfaceColors.errorDisabled` |
-| `surface.error-strong-default` | ![#d72d2d](docs/swatches/d72d2d.svg) `#d72d2d`<br>`red.800` | ![#96252a](docs/swatches/96252a.svg) `#96252a`<br>`red-dark.600` | `--unity-surface-error-strong-default` | `SurfaceColors.errorStrongDefault` |
-| `surface.success-strong` | ![#1e8057](docs/swatches/1e8057.svg) `#1e8057`<br>`green.900` | ![#2b6546](docs/swatches/2b6546.svg) `#2b6546`<br>`green-dark.600` | `--unity-surface-success-strong` | `SurfaceColors.successStrong` |
+| `surface.brand-strong-default` | ![#061ab1](docs/swatches/061ab1.svg) `#061ab1`<br>`blue.700` | ![#1238d2](docs/swatches/1238d2.svg) `#1238d2`<br>`blue-dark.700` | `--unity-surface-brand-strong-default` | `SurfaceColors.brandStrongDefault` |
+| `surface.brand-strong-hover` | ![#05168f](docs/swatches/05168f.svg) `#05168f`<br>`blue.800` | ![#4f6cff](docs/swatches/4f6cff.svg) `#4f6cff`<br>`blue-dark.800` | `--unity-surface-brand-strong-hover` | — |
+| `surface.brand-strong-pressed` | ![#04106e](docs/swatches/04106e.svg) `#04106e`<br>`blue.900` | ![#89a0ff](docs/swatches/89a0ff.svg) `#89a0ff`<br>`blue-dark.900` | `--unity-surface-brand-strong-pressed` | `SurfaceColors.brandStrongPressed` |
+| `surface.brand-strong-disabled` | ![#edf2ff](docs/swatches/edf2ff.svg) `#edf2ff`<br>`blue.200` | ![#080a2a](docs/swatches/080a2a.svg) `#080a2a`<br>`blue-dark.200` | `--unity-surface-brand-strong-disabled` | `SurfaceColors.brandStrongDisabled` |
+| `surface.brand-subtle-default` | ![#dee6ff](docs/swatches/dee6ff.svg) `#dee6ff`<br>`blue.300` | ![#0f28a3](docs/swatches/0f28a3.svg) `#0f28a3`<br>`blue-dark.500` | `--unity-surface-brand-subtle-default` | `SurfaceColors.brandSubtleDefault` |
+| `surface.brand-subtle-hover` | ![#c4d1ff](docs/swatches/c4d1ff.svg) `#c4d1ff`<br>`blue.400` | ![#061ab1](docs/swatches/061ab1.svg) `#061ab1`<br>`blue-dark.600` | `--unity-surface-brand-subtle-hover` | — |
+| `surface.brand-subtle-pressed` | ![#8692db](docs/swatches/8692db.svg) `#8692db`<br>`blue.500` | ![#1238d2](docs/swatches/1238d2.svg) `#1238d2`<br>`blue-dark.700` | `--unity-surface-brand-subtle-pressed` | `SurfaceColors.brandSubtlePressed` |
+| `surface.brand-subtle-disabled` | ![#edf2ff](docs/swatches/edf2ff.svg) `#edf2ff`<br>`blue.200` | ![#0b114c](docs/swatches/0b114c.svg) `#0b114c`<br>`blue-dark.300` | `--unity-surface-brand-subtle-disabled` | `SurfaceColors.brandSubtleDisabled` |
+| `surface.error-subtle-default` | ![#ffe1e1](docs/swatches/ffe1e1.svg) `#ffe1e1`<br>`red.200` | ![#4a1316](docs/swatches/4a1316.svg) `#4a1316`<br>`red-dark.300` | `--unity-surface-error-subtle-default` | `SurfaceColors.errorSubtleDefault` |
+| `surface.error-subtle-hover` | ![#ffc7c7](docs/swatches/ffc7c7.svg) `#ffc7c7`<br>`red.300` | ![#63181c](docs/swatches/63181c.svg) `#63181c`<br>`red-dark.400` | `--unity-surface-error-subtle-hover` | — |
+| `surface.error-subtle-pressed` | ![#ffaaaa](docs/swatches/ffaaaa.svg) `#ffaaaa`<br>`red.400` | ![#7c1e23](docs/swatches/7c1e23.svg) `#7c1e23`<br>`red-dark.500` | `--unity-surface-error-subtle-pressed` | `SurfaceColors.errorSubtlePressed` |
+| `surface.error-subtle-disabled` | ![#fff5f5](docs/swatches/fff5f5.svg) `#fff5f5`<br>`red.100` | ![#330f11](docs/swatches/330f11.svg) `#330f11`<br>`red-dark.200` | `--unity-surface-error-subtle-disabled` | `SurfaceColors.errorSubtleDisabled` |
+| `surface.error-strong` | ![#d72d2d](docs/swatches/d72d2d.svg) `#d72d2d`<br>`red.800` | ![#96252a](docs/swatches/96252a.svg) `#96252a`<br>`red-dark.600` | `--unity-surface-error-strong` | `SurfaceColors.errorStrong` |
+| `surface.success-strong-default` | ![#1e8057](docs/swatches/1e8057.svg) `#1e8057`<br>`green.900` | ![#2b6546](docs/swatches/2b6546.svg) `#2b6546`<br>`green-dark.600` | `--unity-surface-success-strong-default` | `SurfaceColors.successStrongDefault` |
 | `surface.success-strong-hover` | ![#156142](docs/swatches/156142.svg) `#156142`<br>`green.1000` | ![#30a46c](docs/swatches/30a46c.svg) `#30a46c`<br>`green-dark.700` | `--unity-surface-success-strong-hover` | — |
 | `surface.success-strong-pressed` | ![#0d422c](docs/swatches/0d422c.svg) `#0d422c`<br>`green.1100` | ![#33b074](docs/swatches/33b074.svg) `#33b074`<br>`green-dark.800` | `--unity-surface-success-strong-pressed` | `SurfaceColors.successStrongPressed` |
 | `surface.success-strong-disabled` | ![#dcf4e5](docs/swatches/dcf4e5.svg) `#dcf4e5`<br>`green.200` | ![#112018](docs/swatches/112018.svg) `#112018`<br>`green-dark.200` | `--unity-surface-success-strong-disabled` | `SurfaceColors.successStrongDisabled` |
-| `surface.success-light-default` | ![#dcf4e5](docs/swatches/dcf4e5.svg) `#dcf4e5`<br>`green.200` | ![#163023](docs/swatches/163023.svg) `#163023`<br>`green-dark.300` | `--unity-surface-success-light-default` | `SurfaceColors.successLightDefault` |
-| `surface.success-light-hover` | ![#c4ecd7](docs/swatches/c4ecd7.svg) `#c4ecd7`<br>`green.300` | ![#1c3f2c](docs/swatches/1c3f2c.svg) `#1c3f2c`<br>`green-dark.400` | `--unity-surface-success-light-hover` | — |
-| `surface.success-light-pressed` | ![#a7e2c5](docs/swatches/a7e2c5.svg) `#a7e2c5`<br>`green.400` | ![#235138](docs/swatches/235138.svg) `#235138`<br>`green-dark.500` | `--unity-surface-success-light-pressed` | `SurfaceColors.successLightPressed` |
-| `surface.success-light-disabled` | ![#f3fbf5](docs/swatches/f3fbf5.svg) `#f3fbf5`<br>`green.100` | ![#112018](docs/swatches/112018.svg) `#112018`<br>`green-dark.200` | `--unity-surface-success-light-disabled` | `SurfaceColors.successLightDisabled` |
-| `surface.warning-default` | ![#fff9d6](docs/swatches/fff9d6.svg) `#fff9d6`<br>`yellow.200` | ![#2b2400](docs/swatches/2b2400.svg) `#2b2400`<br>`yellow-dark.300` | `--unity-surface-warning-default` | `SurfaceColors.warningDefault` |
+| `surface.success-subtle` | ![#dcf4e5](docs/swatches/dcf4e5.svg) `#dcf4e5`<br>`green.200` | ![#163023](docs/swatches/163023.svg) `#163023`<br>`green-dark.300` | `--unity-surface-success-subtle` | `SurfaceColors.successSubtle` |
+| `surface.warning-subtle` | ![#fff9d6](docs/swatches/fff9d6.svg) `#fff9d6`<br>`yellow.200` | ![#2b2400](docs/swatches/2b2400.svg) `#2b2400`<br>`yellow-dark.300` | `--unity-surface-warning-subtle` | `SurfaceColors.warningSubtle` |
 | `surface.warning-strong` | ![#ffd100](docs/swatches/ffd100.svg) `#ffd100`<br>`yellow.600` | ![#ffd100](docs/swatches/ffd100.svg) `#ffd100`<br>`yellow-dark.800` | `--unity-surface-warning-strong` | `SurfaceColors.warningStrong` |
 | `surface.overlay` | ![#667085](docs/swatches/667085.svg) `#667085`<br>`gray.600` | ![#111113](docs/swatches/111113.svg) `#111113`<br>`gray-dark.100` | `--unity-surface-overlay` | `SurfaceColors.overlay` |
-| `surface.tooltip-toast` | ![#191919](docs/swatches/191919.svg) `#191919`<br>`base.black` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | `--unity-surface-tooltip-toast` | `SurfaceColors.tooltipToast` |
-| `surface.neutral-strong-default` | ![#d0d5dd](docs/swatches/d0d5dd.svg) `#d0d5dd`<br>`gray.400` | ![#43484e](docs/swatches/43484e.svg) `#43484e`<br>`gray-dark.700` | `--unity-surface-neutral-strong-default` | `SurfaceColors.neutralStrongDefault` |
-| `surface.neutral-strong-hover` | ![#98a2b3](docs/swatches/98a2b3.svg) `#98a2b3`<br>`gray.500` | ![#5a6169](docs/swatches/5a6169.svg) `#5a6169`<br>`gray-dark.800` | `--unity-surface-neutral-strong-hover` | — |
+| `surface.inverse` | ![#191919](docs/swatches/191919.svg) `#191919`<br>`base.black` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | `--unity-surface-inverse` | `SurfaceColors.inverse` |
 
 ### text
 
 | Token | Light | Dark | CSS | Kotlin |
 | --- | --- | --- | --- | --- |
-| `text.primary` | ![#09101c](docs/swatches/09101c.svg) `#09101c`<br>`gray.1200` | ![#edeef0](docs/swatches/edeef0.svg) `#edeef0`<br>`gray-dark.1200` | `--unity-text-primary` | `TextColors.primary` |
-| `text.secondary` | ![#667085](docs/swatches/667085.svg) `#667085`<br>`gray.600` | ![#afb3ba](docs/swatches/afb3ba.svg) `#afb3ba`<br>`gray-dark.1100` | `--unity-text-secondary` | `TextColors.secondary` |
+| `text.default` | ![#09101c](docs/swatches/09101c.svg) `#09101c`<br>`gray.1200` | ![#edeef0](docs/swatches/edeef0.svg) `#edeef0`<br>`gray-dark.1200` | `--unity-text-default` | `TextColors.default` |
+| `text.subtle` | ![#667085](docs/swatches/667085.svg) `#667085`<br>`gray.600` | ![#afb3ba](docs/swatches/afb3ba.svg) `#afb3ba`<br>`gray-dark.1100` | `--unity-text-subtle` | `TextColors.subtle` |
 | `text.disabled` | ![#98a2b3](docs/swatches/98a2b3.svg) `#98a2b3`<br>`gray.500` | ![#92979e](docs/swatches/92979e.svg) `#92979e`<br>`gray-dark.1000` | `--unity-text-disabled` | `TextColors.disabled` |
 | `text.inverse` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | ![#09101c](docs/swatches/09101c.svg) `#09101c`<br>`gray.1200` | `--unity-text-inverse` | `TextColors.inverse` |
 | `text.on-action` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | `--unity-text-on-action` | `TextColors.onAction` |
 | `text.on-white` | ![#09101c](docs/swatches/09101c.svg) `#09101c`<br>`gray.1200` | ![#09101c](docs/swatches/09101c.svg) `#09101c`<br>`gray.1200` | `--unity-text-on-white` | `TextColors.onWhite` |
-| `text.link` | ![#061ab1](docs/swatches/061ab1.svg) `#061ab1`<br>`blue.700` | ![#dde6ff](docs/swatches/dde6ff.svg) `#dde6ff`<br>`blue-dark.1100` | `--unity-text-link` | `TextColors.link` |
+| `text.link-default` | ![#061ab1](docs/swatches/061ab1.svg) `#061ab1`<br>`blue.700` | ![#dde6ff](docs/swatches/dde6ff.svg) `#dde6ff`<br>`blue-dark.1100` | `--unity-text-link-default` | `TextColors.linkDefault` |
 | `text.link-hover` | ![#05168f](docs/swatches/05168f.svg) `#05168f`<br>`blue.800` | ![#dde6ff](docs/swatches/dde6ff.svg) `#dde6ff`<br>`blue-dark.1100` | `--unity-text-link-hover` | — |
 | `text.link-pressed` | ![#04106e](docs/swatches/04106e.svg) `#04106e`<br>`blue.900` | ![#f2f5ff](docs/swatches/f2f5ff.svg) `#f2f5ff`<br>`blue-dark.1200` | `--unity-text-link-pressed` | `TextColors.linkPressed` |
 | `text.link-disabled` | ![#8692db](docs/swatches/8692db.svg) `#8692db`<br>`blue.500` | ![#767b82](docs/swatches/767b82.svg) `#767b82`<br>`gray-dark.900` | `--unity-text-link-disabled` | `TextColors.linkDisabled` |
@@ -192,9 +187,9 @@ CSS `--unity-<family>-<step>`, Kotlin `PrimitiveColors.<Family>.<Family><Step>`.
 | ![#00000003](docs/swatches/00000003.svg) | ![#00000005](docs/swatches/00000005.svg) | ![#00000008](docs/swatches/00000008.svg) | ![#0000000a](docs/swatches/0000000a.svg) | ![#0000000d](docs/swatches/0000000d.svg) | ![#00000014](docs/swatches/00000014.svg) | ![#0000001f](docs/swatches/0000001f.svg) | ![#00000029](docs/swatches/00000029.svg) | ![#0000003d](docs/swatches/0000003d.svg) | ![#00000052](docs/swatches/00000052.svg) |
 | `#00000003` | `#00000005` | `#00000008` | `#0000000a` | `#0000000d` | `#00000014` | `#0000001f` | `#00000029` | `#0000003d` | `#00000052` |
 
-### brand
+### gls
 
-| gls-blue | gls-yellow |
+| blue | yellow |
 | --- | --- |
 | ![#061ab1](docs/swatches/061ab1.svg) | ![#ffd100](docs/swatches/ffd100.svg) |
 | `#061ab1` | `#ffd100` |
