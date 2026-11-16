@@ -123,7 +123,7 @@
       "$description": "Surfaces above base-3, such as nested cards and popovers.",
       "$value": "{gray-dark.300}"
     },
-    "secondary-default": {
+    "secondary": {
       "$description": "Fill of neutral, low emphasis actions such as the secondary button.",
       "$value": "{gray-dark.500}"
     },
@@ -140,7 +140,7 @@
       "$description": "Fill of neutral, low emphasis actions such as the secondary button. Disabled state.",
       "$value": "{gray-dark.400}"
     },
-    "tertiary-default": {
+    "tertiary": {
       "$description": "Background of form controls and neutral hover and pressed states.",
       "$value": "{gray-dark.300}"
     },
@@ -161,7 +161,7 @@
       "$description": "White fill that stays white in both themes, for elements placed on action colours.",
       "$value": "{base.white}"
     },
-    "selection-default": {
+    "selection": {
       "$description": "Fill of selected controls such as a checked toggle, checkbox or radio.",
       "$value": "{blue-dark.700}"
     },
@@ -174,7 +174,7 @@
       "$description": "Fill of selected controls such as a checked toggle, checkbox or radio. Disabled state.",
       "$value": "{blue-dark.300}"
     },
-    "brand-strong-default": {
+    "brand-strong": {
       "$description": "Fill of primary actions such as the primary button.",
       "$value": "{blue-dark.700}"
     },
@@ -191,7 +191,7 @@
       "$description": "Fill of primary actions such as the primary button. Disabled state.",
       "$value": "{blue-dark.200}"
     },
-    "brand-subtle-default": {
+    "brand-subtle": {
       "$description": "Soft tinted brand fill for secondary brand actions and chips.",
       "$value": "{blue-dark.500}"
     },
@@ -208,7 +208,7 @@
       "$description": "Soft tinted brand fill for secondary brand actions and chips. Disabled state.",
       "$value": "{blue-dark.300}"
     },
-    "error-subtle-default": {
+    "error-subtle": {
       "$description": "Soft error background for alerts, banners and error fields.",
       "$value": "{red-dark.300}"
     },
@@ -229,7 +229,7 @@
       "$description": "Solid error fill for badges and strong emphasis.",
       "$value": "{red-dark.600}"
     },
-    "success-strong-default": {
+    "success-strong": {
       "$description": "Solid success fill for badges and strong emphasis.",
       "$value": "{green-dark.600}"
     },
@@ -266,7 +266,7 @@
       "$description": "Background of tooltips and toasts. Dark in Light mode, white in Dark mode.",
       "$value": "{base.white}"
     },
-    "track-default": {
+    "track": {
       "$description": "Track of a segmented control.",
       "$value": "{gray-dark.200}"
     },
@@ -279,7 +279,7 @@
       "$description": "Track of a segmented control. Pressed state.",
       "$value": "{gray-dark.400}"
     },
-    "track-selected-default": {
+    "track-selected": {
       "$description": "Selected segment of a segmented control.",
       "$value": "{gray-dark.600}"
     },
@@ -318,7 +318,7 @@
       "$description": "Text that stays dark on a light fill in both themes.",
       "$value": "{gray.1200}"
     },
-    "link-default": {
+    "link": {
       "$description": "Inline link text.",
       "$value": "{blue-dark.1100}"
     },

@@ -8,15 +8,15 @@ const KT = 'packages/kotlin/src/commonMain/kotlin/com/glsnxt/designtokens/';
 test('css has light root and dark overrides', async () => {
   const css = await readFile('packages/web/dist/tokens.css', 'utf8');
   assert.match(css, /:root \{[^}]*--unity-blue-700: #061ab1;/);
-  assert.match(css, /\[data-theme="dark"\] \{[^}]*--unity-surface-selection-default: var\(--unity-blue-dark-700\);/);
+  assert.match(css, /\[data-theme="dark"\] \{[^}]*--unity-surface-selection: var\(--unity-blue-dark-700\);/);
   assert.match(css, /@media \(prefers-color-scheme: dark\)/);
 });
 
 test('kotlin has data class with light and dark factories', async () => {
   const kt = await readFile(`${KT}color/SurfaceColors.kt`, 'utf8');
   assert.match(kt, /data class SurfaceColors\(/);
-  assert.match(kt, /fun lightSurfaceColors\(\) = SurfaceColors\([^)]*selectionDefault = PrimitiveColors\.Blue\.Blue700,/);
-  assert.match(kt, /fun darkSurfaceColors\(\) = SurfaceColors\([^)]*selectionDefault = PrimitiveColors\.BlueDark\.BlueDark700,/);
+  assert.match(kt, /fun lightSurfaceColors\(\) = SurfaceColors\([^)]*selection = PrimitiveColors\.Blue\.Blue700,/);
+  assert.match(kt, /fun darkSurfaceColors\(\) = SurfaceColors\([^)]*selection = PrimitiveColors\.BlueDark\.BlueDark700,/);
   const primitives = await readFile(`${KT}color/PrimitiveColors.kt`, 'utf8');
   assert.match(primitives, /val BlackAlpha1 = Color\(0x03000000\)/);
 });
@@ -24,8 +24,8 @@ test('kotlin has data class with light and dark factories', async () => {
 test('css has viewport overrides and non-colour primitives', async () => {
   const css = await readFile('packages/web/dist/tokens.css', 'utf8');
   assert.match(css, /:root \{[^}]*--unity-spacing-4: 1rem;/);
-  assert.match(css, /:root \{[^}]*--unity-heading-xl-font-size: var\(--unity-font-size-42\);/);
-  assert.match(css, /\[data-viewport="locker"\] \{[^}]*--unity-heading-xl-font-size: var\(--unity-font-size-48\);/);
+  assert.match(css, /:root \{[^}]*--unity-heading-1-font-size: var\(--unity-font-size-42\);/);
+  assert.match(css, /\[data-viewport="locker"\] \{[^}]*--unity-heading-1-font-size: var\(--unity-font-size-48\);/);
   assert.match(css, /--unity-spacing-0: 0;/);
   assert.doesNotMatch(css, /--unity-scale-/);
   assert.match(css, /--unity-font-letter-spacing-12: -0\.05375rem;/);
@@ -39,10 +39,10 @@ test('kotlin has mobile typography, mobile dimensions and typed primitives', asy
   assert.match(typography, /import androidx\.compose\.ui\.text\.TextStyle/);
   assert.match(
     typography,
-    /val headingXl = TextStyle\(fontSize = PrimitiveTokens\.Font\.FontSize42, lineHeight = PrimitiveTokens\.Font\.FontLineHeight52, letterSpacing = PrimitiveTokens\.Font\.FontLetterSpacing12\)/,
+    /val heading1 = TextStyle\(fontSize = PrimitiveTokens\.Font\.FontSize42, lineHeight = PrimitiveTokens\.Font\.FontLineHeight52, letterSpacing = PrimitiveTokens\.Font\.FontLetterSpacing12\)/,
   );
   // Labels have no letter-spacing token, so TextStyle keeps its default.
-  assert.match(typography, /val labelXxsm = TextStyle\(fontSize = [^,]+, lineHeight = [^,)]+\)\n/);
+  assert.match(typography, /val label6 = TextStyle\(fontSize = [^,]+, lineHeight = [^,)]+\)\n/);
   const dimensions = await readFile(`${KT}MobileDimensions.kt`, 'utf8');
   assert.match(dimensions, /val touchTargetMin = 48\.dp/);
   assert.doesNotMatch(dimensions, /FontSize/);
@@ -139,7 +139,7 @@ test('platform overrides drop or replace a token on one platform only', async ()
   await edit('primitive/color', (j) => (j.blue['700'].$extensions = ext({ kotlin: { $value: '#112233' } })));
   for (const v of ['desktop', 'mobile', 'locker']) {
     await edit(`target/${v}`, (j) => {
-      j["heading-xl"]['font-size'].$extensions = ext({ kotlin: { $value: '{font.size.24}' } });
+      j["heading-1"]['font-size'].$extensions = ext({ kotlin: { $value: '{font.size.24}' } });
       j['touch-target'].min.$extensions = ext({ web: false });
     });
   }
@@ -147,9 +147,9 @@ test('platform overrides drop or replace a token on one platform only', async ()
 
   const css = await readFile(`${dir}/packages/web/dist/tokens.css`, 'utf8');
   assert.match(css, /--unity-surface-brand-strong-hover:/);
-  assert.match(css, /--unity-heading-xl-font-size: var\(--unity-font-size-42\);/);
+  assert.match(css, /--unity-heading-1-font-size: var\(--unity-font-size-42\);/);
   assert.doesNotMatch(await readFile(`${dir}/${KT}color/SurfaceColors.kt`, 'utf8'), /brandStrongHover/);
-  assert.match(await readFile(`${dir}/${KT}MobileTypography.kt`, 'utf8'), /val headingXl = TextStyle\(fontSize = PrimitiveTokens\.Font\.FontSize24,/);
+  assert.match(await readFile(`${dir}/${KT}MobileTypography.kt`, 'utf8'), /val heading1 = TextStyle\(fontSize = PrimitiveTokens\.Font\.FontSize24,/);
   const md = await readFile(`${dir}/TOKENS.md`, 'utf8');
   // A target token only Kotlin has: no CSS name, Kotlin values in the target columns.
   assert.doesNotMatch(css, /--unity-touch-target-min:/);
@@ -158,12 +158,12 @@ test('platform overrides drop or replace a token on one platform only', async ()
   assert.match(md, /\| `surface\.brand-strong-hover` \|.*\| — \|$/m);
   // The overridden primitive shows in its own table and in every semantic token that references it.
   assert.match(md, /\| Kotlin: !\[#112233\]\(docs\/swatches\/112233\.svg\) `#112233` \|/);
-  assert.match(md, /\| `surface\.selection-default` \|.*`SurfaceColors\.selectionDefault`<br>light: .*`#112233`/);
+  assert.match(md, /\| `surface\.selection` \|.*`SurfaceColors\.selection`<br>light: .*`#112233`/);
 
-  await edit('semantic/color.light', (j) => (j.surface['brand-strong-default'].$extensions = ext({ kotiln: false })));
+  await edit('semantic/color.light', (j) => (j.surface['brand-strong'].$extensions = ext({ kotiln: false })));
   assert.throws(() => execFileSync('node', ['build.mjs'], { cwd: dir, stdio: 'pipe' }), /com\.glsnxt\.platforms\.kotiln/);
 
-  await edit('semantic/color.light', (j) => (j.surface['brand-strong-default'].$extensions = { 'com.glsnxt.platforms': [] }));
+  await edit('semantic/color.light', (j) => (j.surface['brand-strong'].$extensions = { 'com.glsnxt.platforms': [] }));
   assert.throws(() => execFileSync('node', ['build.mjs'], { cwd: dir, stdio: 'pipe' }), /com\.glsnxt\.platforms must be an object/);
 });
 

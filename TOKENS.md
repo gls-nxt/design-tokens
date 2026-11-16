@@ -54,32 +54,32 @@ Light and dark values, with the primitive each one references. The Kotlin column
 | `surface.base-2` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | ![#212225](docs/swatches/212225.svg) `#212225`<br>`gray-dark.300` | `--unity-surface-base-2` | `SurfaceColors.base2` |
 | `surface.base-3` | ![#fcfcfd](docs/swatches/fcfcfd.svg) `#fcfcfd`<br>`gray.100` | ![#18191b](docs/swatches/18191b.svg) `#18191b`<br>`gray-dark.200` | `--unity-surface-base-3` | `SurfaceColors.base3` |
 | `surface.base-4` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | ![#212225](docs/swatches/212225.svg) `#212225`<br>`gray-dark.300` | `--unity-surface-base-4` | `SurfaceColors.base4` |
-| `surface.secondary-default` | ![#f2f4f7](docs/swatches/f2f4f7.svg) `#f2f4f7`<br>`gray.200` | ![#2e3135](docs/swatches/2e3135.svg) `#2e3135`<br>`gray-dark.500` | `--unity-surface-secondary-default` | `SurfaceColors.secondaryDefault` |
+| `surface.secondary` | ![#f2f4f7](docs/swatches/f2f4f7.svg) `#f2f4f7`<br>`gray.200` | ![#2e3135](docs/swatches/2e3135.svg) `#2e3135`<br>`gray-dark.500` | `--unity-surface-secondary` | `SurfaceColors.secondary` |
 | `surface.secondary-hover` | ![#e4e7ec](docs/swatches/e4e7ec.svg) `#e4e7ec`<br>`gray.300` | ![#363a3f](docs/swatches/363a3f.svg) `#363a3f`<br>`gray-dark.600` | `--unity-surface-secondary-hover` | — |
 | `surface.secondary-pressed` | ![#d0d5dd](docs/swatches/d0d5dd.svg) `#d0d5dd`<br>`gray.400` | ![#363a3f](docs/swatches/363a3f.svg) `#363a3f`<br>`gray-dark.600` | `--unity-surface-secondary-pressed` | `SurfaceColors.secondaryPressed` |
 | `surface.secondary-disabled` | ![#fcfcfd](docs/swatches/fcfcfd.svg) `#fcfcfd`<br>`gray.100` | ![#272a2d](docs/swatches/272a2d.svg) `#272a2d`<br>`gray-dark.400` | `--unity-surface-secondary-disabled` | `SurfaceColors.secondaryDisabled` |
-| `surface.tertiary-default` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | ![#212225](docs/swatches/212225.svg) `#212225`<br>`gray-dark.300` | `--unity-surface-tertiary-default` | `SurfaceColors.tertiaryDefault` |
+| `surface.tertiary` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | ![#212225](docs/swatches/212225.svg) `#212225`<br>`gray-dark.300` | `--unity-surface-tertiary` | `SurfaceColors.tertiary` |
 | `surface.tertiary-hover` | ![#f2f4f7](docs/swatches/f2f4f7.svg) `#f2f4f7`<br>`gray.200` | ![#272a2d](docs/swatches/272a2d.svg) `#272a2d`<br>`gray-dark.400` | `--unity-surface-tertiary-hover` | — |
 | `surface.tertiary-pressed` | ![#e4e7ec](docs/swatches/e4e7ec.svg) `#e4e7ec`<br>`gray.300` | ![#2e3135](docs/swatches/2e3135.svg) `#2e3135`<br>`gray-dark.500` | `--unity-surface-tertiary-pressed` | `SurfaceColors.tertiaryPressed` |
 | `surface.tertiary-disabled` | ![#fcfcfd](docs/swatches/fcfcfd.svg) `#fcfcfd`<br>`gray.100` | ![#18191b](docs/swatches/18191b.svg) `#18191b`<br>`gray-dark.200` | `--unity-surface-tertiary-disabled` | `SurfaceColors.tertiaryDisabled` |
 | `surface.on-action` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | `--unity-surface-on-action` | `SurfaceColors.onAction` |
-| `surface.selection-default` | ![#061ab1](docs/swatches/061ab1.svg) `#061ab1`<br>`blue.700` | ![#1238d2](docs/swatches/1238d2.svg) `#1238d2`<br>`blue-dark.700` | `--unity-surface-selection-default` | `SurfaceColors.selectionDefault` |
+| `surface.selection` | ![#061ab1](docs/swatches/061ab1.svg) `#061ab1`<br>`blue.700` | ![#1238d2](docs/swatches/1238d2.svg) `#1238d2`<br>`blue-dark.700` | `--unity-surface-selection` | `SurfaceColors.selection` |
 | `surface.selection-hover` | ![#05168f](docs/swatches/05168f.svg) `#05168f`<br>`blue.800` | ![#4f6cff](docs/swatches/4f6cff.svg) `#4f6cff`<br>`blue-dark.800` | `--unity-surface-selection-hover` | — |
 | `surface.selection-disabled` | ![#dee6ff](docs/swatches/dee6ff.svg) `#dee6ff`<br>`blue.300` | ![#191f38](docs/swatches/191f38.svg) `#191f38`<br>`blue-dark.300` | `--unity-surface-selection-disabled` | `SurfaceColors.selectionDisabled` |
-| `surface.brand-strong-default` | ![#061ab1](docs/swatches/061ab1.svg) `#061ab1`<br>`blue.700` | ![#1238d2](docs/swatches/1238d2.svg) `#1238d2`<br>`blue-dark.700` | `--unity-surface-brand-strong-default` | `SurfaceColors.brandStrongDefault` |
+| `surface.brand-strong` | ![#061ab1](docs/swatches/061ab1.svg) `#061ab1`<br>`blue.700` | ![#1238d2](docs/swatches/1238d2.svg) `#1238d2`<br>`blue-dark.700` | `--unity-surface-brand-strong` | `SurfaceColors.brandStrong` |
 | `surface.brand-strong-hover` | ![#05168f](docs/swatches/05168f.svg) `#05168f`<br>`blue.800` | ![#4f6cff](docs/swatches/4f6cff.svg) `#4f6cff`<br>`blue-dark.800` | `--unity-surface-brand-strong-hover` | — |
 | `surface.brand-strong-pressed` | ![#04106e](docs/swatches/04106e.svg) `#04106e`<br>`blue.900` | ![#89a0ff](docs/swatches/89a0ff.svg) `#89a0ff`<br>`blue-dark.900` | `--unity-surface-brand-strong-pressed` | `SurfaceColors.brandStrongPressed` |
 | `surface.brand-strong-disabled` | ![#edf2ff](docs/swatches/edf2ff.svg) `#edf2ff`<br>`blue.200` | ![#111422](docs/swatches/111422.svg) `#111422`<br>`blue-dark.200` | `--unity-surface-brand-strong-disabled` | `SurfaceColors.brandStrongDisabled` |
-| `surface.brand-subtle-default` | ![#dee6ff](docs/swatches/dee6ff.svg) `#dee6ff`<br>`blue.300` | ![#232e57](docs/swatches/232e57.svg) `#232e57`<br>`blue-dark.500` | `--unity-surface-brand-subtle-default` | `SurfaceColors.brandSubtleDefault` |
+| `surface.brand-subtle` | ![#dee6ff](docs/swatches/dee6ff.svg) `#dee6ff`<br>`blue.300` | ![#232e57](docs/swatches/232e57.svg) `#232e57`<br>`blue-dark.500` | `--unity-surface-brand-subtle` | `SurfaceColors.brandSubtle` |
 | `surface.brand-subtle-hover` | ![#c4d1ff](docs/swatches/c4d1ff.svg) `#c4d1ff`<br>`blue.400` | ![#2b3769](docs/swatches/2b3769.svg) `#2b3769`<br>`blue-dark.600` | `--unity-surface-brand-subtle-hover` | — |
 | `surface.brand-subtle-pressed` | ![#8692db](docs/swatches/8692db.svg) `#8692db`<br>`blue.500` | ![#1238d2](docs/swatches/1238d2.svg) `#1238d2`<br>`blue-dark.700` | `--unity-surface-brand-subtle-pressed` | `SurfaceColors.brandSubtlePressed` |
 | `surface.brand-subtle-disabled` | ![#edf2ff](docs/swatches/edf2ff.svg) `#edf2ff`<br>`blue.200` | ![#191f38](docs/swatches/191f38.svg) `#191f38`<br>`blue-dark.300` | `--unity-surface-brand-subtle-disabled` | `SurfaceColors.brandSubtleDisabled` |
-| `surface.error-subtle-default` | ![#ffe1e1](docs/swatches/ffe1e1.svg) `#ffe1e1`<br>`red.200` | ![#4a1316](docs/swatches/4a1316.svg) `#4a1316`<br>`red-dark.300` | `--unity-surface-error-subtle-default` | `SurfaceColors.errorSubtleDefault` |
+| `surface.error-subtle` | ![#ffe1e1](docs/swatches/ffe1e1.svg) `#ffe1e1`<br>`red.200` | ![#4a1316](docs/swatches/4a1316.svg) `#4a1316`<br>`red-dark.300` | `--unity-surface-error-subtle` | `SurfaceColors.errorSubtle` |
 | `surface.error-subtle-hover` | ![#ffc7c7](docs/swatches/ffc7c7.svg) `#ffc7c7`<br>`red.300` | ![#63181c](docs/swatches/63181c.svg) `#63181c`<br>`red-dark.400` | `--unity-surface-error-subtle-hover` | — |
 | `surface.error-subtle-pressed` | ![#ffaaaa](docs/swatches/ffaaaa.svg) `#ffaaaa`<br>`red.400` | ![#7c1e23](docs/swatches/7c1e23.svg) `#7c1e23`<br>`red-dark.500` | `--unity-surface-error-subtle-pressed` | `SurfaceColors.errorSubtlePressed` |
 | `surface.error-subtle-disabled` | ![#fff5f5](docs/swatches/fff5f5.svg) `#fff5f5`<br>`red.100` | ![#330f11](docs/swatches/330f11.svg) `#330f11`<br>`red-dark.200` | `--unity-surface-error-subtle-disabled` | `SurfaceColors.errorSubtleDisabled` |
 | `surface.error-strong` | ![#d72d2d](docs/swatches/d72d2d.svg) `#d72d2d`<br>`red.800` | ![#96252a](docs/swatches/96252a.svg) `#96252a`<br>`red-dark.600` | `--unity-surface-error-strong` | `SurfaceColors.errorStrong` |
-| `surface.success-strong-default` | ![#1e8057](docs/swatches/1e8057.svg) `#1e8057`<br>`green.900` | ![#2b6546](docs/swatches/2b6546.svg) `#2b6546`<br>`green-dark.600` | `--unity-surface-success-strong-default` | `SurfaceColors.successStrongDefault` |
+| `surface.success-strong` | ![#1e8057](docs/swatches/1e8057.svg) `#1e8057`<br>`green.900` | ![#2b6546](docs/swatches/2b6546.svg) `#2b6546`<br>`green-dark.600` | `--unity-surface-success-strong` | `SurfaceColors.successStrong` |
 | `surface.success-strong-hover` | ![#156142](docs/swatches/156142.svg) `#156142`<br>`green.1000` | ![#30a46c](docs/swatches/30a46c.svg) `#30a46c`<br>`green-dark.700` | `--unity-surface-success-strong-hover` | — |
 | `surface.success-strong-pressed` | ![#0d422c](docs/swatches/0d422c.svg) `#0d422c`<br>`green.1100` | ![#33b074](docs/swatches/33b074.svg) `#33b074`<br>`green-dark.800` | `--unity-surface-success-strong-pressed` | `SurfaceColors.successStrongPressed` |
 | `surface.success-strong-disabled` | ![#dcf4e5](docs/swatches/dcf4e5.svg) `#dcf4e5`<br>`green.200` | ![#112018](docs/swatches/112018.svg) `#112018`<br>`green-dark.200` | `--unity-surface-success-strong-disabled` | `SurfaceColors.successStrongDisabled` |
@@ -88,10 +88,10 @@ Light and dark values, with the primitive each one references. The Kotlin column
 | `surface.warning-strong` | ![#ffd100](docs/swatches/ffd100.svg) `#ffd100`<br>`yellow.600` | ![#ffd100](docs/swatches/ffd100.svg) `#ffd100`<br>`yellow-dark.800` | `--unity-surface-warning-strong` | `SurfaceColors.warningStrong` |
 | `surface.overlay` | ![#667085](docs/swatches/667085.svg) `#667085`<br>`gray.600` | ![#111113](docs/swatches/111113.svg) `#111113`<br>`gray-dark.100` | `--unity-surface-overlay` | `SurfaceColors.overlay` |
 | `surface.inverse` | ![#191919](docs/swatches/191919.svg) `#191919`<br>`base.black` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | `--unity-surface-inverse` | `SurfaceColors.inverse` |
-| `surface.track-default` | ![#f2f4f7](docs/swatches/f2f4f7.svg) `#f2f4f7`<br>`gray.200` | ![#18191b](docs/swatches/18191b.svg) `#18191b`<br>`gray-dark.200` | `--unity-surface-track-default` | `SurfaceColors.trackDefault` |
+| `surface.track` | ![#f2f4f7](docs/swatches/f2f4f7.svg) `#f2f4f7`<br>`gray.200` | ![#18191b](docs/swatches/18191b.svg) `#18191b`<br>`gray-dark.200` | `--unity-surface-track` | `SurfaceColors.track` |
 | `surface.track-hover` | ![#e4e7ec](docs/swatches/e4e7ec.svg) `#e4e7ec`<br>`gray.300` | ![#212225](docs/swatches/212225.svg) `#212225`<br>`gray-dark.300` | `--unity-surface-track-hover` | — |
 | `surface.track-pressed` | ![#d0d5dd](docs/swatches/d0d5dd.svg) `#d0d5dd`<br>`gray.400` | ![#272a2d](docs/swatches/272a2d.svg) `#272a2d`<br>`gray-dark.400` | `--unity-surface-track-pressed` | `SurfaceColors.trackPressed` |
-| `surface.track-selected-default` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | ![#363a3f](docs/swatches/363a3f.svg) `#363a3f`<br>`gray-dark.600` | `--unity-surface-track-selected-default` | `SurfaceColors.trackSelectedDefault` |
+| `surface.track-selected` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | ![#363a3f](docs/swatches/363a3f.svg) `#363a3f`<br>`gray-dark.600` | `--unity-surface-track-selected` | `SurfaceColors.trackSelected` |
 | `surface.track-selected-hover` | ![#f2f4f7](docs/swatches/f2f4f7.svg) `#f2f4f7`<br>`gray.200` | ![#43484e](docs/swatches/43484e.svg) `#43484e`<br>`gray-dark.700` | `--unity-surface-track-selected-hover` | — |
 | `surface.track-selected-pressed` | ![#e4e7ec](docs/swatches/e4e7ec.svg) `#e4e7ec`<br>`gray.300` | ![#43484e](docs/swatches/43484e.svg) `#43484e`<br>`gray-dark.700` | `--unity-surface-track-selected-pressed` | `SurfaceColors.trackSelectedPressed` |
 
@@ -105,7 +105,7 @@ Light and dark values, with the primitive each one references. The Kotlin column
 | `text.inverse` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | ![#09101c](docs/swatches/09101c.svg) `#09101c`<br>`gray.1200` | `--unity-text-inverse` | `TextColors.inverse` |
 | `text.on-action` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | `--unity-text-on-action` | `TextColors.onAction` |
 | `text.on-white` | ![#09101c](docs/swatches/09101c.svg) `#09101c`<br>`gray.1200` | ![#09101c](docs/swatches/09101c.svg) `#09101c`<br>`gray.1200` | `--unity-text-on-white` | `TextColors.onWhite` |
-| `text.link-default` | ![#061ab1](docs/swatches/061ab1.svg) `#061ab1`<br>`blue.700` | ![#dde6ff](docs/swatches/dde6ff.svg) `#dde6ff`<br>`blue-dark.1100` | `--unity-text-link-default` | `TextColors.linkDefault` |
+| `text.link` | ![#061ab1](docs/swatches/061ab1.svg) `#061ab1`<br>`blue.700` | ![#dde6ff](docs/swatches/dde6ff.svg) `#dde6ff`<br>`blue-dark.1100` | `--unity-text-link` | `TextColors.link` |
 | `text.link-hover` | ![#05168f](docs/swatches/05168f.svg) `#05168f`<br>`blue.800` | ![#dde6ff](docs/swatches/dde6ff.svg) `#dde6ff`<br>`blue-dark.1100` | `--unity-text-link-hover` | — |
 | `text.link-pressed` | ![#04106e](docs/swatches/04106e.svg) `#04106e`<br>`blue.900` | ![#f2f5ff](docs/swatches/f2f5ff.svg) `#f2f5ff`<br>`blue-dark.1200` | `--unity-text-link-pressed` | `TextColors.linkPressed` |
 | `text.link-disabled` | ![#8692db](docs/swatches/8692db.svg) `#8692db`<br>`blue.500` | ![#767b82](docs/swatches/767b82.svg) `#767b82`<br>`gray-dark.900` | `--unity-text-link-disabled` | `TextColors.linkDisabled` |
@@ -122,51 +122,51 @@ Text and touch sizes per target (desktop, mobile, locker), with the primitive ea
 | --- | --- | --- | --- | --- | --- |
 | `touch-target.min` | `24px` | `48px` | `64px` | `--unity-touch-target-min` | `MobileDimensions.touchTargetMin` |
 | `control.height` | `0px` | `0px` | `64px` | `--unity-control-height` | `MobileDimensions.controlHeight` |
-| `heading-xl.font-size` | `42px`<br>`font.size.42` | `42px`<br>`font.size.42` | `48px`<br>`font.size.48` | `--unity-heading-xl-font-size` | `MobileTypography.headingXl.fontSize` |
-| `heading-xl.line-height` | `52px`<br>`font.line-height.52` | `52px`<br>`font.line-height.52` | `56px`<br>`font.line-height.56` | `--unity-heading-xl-line-height` | `MobileTypography.headingXl.lineHeight` |
-| `heading-xl.letter-spacing` | `-0.86px`<br>`font.letter-spacing.12` | `-0.86px`<br>`font.letter-spacing.12` | `-0.86px`<br>`font.letter-spacing.12` | `--unity-heading-xl-letter-spacing` | `MobileTypography.headingXl.letterSpacing` |
-| `heading-lg.font-size` | `34px`<br>`font.size.34` | `34px`<br>`font.size.34` | `42px`<br>`font.size.42` | `--unity-heading-lg-font-size` | `MobileTypography.headingLg.fontSize` |
-| `heading-lg.line-height` | `40px`<br>`font.line-height.40` | `40px`<br>`font.line-height.40` | `52px`<br>`font.line-height.52` | `--unity-heading-lg-line-height` | `MobileTypography.headingLg.lineHeight` |
-| `heading-lg.letter-spacing` | `-0.68px`<br>`font.letter-spacing.11` | `-0.68px`<br>`font.letter-spacing.11` | `-0.68px`<br>`font.letter-spacing.11` | `--unity-heading-lg-letter-spacing` | `MobileTypography.headingLg.letterSpacing` |
-| `heading-md.font-size` | `24px`<br>`font.size.24` | `24px`<br>`font.size.24` | `34px`<br>`font.size.34` | `--unity-heading-md-font-size` | `MobileTypography.headingMd.fontSize` |
-| `heading-md.line-height` | `32px`<br>`font.line-height.32` | `32px`<br>`font.line-height.32` | `40px`<br>`font.line-height.40` | `--unity-heading-md-line-height` | `MobileTypography.headingMd.lineHeight` |
-| `heading-md.letter-spacing` | `-0.48px`<br>`font.letter-spacing.10` | `-0.48px`<br>`font.letter-spacing.10` | `-0.48px`<br>`font.letter-spacing.10` | `--unity-heading-md-letter-spacing` | `MobileTypography.headingMd.letterSpacing` |
-| `heading-sm.font-size` | `22px`<br>`font.size.22` | `22px`<br>`font.size.22` | `32px`<br>`font.size.32` | `--unity-heading-sm-font-size` | `MobileTypography.headingSm.fontSize` |
-| `heading-sm.line-height` | `28px`<br>`font.line-height.28` | `28px`<br>`font.line-height.28` | `40px`<br>`font.line-height.40` | `--unity-heading-sm-line-height` | `MobileTypography.headingSm.lineHeight` |
-| `heading-sm.letter-spacing` | `-0.34px`<br>`font.letter-spacing.9` | `-0.34px`<br>`font.letter-spacing.9` | `-0.34px`<br>`font.letter-spacing.9` | `--unity-heading-sm-letter-spacing` | `MobileTypography.headingSm.letterSpacing` |
-| `heading-xs.font-size` | `20px`<br>`font.size.20` | `20px`<br>`font.size.20` | `28px`<br>`font.size.28` | `--unity-heading-xs-font-size` | `MobileTypography.headingXs.fontSize` |
-| `heading-xs.line-height` | `26px`<br>`font.line-height.26` | `26px`<br>`font.line-height.26` | `36px`<br>`font.line-height.36` | `--unity-heading-xs-line-height` | `MobileTypography.headingXs.lineHeight` |
-| `heading-xs.letter-spacing` | `-0.3px`<br>`font.letter-spacing.8` | `-0.3px`<br>`font.letter-spacing.8` | `-0.3px`<br>`font.letter-spacing.8` | `--unity-heading-xs-letter-spacing` | `MobileTypography.headingXs.letterSpacing` |
-| `heading-xxsm.font-size` | `18px`<br>`font.size.18` | `18px`<br>`font.size.18` | `26px`<br>`font.size.26` | `--unity-heading-xxsm-font-size` | `MobileTypography.headingXxsm.fontSize` |
-| `heading-xxsm.line-height` | `24px`<br>`font.line-height.24` | `24px`<br>`font.line-height.24` | `34px`<br>`font.line-height.34` | `--unity-heading-xxsm-line-height` | `MobileTypography.headingXxsm.lineHeight` |
-| `heading-xxsm.letter-spacing` | `-0.28px`<br>`font.letter-spacing.7` | `-0.28px`<br>`font.letter-spacing.7` | `-0.28px`<br>`font.letter-spacing.7` | `--unity-heading-xxsm-letter-spacing` | `MobileTypography.headingXxsm.letterSpacing` |
-| `body-xl.font-size` | `20px`<br>`font.size.20` | `20px`<br>`font.size.20` | `28px`<br>`font.size.28` | `--unity-body-xl-font-size` | `MobileTypography.bodyXl.fontSize` |
-| `body-xl.line-height` | `32px`<br>`font.line-height.32` | `32px`<br>`font.line-height.32` | `36px`<br>`font.line-height.36` | `--unity-body-xl-line-height` | `MobileTypography.bodyXl.lineHeight` |
-| `body-xl.letter-spacing` | `-0.2px`<br>`font.letter-spacing.6` | `-0.2px`<br>`font.letter-spacing.6` | `-0.2px`<br>`font.letter-spacing.6` | `--unity-body-xl-letter-spacing` | `MobileTypography.bodyXl.letterSpacing` |
-| `body-lg.font-size` | `18px`<br>`font.size.18` | `18px`<br>`font.size.18` | `26px`<br>`font.size.26` | `--unity-body-lg-font-size` | `MobileTypography.bodyLg.fontSize` |
-| `body-lg.line-height` | `28px`<br>`font.line-height.28` | `28px`<br>`font.line-height.28` | `34px`<br>`font.line-height.34` | `--unity-body-lg-line-height` | `MobileTypography.bodyLg.lineHeight` |
-| `body-lg.letter-spacing` | `-0.18px`<br>`font.letter-spacing.5` | `-0.18px`<br>`font.letter-spacing.5` | `-0.18px`<br>`font.letter-spacing.5` | `--unity-body-lg-letter-spacing` | `MobileTypography.bodyLg.letterSpacing` |
-| `body-md.font-size` | `16px`<br>`font.size.16` | `16px`<br>`font.size.16` | `24px`<br>`font.size.24` | `--unity-body-md-font-size` | `MobileTypography.bodyMd.fontSize` |
-| `body-md.line-height` | `24px`<br>`font.line-height.24` | `24px`<br>`font.line-height.24` | `32px`<br>`font.line-height.32` | `--unity-body-md-line-height` | `MobileTypography.bodyMd.lineHeight` |
-| `body-md.letter-spacing` | `-0.16px`<br>`font.letter-spacing.4` | `-0.16px`<br>`font.letter-spacing.4` | `-0.16px`<br>`font.letter-spacing.4` | `--unity-body-md-letter-spacing` | `MobileTypography.bodyMd.letterSpacing` |
-| `body-sm.font-size` | `14px`<br>`font.size.14` | `14px`<br>`font.size.14` | `22px`<br>`font.size.22` | `--unity-body-sm-font-size` | `MobileTypography.bodySm.fontSize` |
-| `body-sm.line-height` | `22px`<br>`font.line-height.22` | `22px`<br>`font.line-height.22` | `30px`<br>`font.line-height.30` | `--unity-body-sm-line-height` | `MobileTypography.bodySm.lineHeight` |
-| `body-sm.letter-spacing` | `-0.14px`<br>`font.letter-spacing.3` | `-0.14px`<br>`font.letter-spacing.3` | `-0.14px`<br>`font.letter-spacing.3` | `--unity-body-sm-letter-spacing` | `MobileTypography.bodySm.letterSpacing` |
-| `body-xsm.font-size` | `12px`<br>`font.size.12` | `12px`<br>`font.size.12` | `22px`<br>`font.size.22` | `--unity-body-xsm-font-size` | `MobileTypography.bodyXsm.fontSize` |
-| `body-xsm.line-height` | `20px`<br>`font.line-height.20` | `20px`<br>`font.line-height.20` | `30px`<br>`font.line-height.30` | `--unity-body-xsm-line-height` | `MobileTypography.bodyXsm.lineHeight` |
-| `body-xsm.letter-spacing` | `-0.12px`<br>`font.letter-spacing.2` | `-0.12px`<br>`font.letter-spacing.2` | `-0.12px`<br>`font.letter-spacing.2` | `--unity-body-xsm-letter-spacing` | `MobileTypography.bodyXsm.letterSpacing` |
-| `label-xl.font-size` | `20px`<br>`font.size.20` | `20px`<br>`font.size.20` | `32px`<br>`font.size.32` | `--unity-label-xl-font-size` | `MobileTypography.labelXl.fontSize` |
-| `label-xl.line-height` | `24px`<br>`font.line-height.24` | `24px`<br>`font.line-height.24` | `36px`<br>`font.line-height.36` | `--unity-label-xl-line-height` | `MobileTypography.labelXl.lineHeight` |
-| `label-lg.font-size` | `18px`<br>`font.size.18` | `18px`<br>`font.size.18` | `28px`<br>`font.size.28` | `--unity-label-lg-font-size` | `MobileTypography.labelLg.fontSize` |
-| `label-lg.line-height` | `22px`<br>`font.line-height.22` | `22px`<br>`font.line-height.22` | `32px`<br>`font.line-height.32` | `--unity-label-lg-line-height` | `MobileTypography.labelLg.lineHeight` |
-| `label-md.font-size` | `16px`<br>`font.size.16` | `16px`<br>`font.size.16` | `24px`<br>`font.size.24` | `--unity-label-md-font-size` | `MobileTypography.labelMd.fontSize` |
-| `label-md.line-height` | `20px`<br>`font.line-height.20` | `20px`<br>`font.line-height.20` | `28px`<br>`font.line-height.28` | `--unity-label-md-line-height` | `MobileTypography.labelMd.lineHeight` |
-| `label-sm.font-size` | `14px`<br>`font.size.14` | `14px`<br>`font.size.14` | `22px`<br>`font.size.22` | `--unity-label-sm-font-size` | `MobileTypography.labelSm.fontSize` |
-| `label-sm.line-height` | `18px`<br>`font.line-height.18` | `18px`<br>`font.line-height.18` | `26px`<br>`font.line-height.26` | `--unity-label-sm-line-height` | `MobileTypography.labelSm.lineHeight` |
-| `label-xsm.font-size` | `12px`<br>`font.size.12` | `12px`<br>`font.size.12` | `22px`<br>`font.size.22` | `--unity-label-xsm-font-size` | `MobileTypography.labelXsm.fontSize` |
-| `label-xsm.line-height` | `16px`<br>`font.line-height.16` | `16px`<br>`font.line-height.16` | `26px`<br>`font.line-height.26` | `--unity-label-xsm-line-height` | `MobileTypography.labelXsm.lineHeight` |
-| `label-xxsm.font-size` | `10px`<br>`font.size.10` | `10px`<br>`font.size.10` | `22px`<br>`font.size.22` | `--unity-label-xxsm-font-size` | `MobileTypography.labelXxsm.fontSize` |
-| `label-xxsm.line-height` | `14px`<br>`font.line-height.14` | `14px`<br>`font.line-height.14` | `26px`<br>`font.line-height.26` | `--unity-label-xxsm-line-height` | `MobileTypography.labelXxsm.lineHeight` |
+| `heading-1.font-size` | `42px`<br>`font.size.42` | `42px`<br>`font.size.42` | `48px`<br>`font.size.48` | `--unity-heading-1-font-size` | `MobileTypography.heading1.fontSize` |
+| `heading-1.line-height` | `52px`<br>`font.line-height.52` | `52px`<br>`font.line-height.52` | `56px`<br>`font.line-height.56` | `--unity-heading-1-line-height` | `MobileTypography.heading1.lineHeight` |
+| `heading-1.letter-spacing` | `-0.86px`<br>`font.letter-spacing.12` | `-0.86px`<br>`font.letter-spacing.12` | `-0.86px`<br>`font.letter-spacing.12` | `--unity-heading-1-letter-spacing` | `MobileTypography.heading1.letterSpacing` |
+| `heading-2.font-size` | `34px`<br>`font.size.34` | `34px`<br>`font.size.34` | `42px`<br>`font.size.42` | `--unity-heading-2-font-size` | `MobileTypography.heading2.fontSize` |
+| `heading-2.line-height` | `40px`<br>`font.line-height.40` | `40px`<br>`font.line-height.40` | `52px`<br>`font.line-height.52` | `--unity-heading-2-line-height` | `MobileTypography.heading2.lineHeight` |
+| `heading-2.letter-spacing` | `-0.68px`<br>`font.letter-spacing.11` | `-0.68px`<br>`font.letter-spacing.11` | `-0.68px`<br>`font.letter-spacing.11` | `--unity-heading-2-letter-spacing` | `MobileTypography.heading2.letterSpacing` |
+| `heading-3.font-size` | `24px`<br>`font.size.24` | `24px`<br>`font.size.24` | `34px`<br>`font.size.34` | `--unity-heading-3-font-size` | `MobileTypography.heading3.fontSize` |
+| `heading-3.line-height` | `32px`<br>`font.line-height.32` | `32px`<br>`font.line-height.32` | `40px`<br>`font.line-height.40` | `--unity-heading-3-line-height` | `MobileTypography.heading3.lineHeight` |
+| `heading-3.letter-spacing` | `-0.48px`<br>`font.letter-spacing.10` | `-0.48px`<br>`font.letter-spacing.10` | `-0.48px`<br>`font.letter-spacing.10` | `--unity-heading-3-letter-spacing` | `MobileTypography.heading3.letterSpacing` |
+| `heading-4.font-size` | `22px`<br>`font.size.22` | `22px`<br>`font.size.22` | `32px`<br>`font.size.32` | `--unity-heading-4-font-size` | `MobileTypography.heading4.fontSize` |
+| `heading-4.line-height` | `28px`<br>`font.line-height.28` | `28px`<br>`font.line-height.28` | `40px`<br>`font.line-height.40` | `--unity-heading-4-line-height` | `MobileTypography.heading4.lineHeight` |
+| `heading-4.letter-spacing` | `-0.34px`<br>`font.letter-spacing.9` | `-0.34px`<br>`font.letter-spacing.9` | `-0.34px`<br>`font.letter-spacing.9` | `--unity-heading-4-letter-spacing` | `MobileTypography.heading4.letterSpacing` |
+| `heading-5.font-size` | `20px`<br>`font.size.20` | `20px`<br>`font.size.20` | `28px`<br>`font.size.28` | `--unity-heading-5-font-size` | `MobileTypography.heading5.fontSize` |
+| `heading-5.line-height` | `26px`<br>`font.line-height.26` | `26px`<br>`font.line-height.26` | `36px`<br>`font.line-height.36` | `--unity-heading-5-line-height` | `MobileTypography.heading5.lineHeight` |
+| `heading-5.letter-spacing` | `-0.3px`<br>`font.letter-spacing.8` | `-0.3px`<br>`font.letter-spacing.8` | `-0.3px`<br>`font.letter-spacing.8` | `--unity-heading-5-letter-spacing` | `MobileTypography.heading5.letterSpacing` |
+| `heading-6.font-size` | `18px`<br>`font.size.18` | `18px`<br>`font.size.18` | `26px`<br>`font.size.26` | `--unity-heading-6-font-size` | `MobileTypography.heading6.fontSize` |
+| `heading-6.line-height` | `24px`<br>`font.line-height.24` | `24px`<br>`font.line-height.24` | `34px`<br>`font.line-height.34` | `--unity-heading-6-line-height` | `MobileTypography.heading6.lineHeight` |
+| `heading-6.letter-spacing` | `-0.28px`<br>`font.letter-spacing.7` | `-0.28px`<br>`font.letter-spacing.7` | `-0.28px`<br>`font.letter-spacing.7` | `--unity-heading-6-letter-spacing` | `MobileTypography.heading6.letterSpacing` |
+| `body-1.font-size` | `20px`<br>`font.size.20` | `20px`<br>`font.size.20` | `28px`<br>`font.size.28` | `--unity-body-1-font-size` | `MobileTypography.body1.fontSize` |
+| `body-1.line-height` | `32px`<br>`font.line-height.32` | `32px`<br>`font.line-height.32` | `36px`<br>`font.line-height.36` | `--unity-body-1-line-height` | `MobileTypography.body1.lineHeight` |
+| `body-1.letter-spacing` | `-0.2px`<br>`font.letter-spacing.6` | `-0.2px`<br>`font.letter-spacing.6` | `-0.2px`<br>`font.letter-spacing.6` | `--unity-body-1-letter-spacing` | `MobileTypography.body1.letterSpacing` |
+| `body-2.font-size` | `18px`<br>`font.size.18` | `18px`<br>`font.size.18` | `26px`<br>`font.size.26` | `--unity-body-2-font-size` | `MobileTypography.body2.fontSize` |
+| `body-2.line-height` | `28px`<br>`font.line-height.28` | `28px`<br>`font.line-height.28` | `34px`<br>`font.line-height.34` | `--unity-body-2-line-height` | `MobileTypography.body2.lineHeight` |
+| `body-2.letter-spacing` | `-0.18px`<br>`font.letter-spacing.5` | `-0.18px`<br>`font.letter-spacing.5` | `-0.18px`<br>`font.letter-spacing.5` | `--unity-body-2-letter-spacing` | `MobileTypography.body2.letterSpacing` |
+| `body-3.font-size` | `16px`<br>`font.size.16` | `16px`<br>`font.size.16` | `24px`<br>`font.size.24` | `--unity-body-3-font-size` | `MobileTypography.body3.fontSize` |
+| `body-3.line-height` | `24px`<br>`font.line-height.24` | `24px`<br>`font.line-height.24` | `32px`<br>`font.line-height.32` | `--unity-body-3-line-height` | `MobileTypography.body3.lineHeight` |
+| `body-3.letter-spacing` | `-0.16px`<br>`font.letter-spacing.4` | `-0.16px`<br>`font.letter-spacing.4` | `-0.16px`<br>`font.letter-spacing.4` | `--unity-body-3-letter-spacing` | `MobileTypography.body3.letterSpacing` |
+| `body-4.font-size` | `14px`<br>`font.size.14` | `14px`<br>`font.size.14` | `22px`<br>`font.size.22` | `--unity-body-4-font-size` | `MobileTypography.body4.fontSize` |
+| `body-4.line-height` | `22px`<br>`font.line-height.22` | `22px`<br>`font.line-height.22` | `30px`<br>`font.line-height.30` | `--unity-body-4-line-height` | `MobileTypography.body4.lineHeight` |
+| `body-4.letter-spacing` | `-0.14px`<br>`font.letter-spacing.3` | `-0.14px`<br>`font.letter-spacing.3` | `-0.14px`<br>`font.letter-spacing.3` | `--unity-body-4-letter-spacing` | `MobileTypography.body4.letterSpacing` |
+| `body-5.font-size` | `12px`<br>`font.size.12` | `12px`<br>`font.size.12` | `22px`<br>`font.size.22` | `--unity-body-5-font-size` | `MobileTypography.body5.fontSize` |
+| `body-5.line-height` | `20px`<br>`font.line-height.20` | `20px`<br>`font.line-height.20` | `30px`<br>`font.line-height.30` | `--unity-body-5-line-height` | `MobileTypography.body5.lineHeight` |
+| `body-5.letter-spacing` | `-0.12px`<br>`font.letter-spacing.2` | `-0.12px`<br>`font.letter-spacing.2` | `-0.12px`<br>`font.letter-spacing.2` | `--unity-body-5-letter-spacing` | `MobileTypography.body5.letterSpacing` |
+| `label-1.font-size` | `20px`<br>`font.size.20` | `20px`<br>`font.size.20` | `32px`<br>`font.size.32` | `--unity-label-1-font-size` | `MobileTypography.label1.fontSize` |
+| `label-1.line-height` | `24px`<br>`font.line-height.24` | `24px`<br>`font.line-height.24` | `36px`<br>`font.line-height.36` | `--unity-label-1-line-height` | `MobileTypography.label1.lineHeight` |
+| `label-2.font-size` | `18px`<br>`font.size.18` | `18px`<br>`font.size.18` | `28px`<br>`font.size.28` | `--unity-label-2-font-size` | `MobileTypography.label2.fontSize` |
+| `label-2.line-height` | `22px`<br>`font.line-height.22` | `22px`<br>`font.line-height.22` | `32px`<br>`font.line-height.32` | `--unity-label-2-line-height` | `MobileTypography.label2.lineHeight` |
+| `label-3.font-size` | `16px`<br>`font.size.16` | `16px`<br>`font.size.16` | `24px`<br>`font.size.24` | `--unity-label-3-font-size` | `MobileTypography.label3.fontSize` |
+| `label-3.line-height` | `20px`<br>`font.line-height.20` | `20px`<br>`font.line-height.20` | `28px`<br>`font.line-height.28` | `--unity-label-3-line-height` | `MobileTypography.label3.lineHeight` |
+| `label-4.font-size` | `14px`<br>`font.size.14` | `14px`<br>`font.size.14` | `22px`<br>`font.size.22` | `--unity-label-4-font-size` | `MobileTypography.label4.fontSize` |
+| `label-4.line-height` | `18px`<br>`font.line-height.18` | `18px`<br>`font.line-height.18` | `26px`<br>`font.line-height.26` | `--unity-label-4-line-height` | `MobileTypography.label4.lineHeight` |
+| `label-5.font-size` | `12px`<br>`font.size.12` | `12px`<br>`font.size.12` | `22px`<br>`font.size.22` | `--unity-label-5-font-size` | `MobileTypography.label5.fontSize` |
+| `label-5.line-height` | `16px`<br>`font.line-height.16` | `16px`<br>`font.line-height.16` | `26px`<br>`font.line-height.26` | `--unity-label-5-line-height` | `MobileTypography.label5.lineHeight` |
+| `label-6.font-size` | `10px`<br>`font.size.10` | `10px`<br>`font.size.10` | `22px`<br>`font.size.22` | `--unity-label-6-font-size` | `MobileTypography.label6.fontSize` |
+| `label-6.line-height` | `14px`<br>`font.line-height.14` | `14px`<br>`font.line-height.14` | `26px`<br>`font.line-height.26` | `--unity-label-6-line-height` | `MobileTypography.label6.lineHeight` |
 
 ## Fonts
 
@@ -374,7 +374,7 @@ CSS `--unity-<family>-<step>`, Kotlin `PrimitiveColors.<Family>.<Family><Step>`.
 
 | Token | Value | CSS | Kotlin |
 | --- | --- | --- | --- |
-| `border-width.none` | `0px` | `--unity-border-width-none` | `PrimitiveTokens.BorderWidth.BorderWidthNone` |
+| `border-width.0` | `0px` | `--unity-border-width-0` | `PrimitiveTokens.BorderWidth.BorderWidth0` |
 | `border-width.sm` | `1px` | `--unity-border-width-sm` | `PrimitiveTokens.BorderWidth.BorderWidthSm` |
 | `border-width.md` | `2px` | `--unity-border-width-md` | `PrimitiveTokens.BorderWidth.BorderWidthMd` |
 

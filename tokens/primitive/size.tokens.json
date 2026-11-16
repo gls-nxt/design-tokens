@@ -142,7 +142,7 @@
   "border-width": {
     "$description": "Stroke weight (border width).",
     "$type": "dimension",
-    "none": {
+    "0": {
       "$value": {
         "value": 0,
         "unit": "px"
