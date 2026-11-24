@@ -68,6 +68,8 @@ const sds = {
 
 // --- Kotlin naming: primitives `PrimitiveColors.BlueDark.BlueDark700`, `PrimitiveTokens.Spacing.Spacing4`;
 // semantic `SurfaceColors.selectionDefault`, `MobileTypography.headingXl`, `MobileDimensions.touchTargetMin`, `FontTokens.heading`
+// Colour tokens sit in a `color` group so every colour name says so. Kotlin names already do (`TextColors`, `PrimitiveColors`), so they drop it.
+const ktPath = (path) => (path[0] === 'color' ? path.slice(1) : path);
 const pascal = (s) => s.replace(/(?:^|-)(\w)/g, (_, c) => c.toUpperCase());
 const camel = (s) => pascal(s).replace(/^./, (c) => c.toLowerCase());
 const primitiveObject = (token) => (token.$type === 'color' ? 'PrimitiveColors' : 'PrimitiveTokens');
@@ -92,10 +94,10 @@ const ktLiteral = (token) => {
 const ktType = (token) =>
   ({ color: 'Color', fontWeight: 'FontWeight', fontFamily: 'String', number: 'Int' })[token.$type] ?? (isText(token) ? 'TextUnit' : 'Dp');
 const ktValue = (token) => {
-  const ref = refOf(token)?.split('.');
+  const ref = refOf(token) && ktPath(refOf(token).split('.'));
   return ref ? `${primitiveObject(token)}.${pascal(ref[0])}.${pascal(ref.join('-'))}` : ktLiteral(token);
 };
-const groupBy = (tokens) => Map.groupBy(tokens, (t) => t.path[0]);
+const groupBy = (tokens) => Map.groupBy(tokens, (t) => ktPath(t.path)[0]);
 
 const KT_IMPORTS = {
   Color: 'androidx.compose.ui.graphics.Color',
@@ -113,7 +115,7 @@ const ktFile = (pkg, body) => {
 
 const ktPrimitives = (name, tokens) => {
   const objects = [...groupBy(tokens)].map(
-    ([group, list]) => `    object ${pascal(group)} {\n${list.map((t) => `        val ${pascal(t.path.join('-'))} = ${ktValue(t)}`).join('\n')}\n    }`,
+    ([group, list]) => `    object ${pascal(group)} {\n${list.map((t) => `        val ${pascal(ktPath(t.path).join('-'))} = ${ktValue(t)}`).join('\n')}\n    }`,
   );
   return `object ${name} {\n${objects.join('\n\n')}\n}\n`;
 };
@@ -127,7 +129,7 @@ const ktDataClass = (cls, field, modes) => {
   );
 };
 
-const groupField = (t) => camel(t.path.slice(1).join('-'));
+const groupField = (t) => camel(ktPath(t.path).slice(1).join('-'));
 const pathField = (t) => camel(t.path.join('-'));
 
 // Target tokens for Kotlin: a group made only of these keys (`heading-xl.font-size`, `heading-xl.line-height`, …) becomes one
@@ -180,11 +182,11 @@ function kotlinFiles({ colorPrimitives, otherPrimitives, light, dark, fonts, tar
 }
 
 function kotlinNames({ colorPrimitives, otherPrimitives, light, fonts, targets }) {
-  const primitive = (obj) => (t) => `${obj}.${pascal(t.path[0])}.${pascal(t.path.join('-'))}`;
+  const primitive = (obj) => (t) => `${obj}.${pascal(ktPath(t.path)[0])}.${pascal(ktPath(t.path).join('-'))}`;
   return [
     ...colorPrimitives.map(primitive('PrimitiveColors')),
     ...otherPrimitives.map(primitive('PrimitiveTokens')),
-    ...light.map((t) => `${pascal(t.path[0])}Colors.${groupField(t)}`),
+    ...light.map((t) => `${pascal(ktPath(t.path)[0])}Colors.${groupField(t)}`),
     ...fonts.map((t) => `${pascal(t.path[0])}Tokens.${groupField(t)}`),
     // One name per text style, since `title-1.font-size` and `title1.line-height` both land in `val title1`.
     ...[...targetGroups(targets.mobile).text.keys()].map((group) => `MobileTypography.${camel(group)}`),
@@ -197,6 +199,11 @@ function checkNames(qualified) {
   if (bad.length) throw new Error(`Invalid generated names (must start with a letter, no Kotlin keywords): ${[...new Set(bad)].join(', ')}`);
   const dupes = qualified.filter((q, i) => qualified.indexOf(q) !== i);
   if (dupes.length) throw new Error(`Generated names collide: ${dupes.join(', ')}`);
+}
+
+function checkColorGroup(tokens) {
+  const bad = tokens.filter((t) => t.$type === 'color' && t.path[0] !== 'color').map((t) => t.path.join('.'));
+  if (bad.length) throw new Error(`Colour tokens must sit in the \`color\` group: ${bad.join(', ')}`);
 }
 
 function checkParity(modes) {
@@ -291,11 +298,11 @@ function tokensMarkdown(web, kotlin, cssNames) {
     '',
     '## Primitive colours',
     '',
-    'CSS `--unity-<family>-<step>`, Kotlin `PrimitiveColors.<Family>.<Family><Step>`. A Kotlin row lists Kotlin values only where they differ from the web ones.',
+    'CSS `--unity-color-<family>-<step>`, Kotlin `PrimitiveColors.<Family>.<Family><Step>`. A Kotlin row lists Kotlin values only where they differ from the web ones.',
   );
   const [wPrim, kPrim] = [web.colorPrimitives, kotlin.colorPrimitives].map(byPath);
   for (const [family, tokens] of groupBy(rows(web.colorPrimitives, kotlin.colorPrimitives))) {
-    const steps = tokens.map((t) => t.path.slice(1).join('-'));
+    const steps = tokens.map((t) => ktPath(t.path).slice(1).join('-'));
     const modes = tokens.map((t) => mode('', key(t), wPrim, kPrim));
     const ktRow = modes.map(([, w, k]) => (!k ? 'Kotlin: —' : differs(w, k) ? `Kotlin: ${swatch(hexOf(k.$value))} \`${hexOf(k.$value)}\`` : ''));
     out.push(
@@ -345,6 +352,7 @@ for (const set of [web, kotlin]) {
   checkParity(set.targets);
 }
 checkNames(kotlinNames(kotlin));
+for (const tokens of Object.values(resolved.web)) checkColorGroup(tokens);
 
 await fs.rm(WEB_DIST, { recursive: true, force: true });
 await fs.mkdir(WEB_DIST, { recursive: true });
