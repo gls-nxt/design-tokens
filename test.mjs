@@ -19,6 +19,8 @@ test('kotlin has data class with light and dark factories', async () => {
   assert.match(kt, /fun darkSurfaceColors\(\) = SurfaceColors\([^)]*selection = PrimitiveColors\.BlueDark\.BlueDark700,/);
   const primitives = await readFile(`${KT}color/PrimitiveColors.kt`, 'utf8');
   assert.match(primitives, /val BlackAlpha1 = Color\(0x03000000\)/);
+  const shadow = await readFile(`${KT}color/ShadowColors.kt`, 'utf8');
+  assert.match(shadow, /fun lightShadowColors\(\) = ShadowColors\([^)]*shadow1 = PrimitiveColors\.BlackAlpha\.BlackAlpha1,/);
 });
 
 test('css has viewport overrides and non-colour primitives', async () => {

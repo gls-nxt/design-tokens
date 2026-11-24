@@ -129,7 +129,11 @@ const ktDataClass = (cls, field, modes) => {
   );
 };
 
-const groupField = (t) => camel(ktPath(t.path).slice(1).join('-'));
+// A Kotlin name can't start with a digit, so `color.shadow.1` keeps its group: `ShadowColors.shadow1`.
+const groupField = (t) => {
+  const p = ktPath(t.path);
+  return camel((/^\d/.test(p[1]) ? p : p.slice(1)).join('-'));
+};
 const pathField = (t) => camel(t.path.join('-'));
 
 // Target tokens for Kotlin: a group made only of these keys (`heading-1.font-size`, `heading-1.line-height`, …) becomes one
