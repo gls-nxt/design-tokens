@@ -157,7 +157,7 @@ The tokens are exported from the Unity Design System Figma library:
 - the **Theme** collection, with its Light and Dark modes;
 - the **Device target** collection (formerly Viewport), with its Desktop, Mobile and Locker modes, exported to `tokens/target/`.
 
-References to the **Brand** collection are resolved to its `GLS` mode (`light/N` → `blue/N`, `dark/N` → `blue-dark/N`, fonts → Newson GLS). The other Brand modes are not exported yet.
+References to the **Brand** collection are resolved to its `GLS` mode (`light/N` → `blue/N`, `dark/N` → `blue-dark/N`, fonts → Newson). The other Brand modes are not exported yet.
 
 Some names differ from Figma: `Font/height` is `font.line-height`, `Font/spacing` is `font.letter-spacing`, and spaces become hyphens. Figma's `Frame Width` and `String` variables are design-file helpers and are not exported.
 
