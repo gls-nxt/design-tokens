@@ -10,109 +10,109 @@ Light and dark values, with the primitive each one references. The Kotlin column
 
 | Token | Light | Dark | CSS | Kotlin |
 | --- | --- | --- | --- | --- |
-| `border.default` | ![#848ea1](docs/swatches/848ea1.svg) `#848ea1`<br>`gray.550` | ![#6e737b](docs/swatches/6e737b.svg) `#6e737b`<br>`gray-dark.850` | `--unity-border-default` | `BorderColors.default` |
-| `border.subtle` | ![#e4e7ec](docs/swatches/e4e7ec.svg) `#e4e7ec`<br>`gray.300` | ![#2e3135](docs/swatches/2e3135.svg) `#2e3135`<br>`gray-dark.500` | `--unity-border-subtle` | `BorderColors.subtle` |
-| `border.action` | ![#061ab1](docs/swatches/061ab1.svg) `#061ab1`<br>`blue.700` | ![#4f6cff](docs/swatches/4f6cff.svg) `#4f6cff`<br>`blue-dark.800` | `--unity-border-action` | `BorderColors.action` |
-| `border.focus` | ![#8692db](docs/swatches/8692db.svg) `#8692db`<br>`blue.500` | ![#4f6cff](docs/swatches/4f6cff.svg) `#4f6cff`<br>`blue-dark.800` | `--unity-border-focus` | `BorderColors.focus` |
-| `border.disabled` | ![#e4e7ec](docs/swatches/e4e7ec.svg) `#e4e7ec`<br>`gray.300` | ![#2e3135](docs/swatches/2e3135.svg) `#2e3135`<br>`gray-dark.500` | `--unity-border-disabled` | `BorderColors.disabled` |
-| `border.error` | ![#f23b3b](docs/swatches/f23b3b.svg) `#f23b3b`<br>`red.700` | ![#d83a40](docs/swatches/d83a40.svg) `#d83a40`<br>`red-dark.800` | `--unity-border-error` | `BorderColors.error` |
-| `border.success` | ![#239e69](docs/swatches/239e69.svg) `#239e69`<br>`green.800` | ![#30a46c](docs/swatches/30a46c.svg) `#30a46c`<br>`green-dark.700` | `--unity-border-success` | `BorderColors.success` |
-| `border.warning` | ![#e66d00](docs/swatches/e66d00.svg) `#e66d00`<br>`orange.700` | ![#f76b15](docs/swatches/f76b15.svg) `#f76b15`<br>`orange-dark.700` | `--unity-border-warning` | `BorderColors.warning` |
-| `border.info` | ![#3242c0](docs/swatches/3242c0.svg) `#3242c0`<br>`blue.600` | ![#4f6cff](docs/swatches/4f6cff.svg) `#4f6cff`<br>`blue-dark.800` | `--unity-border-info` | `BorderColors.info` |
-| `border.selection` | ![#061ab1](docs/swatches/061ab1.svg) `#061ab1`<br>`blue.700` | ![#4f6cff](docs/swatches/4f6cff.svg) `#4f6cff`<br>`blue-dark.800` | `--unity-border-selection` | `BorderColors.selection` |
+| `color.border.default` | ![#848ea1](docs/swatches/848ea1.svg) `#848ea1`<br>`color.gray.550` | ![#6e737b](docs/swatches/6e737b.svg) `#6e737b`<br>`color.gray-dark.850` | `--unity-color-border-default` | `BorderColors.default` |
+| `color.border.subtle` | ![#e4e7ec](docs/swatches/e4e7ec.svg) `#e4e7ec`<br>`color.gray.300` | ![#2e3135](docs/swatches/2e3135.svg) `#2e3135`<br>`color.gray-dark.500` | `--unity-color-border-subtle` | `BorderColors.subtle` |
+| `color.border.action` | ![#061ab1](docs/swatches/061ab1.svg) `#061ab1`<br>`color.blue.700` | ![#4f6cff](docs/swatches/4f6cff.svg) `#4f6cff`<br>`color.blue-dark.800` | `--unity-color-border-action` | `BorderColors.action` |
+| `color.border.focus` | ![#8692db](docs/swatches/8692db.svg) `#8692db`<br>`color.blue.500` | ![#4f6cff](docs/swatches/4f6cff.svg) `#4f6cff`<br>`color.blue-dark.800` | `--unity-color-border-focus` | `BorderColors.focus` |
+| `color.border.disabled` | ![#e4e7ec](docs/swatches/e4e7ec.svg) `#e4e7ec`<br>`color.gray.300` | ![#2e3135](docs/swatches/2e3135.svg) `#2e3135`<br>`color.gray-dark.500` | `--unity-color-border-disabled` | `BorderColors.disabled` |
+| `color.border.error` | ![#f23b3b](docs/swatches/f23b3b.svg) `#f23b3b`<br>`color.red.700` | ![#d83a40](docs/swatches/d83a40.svg) `#d83a40`<br>`color.red-dark.800` | `--unity-color-border-error` | `BorderColors.error` |
+| `color.border.success` | ![#239e69](docs/swatches/239e69.svg) `#239e69`<br>`color.green.800` | ![#30a46c](docs/swatches/30a46c.svg) `#30a46c`<br>`color.green-dark.700` | `--unity-color-border-success` | `BorderColors.success` |
+| `color.border.warning` | ![#e66d00](docs/swatches/e66d00.svg) `#e66d00`<br>`color.orange.700` | ![#f76b15](docs/swatches/f76b15.svg) `#f76b15`<br>`color.orange-dark.700` | `--unity-color-border-warning` | `BorderColors.warning` |
+| `color.border.info` | ![#3242c0](docs/swatches/3242c0.svg) `#3242c0`<br>`color.blue.600` | ![#4f6cff](docs/swatches/4f6cff.svg) `#4f6cff`<br>`color.blue-dark.800` | `--unity-color-border-info` | `BorderColors.info` |
+| `color.border.selection` | ![#061ab1](docs/swatches/061ab1.svg) `#061ab1`<br>`color.blue.700` | ![#4f6cff](docs/swatches/4f6cff.svg) `#4f6cff`<br>`color.blue-dark.800` | `--unity-color-border-selection` | `BorderColors.selection` |
 
 ### effects
 
 | Token | Light | Dark | CSS | Kotlin |
 | --- | --- | --- | --- | --- |
-| `effects.shadow-1` | ![#00000003](docs/swatches/00000003.svg) `#00000003`<br>`black-alpha.1` | ![#00000014](docs/swatches/00000014.svg) `#00000014`<br>`black-alpha.8` | `--unity-effects-shadow-1` | `EffectsColors.shadow1` |
-| `effects.shadow-2` | ![#00000005](docs/swatches/00000005.svg) `#00000005`<br>`black-alpha.2` | ![#0000001f](docs/swatches/0000001f.svg) `#0000001f`<br>`black-alpha.12` | `--unity-effects-shadow-2` | `EffectsColors.shadow2` |
-| `effects.shadow-3` | ![#00000008](docs/swatches/00000008.svg) `#00000008`<br>`black-alpha.3` | ![#00000029](docs/swatches/00000029.svg) `#00000029`<br>`black-alpha.16` | `--unity-effects-shadow-3` | `EffectsColors.shadow3` |
-| `effects.shadow-4` | ![#0000000a](docs/swatches/0000000a.svg) `#0000000a`<br>`black-alpha.4` | ![#0000003d](docs/swatches/0000003d.svg) `#0000003d`<br>`black-alpha.24` | `--unity-effects-shadow-4` | `EffectsColors.shadow4` |
-| `effects.shadow-5` | ![#0000000d](docs/swatches/0000000d.svg) `#0000000d`<br>`black-alpha.5` | ![#00000052](docs/swatches/00000052.svg) `#00000052`<br>`black-alpha.32` | `--unity-effects-shadow-5` | `EffectsColors.shadow5` |
+| `color.effects.shadow-1` | ![#00000003](docs/swatches/00000003.svg) `#00000003`<br>`color.black-alpha.1` | ![#00000014](docs/swatches/00000014.svg) `#00000014`<br>`color.black-alpha.8` | `--unity-color-effects-shadow-1` | `EffectsColors.shadow1` |
+| `color.effects.shadow-2` | ![#00000005](docs/swatches/00000005.svg) `#00000005`<br>`color.black-alpha.2` | ![#0000001f](docs/swatches/0000001f.svg) `#0000001f`<br>`color.black-alpha.12` | `--unity-color-effects-shadow-2` | `EffectsColors.shadow2` |
+| `color.effects.shadow-3` | ![#00000008](docs/swatches/00000008.svg) `#00000008`<br>`color.black-alpha.3` | ![#00000029](docs/swatches/00000029.svg) `#00000029`<br>`color.black-alpha.16` | `--unity-color-effects-shadow-3` | `EffectsColors.shadow3` |
+| `color.effects.shadow-4` | ![#0000000a](docs/swatches/0000000a.svg) `#0000000a`<br>`color.black-alpha.4` | ![#0000003d](docs/swatches/0000003d.svg) `#0000003d`<br>`color.black-alpha.24` | `--unity-color-effects-shadow-4` | `EffectsColors.shadow4` |
+| `color.effects.shadow-5` | ![#0000000d](docs/swatches/0000000d.svg) `#0000000d`<br>`color.black-alpha.5` | ![#00000052](docs/swatches/00000052.svg) `#00000052`<br>`color.black-alpha.32` | `--unity-color-effects-shadow-5` | `EffectsColors.shadow5` |
 
 ### icon
 
 | Token | Light | Dark | CSS | Kotlin |
 | --- | --- | --- | --- | --- |
-| `icon.default` | ![#09101c](docs/swatches/09101c.svg) `#09101c`<br>`gray.1200` | ![#edeef0](docs/swatches/edeef0.svg) `#edeef0`<br>`gray-dark.1200` | `--unity-icon-default` | `IconColors.default` |
-| `icon.subtle` | ![#667085](docs/swatches/667085.svg) `#667085`<br>`gray.600` | ![#afb3ba](docs/swatches/afb3ba.svg) `#afb3ba`<br>`gray-dark.1100` | `--unity-icon-subtle` | `IconColors.subtle` |
-| `icon.disabled` | ![#98a2b3](docs/swatches/98a2b3.svg) `#98a2b3`<br>`gray.500` | ![#92979e](docs/swatches/92979e.svg) `#92979e`<br>`gray-dark.1000` | `--unity-icon-disabled` | `IconColors.disabled` |
-| `icon.on-action` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | `--unity-icon-on-action` | `IconColors.onAction` |
-| `icon.action` | ![#061ab1](docs/swatches/061ab1.svg) `#061ab1`<br>`blue.700` | ![#b8c6ff](docs/swatches/b8c6ff.svg) `#b8c6ff`<br>`blue-dark.1000` | `--unity-icon-action` | `IconColors.action` |
-| `icon.error` | ![#b82525](docs/swatches/b82525.svg) `#b82525`<br>`red.900` | ![#f3a3a8](docs/swatches/f3a3a8.svg) `#f3a3a8`<br>`red-dark.900` | `--unity-icon-error` | `IconColors.error` |
-| `icon.success` | ![#156142](docs/swatches/156142.svg) `#156142`<br>`green.1000` | ![#b5eacf](docs/swatches/b5eacf.svg) `#b5eacf`<br>`green-dark.900` | `--unity-icon-success` | `IconColors.success` |
-| `icon.warning` | ![#813600](docs/swatches/813600.svg) `#813600`<br>`orange.1000` | ![#ffd9b3](docs/swatches/ffd9b3.svg) `#ffd9b3`<br>`orange-dark.900` | `--unity-icon-warning` | `IconColors.warning` |
-| `icon.info` | ![#8692db](docs/swatches/8692db.svg) `#8692db`<br>`blue.500` | ![#89a0ff](docs/swatches/89a0ff.svg) `#89a0ff`<br>`blue-dark.900` | `--unity-icon-info` | `IconColors.info` |
-| `icon.inverse` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | ![#09101c](docs/swatches/09101c.svg) `#09101c`<br>`gray.1200` | `--unity-icon-inverse` | `IconColors.inverse` |
+| `color.icon.default` | ![#09101c](docs/swatches/09101c.svg) `#09101c`<br>`color.gray.1200` | ![#edeef0](docs/swatches/edeef0.svg) `#edeef0`<br>`color.gray-dark.1200` | `--unity-color-icon-default` | `IconColors.default` |
+| `color.icon.subtle` | ![#667085](docs/swatches/667085.svg) `#667085`<br>`color.gray.600` | ![#afb3ba](docs/swatches/afb3ba.svg) `#afb3ba`<br>`color.gray-dark.1100` | `--unity-color-icon-subtle` | `IconColors.subtle` |
+| `color.icon.disabled` | ![#98a2b3](docs/swatches/98a2b3.svg) `#98a2b3`<br>`color.gray.500` | ![#92979e](docs/swatches/92979e.svg) `#92979e`<br>`color.gray-dark.1000` | `--unity-color-icon-disabled` | `IconColors.disabled` |
+| `color.icon.on-action` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`color.base.white` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`color.base.white` | `--unity-color-icon-on-action` | `IconColors.onAction` |
+| `color.icon.action` | ![#061ab1](docs/swatches/061ab1.svg) `#061ab1`<br>`color.blue.700` | ![#b8c6ff](docs/swatches/b8c6ff.svg) `#b8c6ff`<br>`color.blue-dark.1000` | `--unity-color-icon-action` | `IconColors.action` |
+| `color.icon.error` | ![#b82525](docs/swatches/b82525.svg) `#b82525`<br>`color.red.900` | ![#f3a3a8](docs/swatches/f3a3a8.svg) `#f3a3a8`<br>`color.red-dark.900` | `--unity-color-icon-error` | `IconColors.error` |
+| `color.icon.success` | ![#156142](docs/swatches/156142.svg) `#156142`<br>`color.green.1000` | ![#b5eacf](docs/swatches/b5eacf.svg) `#b5eacf`<br>`color.green-dark.900` | `--unity-color-icon-success` | `IconColors.success` |
+| `color.icon.warning` | ![#813600](docs/swatches/813600.svg) `#813600`<br>`color.orange.1000` | ![#ffd9b3](docs/swatches/ffd9b3.svg) `#ffd9b3`<br>`color.orange-dark.900` | `--unity-color-icon-warning` | `IconColors.warning` |
+| `color.icon.info` | ![#8692db](docs/swatches/8692db.svg) `#8692db`<br>`color.blue.500` | ![#89a0ff](docs/swatches/89a0ff.svg) `#89a0ff`<br>`color.blue-dark.900` | `--unity-color-icon-info` | `IconColors.info` |
+| `color.icon.inverse` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`color.base.white` | ![#09101c](docs/swatches/09101c.svg) `#09101c`<br>`color.gray.1200` | `--unity-color-icon-inverse` | `IconColors.inverse` |
 
 ### surface
 
 | Token | Light | Dark | CSS | Kotlin |
 | --- | --- | --- | --- | --- |
-| `surface.base-1` | ![#f2f4f7](docs/swatches/f2f4f7.svg) `#f2f4f7`<br>`gray.200` | ![#272a2d](docs/swatches/272a2d.svg) `#272a2d`<br>`gray-dark.400` | `--unity-surface-base-1` | `SurfaceColors.base1` |
-| `surface.base-2` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | ![#212225](docs/swatches/212225.svg) `#212225`<br>`gray-dark.300` | `--unity-surface-base-2` | `SurfaceColors.base2` |
-| `surface.base-3` | ![#fcfcfd](docs/swatches/fcfcfd.svg) `#fcfcfd`<br>`gray.100` | ![#18191b](docs/swatches/18191b.svg) `#18191b`<br>`gray-dark.200` | `--unity-surface-base-3` | `SurfaceColors.base3` |
-| `surface.base-4` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | ![#212225](docs/swatches/212225.svg) `#212225`<br>`gray-dark.300` | `--unity-surface-base-4` | `SurfaceColors.base4` |
-| `surface.secondary` | ![#f2f4f7](docs/swatches/f2f4f7.svg) `#f2f4f7`<br>`gray.200` | ![#2e3135](docs/swatches/2e3135.svg) `#2e3135`<br>`gray-dark.500` | `--unity-surface-secondary` | `SurfaceColors.secondary` |
-| `surface.secondary-hover` | ![#e4e7ec](docs/swatches/e4e7ec.svg) `#e4e7ec`<br>`gray.300` | ![#363a3f](docs/swatches/363a3f.svg) `#363a3f`<br>`gray-dark.600` | `--unity-surface-secondary-hover` | — |
-| `surface.secondary-pressed` | ![#d0d5dd](docs/swatches/d0d5dd.svg) `#d0d5dd`<br>`gray.400` | ![#363a3f](docs/swatches/363a3f.svg) `#363a3f`<br>`gray-dark.600` | `--unity-surface-secondary-pressed` | `SurfaceColors.secondaryPressed` |
-| `surface.secondary-disabled` | ![#fcfcfd](docs/swatches/fcfcfd.svg) `#fcfcfd`<br>`gray.100` | ![#272a2d](docs/swatches/272a2d.svg) `#272a2d`<br>`gray-dark.400` | `--unity-surface-secondary-disabled` | `SurfaceColors.secondaryDisabled` |
-| `surface.tertiary` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | ![#212225](docs/swatches/212225.svg) `#212225`<br>`gray-dark.300` | `--unity-surface-tertiary` | `SurfaceColors.tertiary` |
-| `surface.tertiary-hover` | ![#f2f4f7](docs/swatches/f2f4f7.svg) `#f2f4f7`<br>`gray.200` | ![#272a2d](docs/swatches/272a2d.svg) `#272a2d`<br>`gray-dark.400` | `--unity-surface-tertiary-hover` | — |
-| `surface.tertiary-pressed` | ![#e4e7ec](docs/swatches/e4e7ec.svg) `#e4e7ec`<br>`gray.300` | ![#2e3135](docs/swatches/2e3135.svg) `#2e3135`<br>`gray-dark.500` | `--unity-surface-tertiary-pressed` | `SurfaceColors.tertiaryPressed` |
-| `surface.tertiary-disabled` | ![#fcfcfd](docs/swatches/fcfcfd.svg) `#fcfcfd`<br>`gray.100` | ![#18191b](docs/swatches/18191b.svg) `#18191b`<br>`gray-dark.200` | `--unity-surface-tertiary-disabled` | `SurfaceColors.tertiaryDisabled` |
-| `surface.on-action` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | `--unity-surface-on-action` | `SurfaceColors.onAction` |
-| `surface.selection` | ![#061ab1](docs/swatches/061ab1.svg) `#061ab1`<br>`blue.700` | ![#1238d2](docs/swatches/1238d2.svg) `#1238d2`<br>`blue-dark.700` | `--unity-surface-selection` | `SurfaceColors.selection` |
-| `surface.selection-hover` | ![#05168f](docs/swatches/05168f.svg) `#05168f`<br>`blue.800` | ![#4f6cff](docs/swatches/4f6cff.svg) `#4f6cff`<br>`blue-dark.800` | `--unity-surface-selection-hover` | — |
-| `surface.selection-disabled` | ![#dee6ff](docs/swatches/dee6ff.svg) `#dee6ff`<br>`blue.300` | ![#191f38](docs/swatches/191f38.svg) `#191f38`<br>`blue-dark.300` | `--unity-surface-selection-disabled` | `SurfaceColors.selectionDisabled` |
-| `surface.brand-strong` | ![#061ab1](docs/swatches/061ab1.svg) `#061ab1`<br>`blue.700` | ![#1238d2](docs/swatches/1238d2.svg) `#1238d2`<br>`blue-dark.700` | `--unity-surface-brand-strong` | `SurfaceColors.brandStrong` |
-| `surface.brand-strong-hover` | ![#05168f](docs/swatches/05168f.svg) `#05168f`<br>`blue.800` | ![#4f6cff](docs/swatches/4f6cff.svg) `#4f6cff`<br>`blue-dark.800` | `--unity-surface-brand-strong-hover` | — |
-| `surface.brand-strong-pressed` | ![#04106e](docs/swatches/04106e.svg) `#04106e`<br>`blue.900` | ![#89a0ff](docs/swatches/89a0ff.svg) `#89a0ff`<br>`blue-dark.900` | `--unity-surface-brand-strong-pressed` | `SurfaceColors.brandStrongPressed` |
-| `surface.brand-strong-disabled` | ![#edf2ff](docs/swatches/edf2ff.svg) `#edf2ff`<br>`blue.200` | ![#111422](docs/swatches/111422.svg) `#111422`<br>`blue-dark.200` | `--unity-surface-brand-strong-disabled` | `SurfaceColors.brandStrongDisabled` |
-| `surface.brand-subtle` | ![#dee6ff](docs/swatches/dee6ff.svg) `#dee6ff`<br>`blue.300` | ![#232e57](docs/swatches/232e57.svg) `#232e57`<br>`blue-dark.500` | `--unity-surface-brand-subtle` | `SurfaceColors.brandSubtle` |
-| `surface.brand-subtle-hover` | ![#c4d1ff](docs/swatches/c4d1ff.svg) `#c4d1ff`<br>`blue.400` | ![#2b3769](docs/swatches/2b3769.svg) `#2b3769`<br>`blue-dark.600` | `--unity-surface-brand-subtle-hover` | — |
-| `surface.brand-subtle-pressed` | ![#8692db](docs/swatches/8692db.svg) `#8692db`<br>`blue.500` | ![#1238d2](docs/swatches/1238d2.svg) `#1238d2`<br>`blue-dark.700` | `--unity-surface-brand-subtle-pressed` | `SurfaceColors.brandSubtlePressed` |
-| `surface.brand-subtle-disabled` | ![#edf2ff](docs/swatches/edf2ff.svg) `#edf2ff`<br>`blue.200` | ![#191f38](docs/swatches/191f38.svg) `#191f38`<br>`blue-dark.300` | `--unity-surface-brand-subtle-disabled` | `SurfaceColors.brandSubtleDisabled` |
-| `surface.error-subtle` | ![#ffe1e1](docs/swatches/ffe1e1.svg) `#ffe1e1`<br>`red.200` | ![#4a1316](docs/swatches/4a1316.svg) `#4a1316`<br>`red-dark.300` | `--unity-surface-error-subtle` | `SurfaceColors.errorSubtle` |
-| `surface.error-subtle-hover` | ![#ffc7c7](docs/swatches/ffc7c7.svg) `#ffc7c7`<br>`red.300` | ![#63181c](docs/swatches/63181c.svg) `#63181c`<br>`red-dark.400` | `--unity-surface-error-subtle-hover` | — |
-| `surface.error-subtle-pressed` | ![#ffaaaa](docs/swatches/ffaaaa.svg) `#ffaaaa`<br>`red.400` | ![#7c1e23](docs/swatches/7c1e23.svg) `#7c1e23`<br>`red-dark.500` | `--unity-surface-error-subtle-pressed` | `SurfaceColors.errorSubtlePressed` |
-| `surface.error-subtle-disabled` | ![#fff5f5](docs/swatches/fff5f5.svg) `#fff5f5`<br>`red.100` | ![#330f11](docs/swatches/330f11.svg) `#330f11`<br>`red-dark.200` | `--unity-surface-error-subtle-disabled` | `SurfaceColors.errorSubtleDisabled` |
-| `surface.error-strong` | ![#d72d2d](docs/swatches/d72d2d.svg) `#d72d2d`<br>`red.800` | ![#96252a](docs/swatches/96252a.svg) `#96252a`<br>`red-dark.600` | `--unity-surface-error-strong` | `SurfaceColors.errorStrong` |
-| `surface.success-strong` | ![#1e8057](docs/swatches/1e8057.svg) `#1e8057`<br>`green.900` | ![#2b6546](docs/swatches/2b6546.svg) `#2b6546`<br>`green-dark.600` | `--unity-surface-success-strong` | `SurfaceColors.successStrong` |
-| `surface.success-strong-hover` | ![#156142](docs/swatches/156142.svg) `#156142`<br>`green.1000` | ![#30a46c](docs/swatches/30a46c.svg) `#30a46c`<br>`green-dark.700` | `--unity-surface-success-strong-hover` | — |
-| `surface.success-strong-pressed` | ![#0d422c](docs/swatches/0d422c.svg) `#0d422c`<br>`green.1100` | ![#33b074](docs/swatches/33b074.svg) `#33b074`<br>`green-dark.800` | `--unity-surface-success-strong-pressed` | `SurfaceColors.successStrongPressed` |
-| `surface.success-strong-disabled` | ![#dcf4e5](docs/swatches/dcf4e5.svg) `#dcf4e5`<br>`green.200` | ![#112018](docs/swatches/112018.svg) `#112018`<br>`green-dark.200` | `--unity-surface-success-strong-disabled` | `SurfaceColors.successStrongDisabled` |
-| `surface.success-subtle` | ![#dcf4e5](docs/swatches/dcf4e5.svg) `#dcf4e5`<br>`green.200` | ![#163023](docs/swatches/163023.svg) `#163023`<br>`green-dark.300` | `--unity-surface-success-subtle` | `SurfaceColors.successSubtle` |
-| `surface.warning-subtle` | ![#fff9d6](docs/swatches/fff9d6.svg) `#fff9d6`<br>`yellow.200` | ![#2b2400](docs/swatches/2b2400.svg) `#2b2400`<br>`yellow-dark.300` | `--unity-surface-warning-subtle` | `SurfaceColors.warningSubtle` |
-| `surface.warning-strong` | ![#ffd100](docs/swatches/ffd100.svg) `#ffd100`<br>`yellow.600` | ![#ffd100](docs/swatches/ffd100.svg) `#ffd100`<br>`yellow-dark.800` | `--unity-surface-warning-strong` | `SurfaceColors.warningStrong` |
-| `surface.overlay` | ![#667085](docs/swatches/667085.svg) `#667085`<br>`gray.600` | ![#111113](docs/swatches/111113.svg) `#111113`<br>`gray-dark.100` | `--unity-surface-overlay` | `SurfaceColors.overlay` |
-| `surface.inverse` | ![#191919](docs/swatches/191919.svg) `#191919`<br>`base.black` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | `--unity-surface-inverse` | `SurfaceColors.inverse` |
-| `surface.track` | ![#f2f4f7](docs/swatches/f2f4f7.svg) `#f2f4f7`<br>`gray.200` | ![#18191b](docs/swatches/18191b.svg) `#18191b`<br>`gray-dark.200` | `--unity-surface-track` | `SurfaceColors.track` |
-| `surface.track-hover` | ![#e4e7ec](docs/swatches/e4e7ec.svg) `#e4e7ec`<br>`gray.300` | ![#212225](docs/swatches/212225.svg) `#212225`<br>`gray-dark.300` | `--unity-surface-track-hover` | — |
-| `surface.track-pressed` | ![#d0d5dd](docs/swatches/d0d5dd.svg) `#d0d5dd`<br>`gray.400` | ![#272a2d](docs/swatches/272a2d.svg) `#272a2d`<br>`gray-dark.400` | `--unity-surface-track-pressed` | `SurfaceColors.trackPressed` |
-| `surface.track-selected` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | ![#363a3f](docs/swatches/363a3f.svg) `#363a3f`<br>`gray-dark.600` | `--unity-surface-track-selected` | `SurfaceColors.trackSelected` |
-| `surface.track-selected-hover` | ![#f2f4f7](docs/swatches/f2f4f7.svg) `#f2f4f7`<br>`gray.200` | ![#43484e](docs/swatches/43484e.svg) `#43484e`<br>`gray-dark.700` | `--unity-surface-track-selected-hover` | — |
-| `surface.track-selected-pressed` | ![#e4e7ec](docs/swatches/e4e7ec.svg) `#e4e7ec`<br>`gray.300` | ![#43484e](docs/swatches/43484e.svg) `#43484e`<br>`gray-dark.700` | `--unity-surface-track-selected-pressed` | `SurfaceColors.trackSelectedPressed` |
+| `color.surface.base-1` | ![#f2f4f7](docs/swatches/f2f4f7.svg) `#f2f4f7`<br>`color.gray.200` | ![#272a2d](docs/swatches/272a2d.svg) `#272a2d`<br>`color.gray-dark.400` | `--unity-color-surface-base-1` | `SurfaceColors.base1` |
+| `color.surface.base-2` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`color.base.white` | ![#212225](docs/swatches/212225.svg) `#212225`<br>`color.gray-dark.300` | `--unity-color-surface-base-2` | `SurfaceColors.base2` |
+| `color.surface.base-3` | ![#fcfcfd](docs/swatches/fcfcfd.svg) `#fcfcfd`<br>`color.gray.100` | ![#18191b](docs/swatches/18191b.svg) `#18191b`<br>`color.gray-dark.200` | `--unity-color-surface-base-3` | `SurfaceColors.base3` |
+| `color.surface.base-4` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`color.base.white` | ![#212225](docs/swatches/212225.svg) `#212225`<br>`color.gray-dark.300` | `--unity-color-surface-base-4` | `SurfaceColors.base4` |
+| `color.surface.secondary` | ![#f2f4f7](docs/swatches/f2f4f7.svg) `#f2f4f7`<br>`color.gray.200` | ![#2e3135](docs/swatches/2e3135.svg) `#2e3135`<br>`color.gray-dark.500` | `--unity-color-surface-secondary` | `SurfaceColors.secondary` |
+| `color.surface.secondary-hover` | ![#e4e7ec](docs/swatches/e4e7ec.svg) `#e4e7ec`<br>`color.gray.300` | ![#363a3f](docs/swatches/363a3f.svg) `#363a3f`<br>`color.gray-dark.600` | `--unity-color-surface-secondary-hover` | — |
+| `color.surface.secondary-pressed` | ![#d0d5dd](docs/swatches/d0d5dd.svg) `#d0d5dd`<br>`color.gray.400` | ![#363a3f](docs/swatches/363a3f.svg) `#363a3f`<br>`color.gray-dark.600` | `--unity-color-surface-secondary-pressed` | `SurfaceColors.secondaryPressed` |
+| `color.surface.secondary-disabled` | ![#fcfcfd](docs/swatches/fcfcfd.svg) `#fcfcfd`<br>`color.gray.100` | ![#272a2d](docs/swatches/272a2d.svg) `#272a2d`<br>`color.gray-dark.400` | `--unity-color-surface-secondary-disabled` | `SurfaceColors.secondaryDisabled` |
+| `color.surface.tertiary` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`color.base.white` | ![#212225](docs/swatches/212225.svg) `#212225`<br>`color.gray-dark.300` | `--unity-color-surface-tertiary` | `SurfaceColors.tertiary` |
+| `color.surface.tertiary-hover` | ![#f2f4f7](docs/swatches/f2f4f7.svg) `#f2f4f7`<br>`color.gray.200` | ![#272a2d](docs/swatches/272a2d.svg) `#272a2d`<br>`color.gray-dark.400` | `--unity-color-surface-tertiary-hover` | — |
+| `color.surface.tertiary-pressed` | ![#e4e7ec](docs/swatches/e4e7ec.svg) `#e4e7ec`<br>`color.gray.300` | ![#2e3135](docs/swatches/2e3135.svg) `#2e3135`<br>`color.gray-dark.500` | `--unity-color-surface-tertiary-pressed` | `SurfaceColors.tertiaryPressed` |
+| `color.surface.tertiary-disabled` | ![#fcfcfd](docs/swatches/fcfcfd.svg) `#fcfcfd`<br>`color.gray.100` | ![#18191b](docs/swatches/18191b.svg) `#18191b`<br>`color.gray-dark.200` | `--unity-color-surface-tertiary-disabled` | `SurfaceColors.tertiaryDisabled` |
+| `color.surface.on-action` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`color.base.white` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`color.base.white` | `--unity-color-surface-on-action` | `SurfaceColors.onAction` |
+| `color.surface.selection` | ![#061ab1](docs/swatches/061ab1.svg) `#061ab1`<br>`color.blue.700` | ![#1238d2](docs/swatches/1238d2.svg) `#1238d2`<br>`color.blue-dark.700` | `--unity-color-surface-selection` | `SurfaceColors.selection` |
+| `color.surface.selection-hover` | ![#05168f](docs/swatches/05168f.svg) `#05168f`<br>`color.blue.800` | ![#4f6cff](docs/swatches/4f6cff.svg) `#4f6cff`<br>`color.blue-dark.800` | `--unity-color-surface-selection-hover` | — |
+| `color.surface.selection-disabled` | ![#dee6ff](docs/swatches/dee6ff.svg) `#dee6ff`<br>`color.blue.300` | ![#191f38](docs/swatches/191f38.svg) `#191f38`<br>`color.blue-dark.300` | `--unity-color-surface-selection-disabled` | `SurfaceColors.selectionDisabled` |
+| `color.surface.brand-strong` | ![#061ab1](docs/swatches/061ab1.svg) `#061ab1`<br>`color.blue.700` | ![#1238d2](docs/swatches/1238d2.svg) `#1238d2`<br>`color.blue-dark.700` | `--unity-color-surface-brand-strong` | `SurfaceColors.brandStrong` |
+| `color.surface.brand-strong-hover` | ![#05168f](docs/swatches/05168f.svg) `#05168f`<br>`color.blue.800` | ![#4f6cff](docs/swatches/4f6cff.svg) `#4f6cff`<br>`color.blue-dark.800` | `--unity-color-surface-brand-strong-hover` | — |
+| `color.surface.brand-strong-pressed` | ![#04106e](docs/swatches/04106e.svg) `#04106e`<br>`color.blue.900` | ![#89a0ff](docs/swatches/89a0ff.svg) `#89a0ff`<br>`color.blue-dark.900` | `--unity-color-surface-brand-strong-pressed` | `SurfaceColors.brandStrongPressed` |
+| `color.surface.brand-strong-disabled` | ![#edf2ff](docs/swatches/edf2ff.svg) `#edf2ff`<br>`color.blue.200` | ![#111422](docs/swatches/111422.svg) `#111422`<br>`color.blue-dark.200` | `--unity-color-surface-brand-strong-disabled` | `SurfaceColors.brandStrongDisabled` |
+| `color.surface.brand-subtle` | ![#dee6ff](docs/swatches/dee6ff.svg) `#dee6ff`<br>`color.blue.300` | ![#232e57](docs/swatches/232e57.svg) `#232e57`<br>`color.blue-dark.500` | `--unity-color-surface-brand-subtle` | `SurfaceColors.brandSubtle` |
+| `color.surface.brand-subtle-hover` | ![#c4d1ff](docs/swatches/c4d1ff.svg) `#c4d1ff`<br>`color.blue.400` | ![#2b3769](docs/swatches/2b3769.svg) `#2b3769`<br>`color.blue-dark.600` | `--unity-color-surface-brand-subtle-hover` | — |
+| `color.surface.brand-subtle-pressed` | ![#8692db](docs/swatches/8692db.svg) `#8692db`<br>`color.blue.500` | ![#1238d2](docs/swatches/1238d2.svg) `#1238d2`<br>`color.blue-dark.700` | `--unity-color-surface-brand-subtle-pressed` | `SurfaceColors.brandSubtlePressed` |
+| `color.surface.brand-subtle-disabled` | ![#edf2ff](docs/swatches/edf2ff.svg) `#edf2ff`<br>`color.blue.200` | ![#191f38](docs/swatches/191f38.svg) `#191f38`<br>`color.blue-dark.300` | `--unity-color-surface-brand-subtle-disabled` | `SurfaceColors.brandSubtleDisabled` |
+| `color.surface.error-subtle` | ![#ffe1e1](docs/swatches/ffe1e1.svg) `#ffe1e1`<br>`color.red.200` | ![#4a1316](docs/swatches/4a1316.svg) `#4a1316`<br>`color.red-dark.300` | `--unity-color-surface-error-subtle` | `SurfaceColors.errorSubtle` |
+| `color.surface.error-subtle-hover` | ![#ffc7c7](docs/swatches/ffc7c7.svg) `#ffc7c7`<br>`color.red.300` | ![#63181c](docs/swatches/63181c.svg) `#63181c`<br>`color.red-dark.400` | `--unity-color-surface-error-subtle-hover` | — |
+| `color.surface.error-subtle-pressed` | ![#ffaaaa](docs/swatches/ffaaaa.svg) `#ffaaaa`<br>`color.red.400` | ![#7c1e23](docs/swatches/7c1e23.svg) `#7c1e23`<br>`color.red-dark.500` | `--unity-color-surface-error-subtle-pressed` | `SurfaceColors.errorSubtlePressed` |
+| `color.surface.error-subtle-disabled` | ![#fff5f5](docs/swatches/fff5f5.svg) `#fff5f5`<br>`color.red.100` | ![#330f11](docs/swatches/330f11.svg) `#330f11`<br>`color.red-dark.200` | `--unity-color-surface-error-subtle-disabled` | `SurfaceColors.errorSubtleDisabled` |
+| `color.surface.error-strong` | ![#d72d2d](docs/swatches/d72d2d.svg) `#d72d2d`<br>`color.red.800` | ![#96252a](docs/swatches/96252a.svg) `#96252a`<br>`color.red-dark.600` | `--unity-color-surface-error-strong` | `SurfaceColors.errorStrong` |
+| `color.surface.success-strong` | ![#1e8057](docs/swatches/1e8057.svg) `#1e8057`<br>`color.green.900` | ![#2b6546](docs/swatches/2b6546.svg) `#2b6546`<br>`color.green-dark.600` | `--unity-color-surface-success-strong` | `SurfaceColors.successStrong` |
+| `color.surface.success-strong-hover` | ![#156142](docs/swatches/156142.svg) `#156142`<br>`color.green.1000` | ![#30a46c](docs/swatches/30a46c.svg) `#30a46c`<br>`color.green-dark.700` | `--unity-color-surface-success-strong-hover` | — |
+| `color.surface.success-strong-pressed` | ![#0d422c](docs/swatches/0d422c.svg) `#0d422c`<br>`color.green.1100` | ![#33b074](docs/swatches/33b074.svg) `#33b074`<br>`color.green-dark.800` | `--unity-color-surface-success-strong-pressed` | `SurfaceColors.successStrongPressed` |
+| `color.surface.success-strong-disabled` | ![#dcf4e5](docs/swatches/dcf4e5.svg) `#dcf4e5`<br>`color.green.200` | ![#112018](docs/swatches/112018.svg) `#112018`<br>`color.green-dark.200` | `--unity-color-surface-success-strong-disabled` | `SurfaceColors.successStrongDisabled` |
+| `color.surface.success-subtle` | ![#dcf4e5](docs/swatches/dcf4e5.svg) `#dcf4e5`<br>`color.green.200` | ![#163023](docs/swatches/163023.svg) `#163023`<br>`color.green-dark.300` | `--unity-color-surface-success-subtle` | `SurfaceColors.successSubtle` |
+| `color.surface.warning-subtle` | ![#fff9d6](docs/swatches/fff9d6.svg) `#fff9d6`<br>`color.yellow.200` | ![#2b2400](docs/swatches/2b2400.svg) `#2b2400`<br>`color.yellow-dark.300` | `--unity-color-surface-warning-subtle` | `SurfaceColors.warningSubtle` |
+| `color.surface.warning-strong` | ![#ffd100](docs/swatches/ffd100.svg) `#ffd100`<br>`color.yellow.600` | ![#ffd100](docs/swatches/ffd100.svg) `#ffd100`<br>`color.yellow-dark.800` | `--unity-color-surface-warning-strong` | `SurfaceColors.warningStrong` |
+| `color.surface.overlay` | ![#667085](docs/swatches/667085.svg) `#667085`<br>`color.gray.600` | ![#111113](docs/swatches/111113.svg) `#111113`<br>`color.gray-dark.100` | `--unity-color-surface-overlay` | `SurfaceColors.overlay` |
+| `color.surface.inverse` | ![#191919](docs/swatches/191919.svg) `#191919`<br>`color.base.black` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`color.base.white` | `--unity-color-surface-inverse` | `SurfaceColors.inverse` |
+| `color.surface.track` | ![#f2f4f7](docs/swatches/f2f4f7.svg) `#f2f4f7`<br>`color.gray.200` | ![#18191b](docs/swatches/18191b.svg) `#18191b`<br>`color.gray-dark.200` | `--unity-color-surface-track` | `SurfaceColors.track` |
+| `color.surface.track-hover` | ![#e4e7ec](docs/swatches/e4e7ec.svg) `#e4e7ec`<br>`color.gray.300` | ![#212225](docs/swatches/212225.svg) `#212225`<br>`color.gray-dark.300` | `--unity-color-surface-track-hover` | — |
+| `color.surface.track-pressed` | ![#d0d5dd](docs/swatches/d0d5dd.svg) `#d0d5dd`<br>`color.gray.400` | ![#272a2d](docs/swatches/272a2d.svg) `#272a2d`<br>`color.gray-dark.400` | `--unity-color-surface-track-pressed` | `SurfaceColors.trackPressed` |
+| `color.surface.track-selected` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`color.base.white` | ![#363a3f](docs/swatches/363a3f.svg) `#363a3f`<br>`color.gray-dark.600` | `--unity-color-surface-track-selected` | `SurfaceColors.trackSelected` |
+| `color.surface.track-selected-hover` | ![#f2f4f7](docs/swatches/f2f4f7.svg) `#f2f4f7`<br>`color.gray.200` | ![#43484e](docs/swatches/43484e.svg) `#43484e`<br>`color.gray-dark.700` | `--unity-color-surface-track-selected-hover` | — |
+| `color.surface.track-selected-pressed` | ![#e4e7ec](docs/swatches/e4e7ec.svg) `#e4e7ec`<br>`color.gray.300` | ![#43484e](docs/swatches/43484e.svg) `#43484e`<br>`color.gray-dark.700` | `--unity-color-surface-track-selected-pressed` | `SurfaceColors.trackSelectedPressed` |
 
 ### text
 
 | Token | Light | Dark | CSS | Kotlin |
 | --- | --- | --- | --- | --- |
-| `text.default` | ![#09101c](docs/swatches/09101c.svg) `#09101c`<br>`gray.1200` | ![#edeef0](docs/swatches/edeef0.svg) `#edeef0`<br>`gray-dark.1200` | `--unity-text-default` | `TextColors.default` |
-| `text.subtle` | ![#667085](docs/swatches/667085.svg) `#667085`<br>`gray.600` | ![#afb3ba](docs/swatches/afb3ba.svg) `#afb3ba`<br>`gray-dark.1100` | `--unity-text-subtle` | `TextColors.subtle` |
-| `text.disabled` | ![#98a2b3](docs/swatches/98a2b3.svg) `#98a2b3`<br>`gray.500` | ![#92979e](docs/swatches/92979e.svg) `#92979e`<br>`gray-dark.1000` | `--unity-text-disabled` | `TextColors.disabled` |
-| `text.inverse` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | ![#09101c](docs/swatches/09101c.svg) `#09101c`<br>`gray.1200` | `--unity-text-inverse` | `TextColors.inverse` |
-| `text.on-action` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`base.white` | `--unity-text-on-action` | `TextColors.onAction` |
-| `text.on-white` | ![#09101c](docs/swatches/09101c.svg) `#09101c`<br>`gray.1200` | ![#09101c](docs/swatches/09101c.svg) `#09101c`<br>`gray.1200` | `--unity-text-on-white` | `TextColors.onWhite` |
-| `text.link` | ![#061ab1](docs/swatches/061ab1.svg) `#061ab1`<br>`blue.700` | ![#dde6ff](docs/swatches/dde6ff.svg) `#dde6ff`<br>`blue-dark.1100` | `--unity-text-link` | `TextColors.link` |
-| `text.link-hover` | ![#05168f](docs/swatches/05168f.svg) `#05168f`<br>`blue.800` | ![#dde6ff](docs/swatches/dde6ff.svg) `#dde6ff`<br>`blue-dark.1100` | `--unity-text-link-hover` | — |
-| `text.link-pressed` | ![#04106e](docs/swatches/04106e.svg) `#04106e`<br>`blue.900` | ![#f2f5ff](docs/swatches/f2f5ff.svg) `#f2f5ff`<br>`blue-dark.1200` | `--unity-text-link-pressed` | `TextColors.linkPressed` |
-| `text.link-disabled` | ![#8692db](docs/swatches/8692db.svg) `#8692db`<br>`blue.500` | ![#767b82](docs/swatches/767b82.svg) `#767b82`<br>`gray-dark.900` | `--unity-text-link-disabled` | `TextColors.linkDisabled` |
-| `text.error` | ![#b82525](docs/swatches/b82525.svg) `#b82525`<br>`red.900` | ![#f6c8cb](docs/swatches/f6c8cb.svg) `#f6c8cb`<br>`red-dark.1000` | `--unity-text-error` | `TextColors.error` |
-| `text.success` | ![#156142](docs/swatches/156142.svg) `#156142`<br>`green.1000` | ![#b5eacf](docs/swatches/b5eacf.svg) `#b5eacf`<br>`green-dark.900` | `--unity-text-success` | `TextColors.success` |
-| `text.warning` | ![#813600](docs/swatches/813600.svg) `#813600`<br>`orange.1000` | ![#ffd9b3](docs/swatches/ffd9b3.svg) `#ffd9b3`<br>`orange-dark.900` | `--unity-text-warning` | `TextColors.warning` |
-| `text.info` | ![#3242c0](docs/swatches/3242c0.svg) `#3242c0`<br>`blue.600` | ![#89a0ff](docs/swatches/89a0ff.svg) `#89a0ff`<br>`blue-dark.900` | `--unity-text-info` | `TextColors.info` |
+| `color.text.default` | ![#09101c](docs/swatches/09101c.svg) `#09101c`<br>`color.gray.1200` | ![#edeef0](docs/swatches/edeef0.svg) `#edeef0`<br>`color.gray-dark.1200` | `--unity-color-text-default` | `TextColors.default` |
+| `color.text.subtle` | ![#667085](docs/swatches/667085.svg) `#667085`<br>`color.gray.600` | ![#afb3ba](docs/swatches/afb3ba.svg) `#afb3ba`<br>`color.gray-dark.1100` | `--unity-color-text-subtle` | `TextColors.subtle` |
+| `color.text.disabled` | ![#98a2b3](docs/swatches/98a2b3.svg) `#98a2b3`<br>`color.gray.500` | ![#92979e](docs/swatches/92979e.svg) `#92979e`<br>`color.gray-dark.1000` | `--unity-color-text-disabled` | `TextColors.disabled` |
+| `color.text.inverse` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`color.base.white` | ![#09101c](docs/swatches/09101c.svg) `#09101c`<br>`color.gray.1200` | `--unity-color-text-inverse` | `TextColors.inverse` |
+| `color.text.on-action` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`color.base.white` | ![#ffffff](docs/swatches/ffffff.svg) `#ffffff`<br>`color.base.white` | `--unity-color-text-on-action` | `TextColors.onAction` |
+| `color.text.on-white` | ![#09101c](docs/swatches/09101c.svg) `#09101c`<br>`color.gray.1200` | ![#09101c](docs/swatches/09101c.svg) `#09101c`<br>`color.gray.1200` | `--unity-color-text-on-white` | `TextColors.onWhite` |
+| `color.text.link` | ![#061ab1](docs/swatches/061ab1.svg) `#061ab1`<br>`color.blue.700` | ![#dde6ff](docs/swatches/dde6ff.svg) `#dde6ff`<br>`color.blue-dark.1100` | `--unity-color-text-link` | `TextColors.link` |
+| `color.text.link-hover` | ![#05168f](docs/swatches/05168f.svg) `#05168f`<br>`color.blue.800` | ![#dde6ff](docs/swatches/dde6ff.svg) `#dde6ff`<br>`color.blue-dark.1100` | `--unity-color-text-link-hover` | — |
+| `color.text.link-pressed` | ![#04106e](docs/swatches/04106e.svg) `#04106e`<br>`color.blue.900` | ![#f2f5ff](docs/swatches/f2f5ff.svg) `#f2f5ff`<br>`color.blue-dark.1200` | `--unity-color-text-link-pressed` | `TextColors.linkPressed` |
+| `color.text.link-disabled` | ![#8692db](docs/swatches/8692db.svg) `#8692db`<br>`color.blue.500` | ![#767b82](docs/swatches/767b82.svg) `#767b82`<br>`color.gray-dark.900` | `--unity-color-text-link-disabled` | `TextColors.linkDisabled` |
+| `color.text.error` | ![#b82525](docs/swatches/b82525.svg) `#b82525`<br>`color.red.900` | ![#f6c8cb](docs/swatches/f6c8cb.svg) `#f6c8cb`<br>`color.red-dark.1000` | `--unity-color-text-error` | `TextColors.error` |
+| `color.text.success` | ![#156142](docs/swatches/156142.svg) `#156142`<br>`color.green.1000` | ![#b5eacf](docs/swatches/b5eacf.svg) `#b5eacf`<br>`color.green-dark.900` | `--unity-color-text-success` | `TextColors.success` |
+| `color.text.warning` | ![#813600](docs/swatches/813600.svg) `#813600`<br>`color.orange.1000` | ![#ffd9b3](docs/swatches/ffd9b3.svg) `#ffd9b3`<br>`color.orange-dark.900` | `--unity-color-text-warning` | `TextColors.warning` |
+| `color.text.info` | ![#3242c0](docs/swatches/3242c0.svg) `#3242c0`<br>`color.blue.600` | ![#89a0ff](docs/swatches/89a0ff.svg) `#89a0ff`<br>`color.blue-dark.900` | `--unity-color-text-info` | `TextColors.info` |
 
 ## Target sizes
 
@@ -172,12 +172,12 @@ Text and touch sizes per target (desktop, mobile, locker), with the primitive ea
 
 | Token | Value | CSS | Kotlin |
 | --- | --- | --- | --- |
-| `font.heading` | `Newson GLS`<br>`font.family.newson-gls` | `--unity-font-heading` | `FontTokens.heading` |
-| `font.body` | `Newson GLS`<br>`font.family.newson-gls` | `--unity-font-body` | `FontTokens.body` |
+| `font.heading` | `Newson`<br>`font.family.newson` | `--unity-font-heading` | `FontTokens.heading` |
+| `font.body` | `Newson`<br>`font.family.newson` | `--unity-font-body` | `FontTokens.body` |
 
 ## Primitive colours
 
-CSS `--unity-<family>-<step>`, Kotlin `PrimitiveColors.<Family>.<Family><Step>`. A Kotlin row lists Kotlin values only where they differ from the web ones.
+CSS `--unity-color-<family>-<step>`, Kotlin `PrimitiveColors.<Family>.<Family><Step>`. A Kotlin row lists Kotlin values only where they differ from the web ones.
 
 ### base
 
@@ -290,7 +290,7 @@ CSS `--unity-<family>-<step>`, Kotlin `PrimitiveColors.<Family>.<Family><Step>`.
 
 | Token | Value | CSS | Kotlin |
 | --- | --- | --- | --- |
-| `font.family.newson-gls` | `Newson GLS` | `--unity-font-family-newson-gls` | `PrimitiveTokens.Font.FontFamilyNewsonGls` |
+| `font.family.newson` | `Newson` | `--unity-font-family-newson` | `PrimitiveTokens.Font.FontFamilyNewson` |
 | `font.family.inter` | `Inter` | `--unity-font-family-inter` | `PrimitiveTokens.Font.FontFamilyInter` |
 | `font.weight.regular` | `400` | `--unity-font-weight-regular` | `PrimitiveTokens.Font.FontWeightRegular` |
 | `font.weight.medium` | `500` | `--unity-font-weight-medium` | `PrimitiveTokens.Font.FontWeightMedium` |

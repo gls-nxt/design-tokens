@@ -7,8 +7,8 @@ const KT = 'packages/kotlin/src/commonMain/kotlin/com/glsnxt/designtokens/';
 
 test('css has light root and dark overrides', async () => {
   const css = await readFile('packages/web/dist/tokens.css', 'utf8');
-  assert.match(css, /:root \{[^}]*--unity-blue-700: #061ab1;/);
-  assert.match(css, /\[data-theme="dark"\] \{[^}]*--unity-surface-selection: var\(--unity-blue-dark-700\);/);
+  assert.match(css, /:root \{[^}]*--unity-color-blue-700: #061ab1;/);
+  assert.match(css, /\[data-theme="dark"\] \{[^}]*--unity-color-surface-selection: var\(--unity-color-blue-dark-700\);/);
   assert.match(css, /@media \(prefers-color-scheme: dark\)/);
 });
 
@@ -31,7 +31,7 @@ test('css has viewport overrides and non-colour primitives', async () => {
   assert.match(css, /--unity-font-letter-spacing-12: -0\.05375rem;/);
   assert.doesNotMatch(css, /\dpx;/);
   // Group-level $type must not leak across files: colours stay colours.
-  assert.match(css, /--unity-black-alpha-1: rgba\(0, 0, 0, /);
+  assert.match(css, /--unity-color-black-alpha-1: rgba\(0, 0, 0, /);
 });
 
 test('kotlin has mobile typography, mobile dimensions and typed primitives', async () => {
@@ -135,8 +135,8 @@ test('platform overrides drop or replace a token on one platform only', async ()
     await writeFile(`${dir}/tokens/${file}.tokens.json`, JSON.stringify(json));
   };
   const ext = (platforms) => ({ 'com.glsnxt.platforms': platforms });
-  for (const mode of ['light', 'dark']) await edit(`semantic/color.${mode}`, (j) => (j.surface['brand-strong-hover'].$extensions = ext({ kotlin: false })));
-  await edit('primitive/color', (j) => (j.blue['700'].$extensions = ext({ kotlin: { $value: '#112233' } })));
+  for (const mode of ['light', 'dark']) await edit(`semantic/color.${mode}`, (j) => (j.color.surface['brand-strong-hover'].$extensions = ext({ kotlin: false })));
+  await edit('primitive/color', (j) => (j.color.blue['700'].$extensions = ext({ kotlin: { $value: '#112233' } })));
   for (const v of ['desktop', 'mobile', 'locker']) {
     await edit(`target/${v}`, (j) => {
       j["heading-1"]['font-size'].$extensions = ext({ kotlin: { $value: '{font.size.24}' } });
@@ -146,7 +146,7 @@ test('platform overrides drop or replace a token on one platform only', async ()
   execFileSync('node', ['build.mjs'], { cwd: dir });
 
   const css = await readFile(`${dir}/packages/web/dist/tokens.css`, 'utf8');
-  assert.match(css, /--unity-surface-brand-strong-hover:/);
+  assert.match(css, /--unity-color-surface-brand-strong-hover:/);
   assert.match(css, /--unity-heading-1-font-size: var\(--unity-font-size-42\);/);
   assert.doesNotMatch(await readFile(`${dir}/${KT}color/SurfaceColors.kt`, 'utf8'), /brandStrongHover/);
   assert.match(await readFile(`${dir}/${KT}MobileTypography.kt`, 'utf8'), /val heading1 = TextStyle\(fontSize = PrimitiveTokens\.Font\.FontSize24,/);
@@ -155,15 +155,19 @@ test('platform overrides drop or replace a token on one platform only', async ()
   assert.doesNotMatch(css, /--unity-touch-target-min:/);
   assert.match(await readFile(`${dir}/${KT}MobileDimensions.kt`, 'utf8'), /val touchTargetMin = 48\.dp/);
   assert.match(md, /^\| `touch-target\.min` \| `24px` \| `48px` \| `64px` \| — \| `MobileDimensions\.touchTargetMin` \|$/m);
-  assert.match(md, /\| `surface\.brand-strong-hover` \|.*\| — \|$/m);
+  assert.match(md, /\| `color\.surface\.brand-strong-hover` \|.*\| — \|$/m);
   // The overridden primitive shows in its own table and in every semantic token that references it.
   assert.match(md, /\| Kotlin: !\[#112233\]\(docs\/swatches\/112233\.svg\) `#112233` \|/);
-  assert.match(md, /\| `surface\.selection` \|.*`SurfaceColors\.selection`<br>light: .*`#112233`/);
+  assert.match(md, /\| `color\.surface\.selection` \|.*`SurfaceColors\.selection`<br>light: .*`#112233`/);
 
-  await edit('semantic/color.light', (j) => (j.surface['brand-strong'].$extensions = ext({ kotiln: false })));
+  await edit('primitive/color', (j) => (j.stray = { $value: '#000000' }));
+  assert.throws(() => execFileSync('node', ['build.mjs'], { cwd: dir, stdio: 'pipe' }), /Colour tokens must sit in the `color` group: stray/);
+  await edit('primitive/color', (j) => delete j.stray);
+
+  await edit('semantic/color.light', (j) => (j.color.surface['brand-strong'].$extensions = ext({ kotiln: false })));
   assert.throws(() => execFileSync('node', ['build.mjs'], { cwd: dir, stdio: 'pipe' }), /com\.glsnxt\.platforms\.kotiln/);
 
-  await edit('semantic/color.light', (j) => (j.surface['brand-strong'].$extensions = { 'com.glsnxt.platforms': [] }));
+  await edit('semantic/color.light', (j) => (j.color.surface['brand-strong'].$extensions = { 'com.glsnxt.platforms': [] }));
   assert.throws(() => execFileSync('node', ['build.mjs'], { cwd: dir, stdio: 'pipe' }), /com\.glsnxt\.platforms must be an object/);
 });
 

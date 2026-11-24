@@ -36,7 +36,7 @@ Both packages are published to GitHub Packages and share one version.
    ```css
    @import '@gls-nxt/design-tokens/tokens.css';
 
-   .button { background: var(--unity-surface-selection); }
+   .button { background: var(--unity-color-surface-selection); }
    ```
    Dark mode follows the OS setting. To force a mode, set `data-theme="dark"` or `data-theme="light"` on `<html>`.
 
@@ -82,14 +82,14 @@ The library targets Android, `iosArm64` and `iosSimulatorArm64`. It is built wit
 
 1. **Edit the JSON in `tokens/`:**
    - `primitive/` holds the raw values: `color`, `size` and `font`.
-   - `semantic/color.light.tokens.json` and `color.dark.tokens.json` reference the primitives, as in `{blue.700}`.
+   - `semantic/color.light.tokens.json` and `color.dark.tokens.json` reference the primitives, as in `{color.blue.700}`.
    - `semantic/font.tokens.json` holds the brand fonts.
    - `target/<desktop|mobile|locker>.tokens.json` reference the primitives, as in `{font.size.42}`. A group made only of `font-size`, `line-height` and `letter-spacing` becomes one Kotlin `TextStyle`; any other token becomes a `Dp`. A group can't mix the two.
    - Set `$type` on groups, not at the top of a file. Style Dictionary merges all files, so a top-level `$type` overrides the other files.
 2. **Set platform-specific values if you need them.** A token can differ per platform (`web` or `kotlin`). Add `$extensions` to the token:
    ```json
    "brand-strong-hover": {
-     "$value": "{blue.800}",
+     "$value": "{color.blue.800}",
      "$extensions": { "com.glsnxt.platforms": { "kotlin": false } }
    },
    "font-size": {
@@ -106,7 +106,8 @@ The library targets Android, `iosArm64` and `iosSimulatorArm64`. It is built wit
 
 [`TOKENS.md`](TOKENS.md) previews every token in every mode, with its CSS and Kotlin names. On a pull request, CI posts a comment that lists each changed token before and after.
 
-The build fails in four cases:
+The build fails in five cases:
+- a colour token sits outside the `color` group;
 - the light and dark files, or the three target files, define different tokens on a platform;
 - a `com.glsnxt.platforms` entry names an unknown platform or has an invalid value;
 - a generated name is not a valid identifier;
@@ -118,14 +119,15 @@ Token path segments are lowercase kebab-case. Each platform derives its names fr
 
 | Token | CSS | Kotlin |
 | --- | --- | --- |
-| `blue.700` | `--unity-blue-700` | `PrimitiveColors.Blue.Blue700` |
-| `surface.selection` | `--unity-surface-selection` | `SurfaceColors.selection` |
-| `surface.base-1` | `--unity-surface-base-1` | `SurfaceColors.base1` |
+| `color.blue.700` | `--unity-color-blue-700` | `PrimitiveColors.Blue.Blue700` |
+| `color.surface.selection` | `--unity-color-surface-selection` | `SurfaceColors.selection` |
+| `color.surface.base-1` | `--unity-color-surface-base-1` | `SurfaceColors.base1` |
 | `spacing.4` | `--unity-spacing-4` | `PrimitiveTokens.Spacing.Spacing4` |
 | `heading-1.font-size` | `--unity-heading-1-font-size` | `MobileTypography.heading1.fontSize` |
 | `touch-target.min` | `--unity-touch-target-min` | `MobileDimensions.touchTargetMin` |
 
-Two rules apply:
+Three rules apply:
+- Every colour token sits in the `color` group, so its name contains `color`. Kotlin names drop that segment, because they already say `Colors`.
 - A semantic segment after the group must start with a letter. Use `text.size-2xl`, not `text.2xl`.
 - No name may be a Kotlin keyword.
 
@@ -157,7 +159,7 @@ The tokens are exported from the Unity Design System Figma library:
 - the **Theme** collection, with its Light and Dark modes;
 - the **Device target** collection (formerly Viewport), with its Desktop, Mobile and Locker modes, exported to `tokens/target/`.
 
-References to the **Brand** collection are resolved to its `GLS` mode (`light/N` → `blue/N`, `dark/N` → `blue-dark/N`, fonts → Newson GLS). The other Brand modes are not exported yet.
+References to the **Brand** collection are resolved to its `GLS` mode (`light/N` → `blue/N`, `dark/N` → `blue-dark/N`, fonts → Newson). The other Brand modes are not exported yet.
 
 Some names differ from Figma: `Font/height` is `font.line-height`, `Font/spacing` is `font.letter-spacing`, and spaces become hyphens. Figma's `Frame Width` and `String` variables are design-file helpers and are not exported.
 
