@@ -172,8 +172,8 @@ Text and touch sizes per target (desktop, mobile, locker), with the primitive ea
 
 | Token | Value | CSS | Kotlin |
 | --- | --- | --- | --- |
-| `font.heading` | `Newson GLS`<br>`font.family.newson-gls` | `--unity-font-heading` | `FontTokens.heading` |
-| `font.body` | `Newson GLS`<br>`font.family.newson-gls` | `--unity-font-body` | `FontTokens.body` |
+| `font.heading` | `Newson`<br>`font.family.newson` | `--unity-font-heading` | `FontTokens.heading` |
+| `font.body` | `Newson`<br>`font.family.newson` | `--unity-font-body` | `FontTokens.body` |
 
 ## Primitive colours
 
@@ -290,7 +290,7 @@ CSS `--unity-<family>-<step>`, Kotlin `PrimitiveColors.<Family>.<Family><Step>`.
 
 | Token | Value | CSS | Kotlin |
 | --- | --- | --- | --- |
-| `font.family.newson-gls` | `Newson GLS` | `--unity-font-family-newson-gls` | `PrimitiveTokens.Font.FontFamilyNewsonGls` |
+| `font.family.newson` | `Newson` | `--unity-font-family-newson` | `PrimitiveTokens.Font.FontFamilyNewson` |
 | `font.family.inter` | `Inter` | `--unity-font-family-inter` | `PrimitiveTokens.Font.FontFamilyInter` |
 | `font.weight.regular` | `400` | `--unity-font-weight-regular` | `PrimitiveTokens.Font.FontWeightRegular` |
 | `font.weight.medium` | `500` | `--unity-font-weight-medium` | `PrimitiveTokens.Font.FontWeightMedium` |

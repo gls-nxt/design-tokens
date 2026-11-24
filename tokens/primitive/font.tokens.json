@@ -3,8 +3,8 @@
     "family": {
       "$description": "Font family (raw value).",
       "$type": "fontFamily",
-      "newson-gls": {
-        "$value": "Newson GLS"
+      "newson": {
+        "$value": "Newson"
       },
       "inter": {
         "$value": "Inter"

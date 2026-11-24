@@ -3,11 +3,11 @@
     "$type": "fontFamily",
     "heading": {
       "$description": "Brand font for headings. Changes per brand mode.",
-      "$value": "{font.family.newson-gls}"
+      "$value": "{font.family.newson}"
     },
     "body": {
       "$description": "Brand font for body text. Changes per brand mode.",
-      "$value": "{font.family.newson-gls}"
+      "$value": "{font.family.newson}"
     }
   }
 }
