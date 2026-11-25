@@ -43,24 +43,24 @@
         "$value": "{color.blue-dark.800}"
       }
     },
-    "effects": {
-      "shadow-1": {
+    "shadow": {
+      "1": {
         "$description": "Shadow colour for elevation level 1 (1 lowest, 5 highest). Used by the shadow xs to xl styles.",
         "$value": "{color.black-alpha.8}"
       },
-      "shadow-2": {
+      "2": {
         "$description": "Shadow colour for elevation level 2 (1 lowest, 5 highest). Used by the shadow xs to xl styles.",
         "$value": "{color.black-alpha.12}"
       },
-      "shadow-3": {
+      "3": {
         "$description": "Shadow colour for elevation level 3 (1 lowest, 5 highest). Used by the shadow xs to xl styles.",
         "$value": "{color.black-alpha.16}"
       },
-      "shadow-4": {
+      "4": {
         "$description": "Shadow colour for elevation level 4 (1 lowest, 5 highest). Used by the shadow xs to xl styles.",
         "$value": "{color.black-alpha.24}"
       },
-      "shadow-5": {
+      "5": {
         "$description": "Shadow colour for elevation level 5 (1 lowest, 5 highest). Used by the shadow xs to xl styles.",
         "$value": "{color.black-alpha.32}"
       }

@@ -21,6 +21,22 @@ test('kotlin has data class with light and dark factories', async () => {
   assert.match(primitives, /val BlackAlpha1 = Color\(0x03000000\)/);
 });
 
+test('shadow colours are named shadow 1 to 5 in both modes and outputs', async () => {
+  const css = await readFile('packages/web/dist/tokens.css', 'utf8');
+  const kt = await readFile(`${KT}color/ShadowColors.kt`, 'utf8');
+  const modes = { light: [':root', [1, 2, 3, 4, 5]], dark: ['[data-theme="dark"]', [8, 12, 16, 24, 32]] };
+  for (const [mode, [selector, alphas]] of Object.entries(modes)) {
+    const block = css.slice(css.indexOf(`${selector} {`)).split('}')[0];
+    const factory = kt.slice(kt.indexOf(`fun ${mode}ShadowColors() = ShadowColors(`)).split(')\n')[0];
+    alphas.forEach((alpha, i) => {
+      assert.ok(block.includes(`--unity-color-shadow-${i + 1}: var(--unity-color-black-alpha-${alpha});`), `${mode} css shadow-${i + 1}`);
+      assert.ok(factory.includes(`shadow${i + 1} = PrimitiveColors.BlackAlpha.BlackAlpha${alpha},`), `${mode} kotlin shadow${i + 1}`);
+    });
+  }
+  assert.doesNotMatch(css, /effects/);
+  await assert.rejects(readFile(`${KT}color/EffectsColors.kt`, 'utf8'));
+});
+
 test('css has viewport overrides and non-colour primitives', async () => {
   const css = await readFile('packages/web/dist/tokens.css', 'utf8');
   assert.match(css, /:root \{[^}]*--unity-spacing-4: 1rem;/);

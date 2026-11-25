@@ -21,15 +21,15 @@ Light and dark values, with the primitive each one references. The Kotlin column
 | `color.border.info` | ![#3242c0](docs/swatches/3242c0.svg) `#3242c0`<br>`color.blue.600` | ![#4f6cff](docs/swatches/4f6cff.svg) `#4f6cff`<br>`color.blue-dark.800` | `--unity-color-border-info` | `BorderColors.info` |
 | `color.border.selection` | ![#061ab1](docs/swatches/061ab1.svg) `#061ab1`<br>`color.blue.700` | ![#4f6cff](docs/swatches/4f6cff.svg) `#4f6cff`<br>`color.blue-dark.800` | `--unity-color-border-selection` | `BorderColors.selection` |
 
-### effects
+### shadow
 
 | Token | Light | Dark | CSS | Kotlin |
 | --- | --- | --- | --- | --- |
-| `color.effects.shadow-1` | ![#00000003](docs/swatches/00000003.svg) `#00000003`<br>`color.black-alpha.1` | ![#00000014](docs/swatches/00000014.svg) `#00000014`<br>`color.black-alpha.8` | `--unity-color-effects-shadow-1` | `EffectsColors.shadow1` |
-| `color.effects.shadow-2` | ![#00000005](docs/swatches/00000005.svg) `#00000005`<br>`color.black-alpha.2` | ![#0000001f](docs/swatches/0000001f.svg) `#0000001f`<br>`color.black-alpha.12` | `--unity-color-effects-shadow-2` | `EffectsColors.shadow2` |
-| `color.effects.shadow-3` | ![#00000008](docs/swatches/00000008.svg) `#00000008`<br>`color.black-alpha.3` | ![#00000029](docs/swatches/00000029.svg) `#00000029`<br>`color.black-alpha.16` | `--unity-color-effects-shadow-3` | `EffectsColors.shadow3` |
-| `color.effects.shadow-4` | ![#0000000a](docs/swatches/0000000a.svg) `#0000000a`<br>`color.black-alpha.4` | ![#0000003d](docs/swatches/0000003d.svg) `#0000003d`<br>`color.black-alpha.24` | `--unity-color-effects-shadow-4` | `EffectsColors.shadow4` |
-| `color.effects.shadow-5` | ![#0000000d](docs/swatches/0000000d.svg) `#0000000d`<br>`color.black-alpha.5` | ![#00000052](docs/swatches/00000052.svg) `#00000052`<br>`color.black-alpha.32` | `--unity-color-effects-shadow-5` | `EffectsColors.shadow5` |
+| `color.shadow.1` | ![#00000003](docs/swatches/00000003.svg) `#00000003`<br>`color.black-alpha.1` | ![#00000014](docs/swatches/00000014.svg) `#00000014`<br>`color.black-alpha.8` | `--unity-color-shadow-1` | `ShadowColors.shadow1` |
+| `color.shadow.2` | ![#00000005](docs/swatches/00000005.svg) `#00000005`<br>`color.black-alpha.2` | ![#0000001f](docs/swatches/0000001f.svg) `#0000001f`<br>`color.black-alpha.12` | `--unity-color-shadow-2` | `ShadowColors.shadow2` |
+| `color.shadow.3` | ![#00000008](docs/swatches/00000008.svg) `#00000008`<br>`color.black-alpha.3` | ![#00000029](docs/swatches/00000029.svg) `#00000029`<br>`color.black-alpha.16` | `--unity-color-shadow-3` | `ShadowColors.shadow3` |
+| `color.shadow.4` | ![#0000000a](docs/swatches/0000000a.svg) `#0000000a`<br>`color.black-alpha.4` | ![#0000003d](docs/swatches/0000003d.svg) `#0000003d`<br>`color.black-alpha.24` | `--unity-color-shadow-4` | `ShadowColors.shadow4` |
+| `color.shadow.5` | ![#0000000d](docs/swatches/0000000d.svg) `#0000000d`<br>`color.black-alpha.5` | ![#00000052](docs/swatches/00000052.svg) `#00000052`<br>`color.black-alpha.32` | `--unity-color-shadow-5` | `ShadowColors.shadow5` |
 
 ### icon
 
