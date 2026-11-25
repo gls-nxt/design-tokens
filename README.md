@@ -133,8 +133,20 @@ Three rules apply:
 
 ## Release
 
-There are two ways to start a release. Both run the same `Release` workflow.
+Git tags are the only source of the version. The package files stay at `0.0.0`, and the workflow sets the real version when it publishes. Don't bump them in a pull request.
 
+There are three ways to start a release. All run the same `Release` workflow.
+
+- **Merge a pull request (the usual way).** Every merge to `main` releases. The [conventional commit](https://www.conventionalcommits.org) messages since the latest tag choose the bump, and the largest one wins:
+
+  | Commits since the latest tag | Bump |
+  | --- | --- |
+  | any has `!` after the type, such as `feat(tokens)!: …`, or a `BREAKING CHANGE:` footer | major |
+  | any starts with `feat:` | minor |
+  | any starts with `fix:` or `perf:` | patch |
+  | none of the above, for example only `docs:`, `ci:` or merge commits | minor |
+
+  Merges close together can share one release, because each run counts every commit since the latest tag. Every merge releases; there is no way to skip one. [`github-tag-action`](https://github.com/mathieudutour/github-tag-action) works out the version.
 - **Bump from the UI or CLI.** In GitHub, open **Actions → Release → Run workflow** on `main`, pick `patch`, `minor` or `major`, and run it. From the terminal:
   ```sh
   gh workflow run release.yml -f bump=minor
@@ -145,10 +157,10 @@ There are two ways to start a release. Both run the same `Release` workflow.
   git tag v1.2.0 && git push origin v1.2.0
   ```
 
-Either way, the workflow then:
+Whichever way you start it, the workflow then:
 1. builds and tests;
 2. publishes both packages at that version;
-3. creates the GitHub Release with generated notes. For a manual run, it also creates the tag at this step.
+3. creates the GitHub Release with generated notes. For a merge or a manual run, it also creates the tag at this step.
 
 A renamed or removed token breaks consumers, so it needs a major version.
 

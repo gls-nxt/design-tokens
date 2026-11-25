@@ -9,50 +9,59 @@ on:
         options: [patch, minor, major]
         default: patch
   push:
+    branches: [main] # every merged PR
     tags: ['v*.*.*']
 
 permissions:
   contents: write # tag + GitHub Release
   packages: write
 
+# Queued runs wait, so each run sees the tags the previous one created.
 concurrency:
   group: release
   cancel-in-progress: false
 
 jobs:
-  release:
-    # Manual runs release from main; tag pushes release the tagged commit.
+  version:
+    # Manual runs release from main; pushes release the pushed commit.
     if: github.event_name == 'push' || github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      # Empty = nothing to release.
+      version: ${{ steps.tag.outputs.new_version || steps.pushed.outputs.version }}
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          fetch-depth: 0 # need tags to find the current version
-
-      - name: Determine version
-        env:
-          BUMP: ${{ inputs.bump }}
+      # Tag push: the tag is the version.
+      - id: pushed
+        if: github.ref_type == 'tag'
         run: |
-          if [ "$GITHUB_EVENT_NAME" = push ]; then
-            # Tag push: the tag is the version.
-            version=${GITHUB_REF_NAME#v}
-            current=$GITHUB_REF_NAME
-          else
-            current=$(git tag --list 'v*.*.*' --sort=-v:refname | head -n1)
-            IFS=. read -r major minor patch <<< "${current:-v0.0.0}"
-            major=${major#v}
-            case "$BUMP" in
-              major) major=$((major + 1)); minor=0; patch=0 ;;
-              minor) minor=$((minor + 1)); patch=0 ;;
-              patch) patch=$((patch + 1)) ;;
-            esac
-            version=$major.$minor.$patch
-          fi
+          version=${GITHUB_REF_NAME#v}
           if ! [[ $version =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
             echo "::error::'$version' is not a MAJOR.MINOR.PATCH version"; exit 1
           fi
-          echo "VERSION=$version" >> "$GITHUB_ENV"
-          echo "Releasing v$version (trigger: $GITHUB_EVENT_NAME, previous: ${current:-none})" >> "$GITHUB_STEP_SUMMARY"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      # Merge or manual run: bump the latest tag. Commits since that tag pick the
+      # bump: "!" or BREAKING CHANGE major, fix/perf patch, anything else minor.
+      # A manual run's input overrides them.
+      - id: tag
+        if: github.ref_type != 'tag'
+        uses: mathieudutour/github-tag-action@83c71bb5e316c2ffdea47a2c169498dfa9fc6afd # v7
+        with:
+          github_token: ${{ github.token }}
+          dry_run: true # the release job tags last, after publishing
+          default_bump: minor
+          force_bump: ${{ inputs.bump }}
+
+  release:
+    needs: version
+    if: needs.version.outputs.version != ''
+    runs-on: ubuntu-latest
+    env:
+      VERSION: ${{ needs.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
