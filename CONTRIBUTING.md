@@ -33,4 +33,4 @@ CI runs the same checks on every pull request.
 
 ## Releases
 
-Only maintainers release. See the **Release** section of the README. A renamed or removed token needs a major version.
+Merging a pull request releases it. Write [conventional commit](https://www.conventionalcommits.org) messages, because they choose the version: `feat(tokens)!: …` gives a major version, `fix: …` a patch, and anything else a minor version. See the **Release** section of the README. A renamed or removed token needs a major version.
